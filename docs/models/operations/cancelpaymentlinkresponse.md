@@ -1,0 +1,13 @@
+# CancelPaymentLinkResponse
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `ContentType`                                                                 | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `Headers`                                                                     | map[string][]*string*                                                         | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `LinkCancelledError`                                                          | [*shared.LinkCancelledError](../../models/shared/linkcancellederror.md)       | :heavy_minus_sign:                                                            | Cannot cancel Payment Link if status is not ACTIVE                            |
+| `LinkCancelledResponse`                                                       | [*shared.LinkCancelledResponse](../../models/shared/linkcancelledresponse.md) | :heavy_minus_sign:                                                            | Payment Link cancelled                                                        |
+| `StatusCode`                                                                  | *int*                                                                         | :heavy_check_mark:                                                            | N/A                                                                           |
+| `RawResponse`                                                                 | [*http.Response](https://pkg.go.dev/net/http#Response)                        | :heavy_minus_sign:                                                            | N/A                                                                           |
