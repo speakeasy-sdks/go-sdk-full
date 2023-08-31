@@ -390,3 +390,4 @@ docs/models/shared/cryptogram.md
 docs/models/shared/terminalresponse.md
 docs/models/shared/createterminalrequest.md
 docs/models/callbacks/createorderpaymentwebhookresponse.md
+.gitattributes
