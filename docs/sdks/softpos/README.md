@@ -32,13 +32,13 @@ func main() {
     ctx := context.Background()
     res, err := s.SoftPOS.CreateTerminals(ctx, operations.CreateTerminalsRequest{
         CreateTerminalRequest: &shared.CreateTerminalRequest{
-            TerminalID: pglatest.String("tempore"),
-            TerminalName: "labore",
-            TerminalPhoneNo: "delectus",
+            TerminalID: pglatest.String("modi"),
+            TerminalName: "praesentium",
+            TerminalPhoneNo: "rem",
         },
-        XAPIVersion: pglatest.String("eum"),
-        XClientID: "non",
-        XClientSecret: "eligendi",
+        XAPIVersion: pglatest.String("voluptates"),
+        XClientID: "quasi",
+        XClientSecret: "repudiandae",
     })
     if err != nil {
         log.Fatal(err)
@@ -85,9 +85,9 @@ func main() {
     ctx := context.Background()
     res, err := s.SoftPOS.GetTerminalByMobileNumber(ctx, operations.GetTerminalByMobileNumberRequest{
         TerminalPhoneNo: "sint",
-        XAPIVersion: pglatest.String("aliquid"),
-        XClientID: "provident",
-        XClientSecret: "necessitatibus",
+        XAPIVersion: pglatest.String("veritatis"),
+        XClientID: "itaque",
+        XClientSecret: "incidunt",
     })
     if err != nil {
         log.Fatal(err)

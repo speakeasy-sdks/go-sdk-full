@@ -28,10 +28,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-        LinkID: "laboriosam",
-        XAPIVersion: pglatest.String("hic"),
-        XClientID: "saepe",
-        XClientSecret: "fuga",
+        LinkID: "esse",
+        XAPIVersion: pglatest.String("ipsum"),
+        XClientID: "excepturi",
+        XClientSecret: "aspernatur",
     })
     if err != nil {
         log.Fatal(err)
@@ -80,37 +80,35 @@ func main() {
     res, err := s.PaymentLinks.CreatePaymentLink(ctx, operations.CreatePaymentLinkRequest{
         CreateLinkRequest: &shared.CreateLinkRequest{
             CustomerDetails: shared.LinkCustomerDetailsEntity{
-                CustomerEmail: pglatest.String("in"),
-                CustomerName: pglatest.String("corporis"),
-                CustomerPhone: "iste",
+                CustomerEmail: pglatest.String("perferendis"),
+                CustomerName: pglatest.String("ad"),
+                CustomerPhone: "natus",
             },
-            LinkAmount: 4370.32,
+            LinkAmount: 1496.75,
             LinkAutoReminders: pglatest.Bool(false),
-            LinkCurrency: "saepe",
-            LinkExpiryTime: pglatest.String("quidem"),
-            LinkID: "architecto",
+            LinkCurrency: "iste",
+            LinkExpiryTime: pglatest.String("dolor"),
+            LinkID: "natus",
             LinkMeta: &shared.LinkMetaEntity{
-                NotifyURL: pglatest.String("ipsa"),
-                PaymentMethods: pglatest.String("reiciendis"),
-                ReturnURL: pglatest.String("est"),
+                NotifyURL: pglatest.String("laboriosam"),
+                PaymentMethods: pglatest.String("hic"),
+                ReturnURL: pglatest.String("saepe"),
                 UpiIntent: pglatest.Bool(false),
             },
-            LinkMinimumPartialAmount: pglatest.Float64(6531.4),
+            LinkMinimumPartialAmount: pglatest.Float64(6818.2),
             LinkNotes: map[string]string{
-                "dolores": "dolorem",
-                "corporis": "explicabo",
-                "nobis": "enim",
+                "in": "corporis",
             },
             LinkNotify: &shared.LinkNotifyEntity{
                 SendEmail: pglatest.Bool(false),
                 SendSms: pglatest.Bool(false),
             },
             LinkPartialPayments: pglatest.Bool(false),
-            LinkPurpose: "omnis",
+            LinkPurpose: "iste",
         },
-        XAPIVersion: pglatest.String("nemo"),
-        XClientID: "minima",
-        XClientSecret: "excepturi",
+        XAPIVersion: pglatest.String("iure"),
+        XClientID: "saepe",
+        XClientSecret: "quidem",
     })
     if err != nil {
         log.Fatal(err)
@@ -156,10 +154,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkDetails(ctx, operations.GetPaymentLinkDetailsRequest{
-        LinkID: "accusantium",
-        XAPIVersion: pglatest.String("iure"),
-        XClientID: "culpa",
-        XClientSecret: "doloribus",
+        LinkID: "architecto",
+        XAPIVersion: pglatest.String("ipsa"),
+        XClientID: "reiciendis",
+        XClientSecret: "est",
     })
     if err != nil {
         log.Fatal(err)
@@ -205,9 +203,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkOrders(ctx, operations.GetPaymentLinkOrdersRequest{
-        LinkID: "sapiente",
-        XAPIVersion: pglatest.String("architecto"),
-        XClientID: "mollitia",
+        LinkID: "mollitia",
+        XAPIVersion: pglatest.String("laborum"),
+        XClientID: "dolores",
         XClientSecret: "dolorem",
     })
     if err != nil {

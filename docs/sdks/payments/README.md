@@ -26,11 +26,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentbyID(ctx, operations.GetPaymentbyIDRequest{
-        CfPaymentID: 635059,
-        OrderID: "consequuntur",
-        XAPIVersion: pglatest.String("repellat"),
-        XClientID: "mollitia",
-        XClientSecret: "occaecati",
+        CfPaymentID: 358152,
+        OrderID: "explicabo",
+        XAPIVersion: pglatest.String("nobis"),
+        XClientID: "enim",
+        XClientSecret: "omnis",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,10 +76,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentsfororder(ctx, operations.GetPaymentsfororderRequest{
-        OrderID: "numquam",
-        XAPIVersion: pglatest.String("commodi"),
-        XClientID: "quam",
-        XClientSecret: "molestiae",
+        OrderID: "nemo",
+        XAPIVersion: pglatest.String("minima"),
+        XClientID: "excepturi",
+        XClientSecret: "accusantium",
     })
     if err != nil {
         log.Fatal(err)

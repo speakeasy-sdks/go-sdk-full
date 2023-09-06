@@ -32,11 +32,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-        CustomerID: "deserunt",
-        InstrumentID: "distinctio",
-        XAPIVersion: pglatest.String("quibusdam"),
-        XClientID: "labore",
-        XClientSecret: "modi",
+        CustomerID: "reprehenderit",
+        InstrumentID: "ut",
+        XAPIVersion: pglatest.String("maiores"),
+        XClientID: "dicta",
+        XClientSecret: "corporis",
     })
     if err != nil {
         log.Fatal(err)
@@ -82,11 +82,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchAllSavedInstruments(ctx, operations.FetchAllSavedInstrumentsRequest{
-        CustomerID: "qui",
+        CustomerID: "dolore",
         InstrumentType: operations.FetchAllSavedInstrumentsInstrumentTypeCard,
-        XAPIVersion: pglatest.String("aliquid"),
-        XClientID: "cupiditate",
-        XClientSecret: "quos",
+        XAPIVersion: pglatest.String("iusto"),
+        XClientID: "dicta",
+        XClientSecret: "harum",
     })
     if err != nil {
         log.Fatal(err)
@@ -132,11 +132,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchCryptogram(ctx, operations.FetchCryptogramRequest{
-        CustomerID: "perferendis",
-        InstrumentID: "magni",
-        XAPIVersion: pglatest.String("assumenda"),
-        XClientID: "ipsam",
-        XClientSecret: "alias",
+        CustomerID: "enim",
+        InstrumentID: "accusamus",
+        XAPIVersion: pglatest.String("commodi"),
+        XClientID: "repudiandae",
+        XClientSecret: "quae",
     })
     if err != nil {
         log.Fatal(err)
@@ -182,11 +182,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchSpecificSavedInstrument(ctx, operations.FetchSpecificSavedInstrumentRequest{
-        CustomerID: "fugit",
-        InstrumentID: "dolorum",
-        XAPIVersion: pglatest.String("excepturi"),
-        XClientID: "tempora",
-        XClientSecret: "facilis",
+        CustomerID: "ipsum",
+        InstrumentID: "quidem",
+        XAPIVersion: pglatest.String("molestias"),
+        XClientID: "excepturi",
+        XClientSecret: "pariatur",
     })
     if err != nil {
         log.Fatal(err)

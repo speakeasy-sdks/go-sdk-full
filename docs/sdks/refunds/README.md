@@ -29,37 +29,22 @@ func main() {
     ctx := context.Background()
     res, err := s.Refunds.Createrefund(ctx, operations.CreaterefundRequest{
         CreateRefundRequest: &shared.CreateRefundRequest{
-            RefundAmount: 9764.6,
-            RefundID: "vero",
-            RefundNote: pglatest.String("nihil"),
-            RefundSpeed: shared.CreateRefundRequestRefundSpeedInstant.ToPointer(),
+            RefundAmount: 2444.25,
+            RefundID: "error",
+            RefundNote: pglatest.String("quia"),
+            RefundSpeed: shared.CreateRefundRequestRefundSpeedStandard.ToPointer(),
             RefundSplits: []shared.VendorSplit{
                 shared.VendorSplit{
-                    Amount: pglatest.Float64(557.14),
-                    Percentage: pglatest.Float64(6048.46),
-                    VendorID: pglatest.String("voluptate"),
-                },
-                shared.VendorSplit{
-                    Amount: pglatest.Float64(7392.64),
-                    Percentage: pglatest.Float64(199.87),
-                    VendorID: pglatest.String("doloremque"),
-                },
-                shared.VendorSplit{
-                    Amount: pglatest.Float64(4417.11),
-                    Percentage: pglatest.Float64(2828.07),
-                    VendorID: pglatest.String("maiores"),
-                },
-                shared.VendorSplit{
-                    Amount: pglatest.Float64(1201.96),
-                    Percentage: pglatest.Float64(3594.44),
-                    VendorID: pglatest.String("dolore"),
+                    Amount: pglatest.Float64(1103.75),
+                    Percentage: pglatest.Float64(6747.52),
+                    VendorID: pglatest.String("animi"),
                 },
             },
         },
-        OrderID: "iusto",
-        XAPIVersion: pglatest.String("dicta"),
-        XClientID: "harum",
-        XClientSecret: "enim",
+        OrderID: "enim",
+        XAPIVersion: pglatest.String("odit"),
+        XClientID: "quo",
+        XClientSecret: "sequi",
     })
     if err != nil {
         log.Fatal(err)
@@ -105,11 +90,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.GetRefund(ctx, operations.GetRefundRequest{
-        OrderID: "accusamus",
-        RefundID: "commodi",
-        XAPIVersion: pglatest.String("repudiandae"),
-        XClientID: "quae",
-        XClientSecret: "ipsum",
+        OrderID: "tenetur",
+        RefundID: "ipsam",
+        XAPIVersion: pglatest.String("id"),
+        XClientID: "possimus",
+        XClientSecret: "aut",
     })
     if err != nil {
         log.Fatal(err)
@@ -155,10 +140,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.Getallrefundsfororder(ctx, operations.GetallrefundsfororderRequest{
-        OrderID: "quidem",
-        XAPIVersion: pglatest.String("molestias"),
-        XClientID: "excepturi",
-        XClientSecret: "pariatur",
+        OrderID: "quasi",
+        XAPIVersion: pglatest.String("error"),
+        XClientID: "temporibus",
+        XClientSecret: "laborum",
     })
     if err != nil {
         log.Fatal(err)

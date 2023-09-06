@@ -29,17 +29,17 @@ func main() {
     res, err := s.Reconciliation.PostRecon(ctx, operations.PostReconRequest{
         FetchPGReconRequest: &shared.FetchPGReconRequest{
             Filters: shared.FetchPGReconRequestFilters{
-                EndDate: "velit",
-                StartDate: "error",
+                EndDate: "iure",
+                StartDate: "culpa",
             },
             Pagination: shared.FetchPGReconRequestPagination{
-                Cursor: pglatest.String("quia"),
-                Limit: 338007,
+                Cursor: pglatest.String("doloribus"),
+                Limit: 958950,
             },
         },
-        XAPIVersion: pglatest.String("vitae"),
-        XClientID: "laborum",
-        XClientSecret: "animi",
+        XAPIVersion: pglatest.String("architecto"),
+        XClientID: "mollitia",
+        XClientSecret: "dolorem",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,26 +89,22 @@ func main() {
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    138183,
-                    778346,
+                    635059,
                 },
-                EndDate: pglatest.String("sequi"),
+                EndDate: pglatest.String("consequuntur"),
                 SettlementUtrs: []string{
-                    "ipsam",
-                    "id",
-                    "possimus",
-                    "aut",
+                    "repellat",
                 },
-                StartDate: pglatest.String("quasi"),
+                StartDate: pglatest.String("mollitia"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Cursor: pglatest.String("error"),
-                Limit: 837945,
+                Cursor: pglatest.String("occaecati"),
+                Limit: 253291,
             },
         },
-        XAPIVersion: pglatest.String("laborum"),
-        XClientID: "quasi",
-        XClientSecret: "reiciendis",
+        XAPIVersion: pglatest.String("commodi"),
+        XClientID: "quam",
+        XClientSecret: "molestiae",
     })
     if err != nil {
         log.Fatal(err)

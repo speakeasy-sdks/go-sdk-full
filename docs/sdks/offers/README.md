@@ -30,14 +30,14 @@ func main() {
         CreateOfferBackendRequest: &shared.CreateOfferBackendRequest{
             OfferDetails: shared.OfferDetails{
                 CashbackDetails: &shared.CashbackDetails{
-                    CashbackType: shared.CashbackDetailsCashbackTypePercentage.ToPointer(),
-                    CashbackValue: pglatest.String("placeat"),
-                    MaxCashbackAmount: "voluptatum",
+                    CashbackType: shared.CashbackDetailsCashbackTypeFlat.ToPointer(),
+                    CashbackValue: pglatest.String("molestiae"),
+                    MaxCashbackAmount: "minus",
                 },
                 DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountDetailsDiscountTypeFlat,
-                    DiscountValue: "excepturi",
-                    MaxDiscountAmount: "nisi",
+                    DiscountType: shared.DiscountDetailsDiscountTypePercentage,
+                    DiscountValue: "voluptatum",
+                    MaxDiscountAmount: "iusto",
                 },
                 OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
             },
@@ -58,9 +58,9 @@ func main() {
                 PaymentMethod: shared.OfferValidationsPaymentMethod{},
             },
         },
-        XAPIVersion: pglatest.String("temporibus"),
-        XClientID: "ab",
-        XClientSecret: "quis",
+        XAPIVersion: pglatest.String("nisi"),
+        XClientID: "recusandae",
+        XClientSecret: "temporibus",
     })
     if err != nil {
         log.Fatal(err)
@@ -106,10 +106,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "veritatis",
-        XAPIVersion: pglatest.String("deserunt"),
-        XClientID: "perferendis",
-        XClientSecret: "ipsam",
+        OfferID: "ab",
+        XAPIVersion: pglatest.String("quis"),
+        XClientID: "veritatis",
+        XClientSecret: "deserunt",
     })
     if err != nil {
         log.Fatal(err)

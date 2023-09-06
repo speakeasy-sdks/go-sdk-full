@@ -26,10 +26,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settlements.Getsettlements(ctx, operations.GetsettlementsRequest{
-        OrderID: "modi",
-        XAPIVersion: pglatest.String("praesentium"),
-        XClientID: "rem",
-        XClientSecret: "voluptates",
+        OrderID: "quasi",
+        XAPIVersion: pglatest.String("reiciendis"),
+        XClientID: "voluptatibus",
+        XClientSecret: "vero",
     })
     if err != nil {
         log.Fatal(err)
@@ -79,22 +79,22 @@ func main() {
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    921158,
+                    468651,
                 },
-                EndDate: pglatest.String("sint"),
+                EndDate: pglatest.String("praesentium"),
                 SettlementUtrs: []string{
-                    "itaque",
+                    "voluptatibus",
                 },
-                StartDate: pglatest.String("incidunt"),
+                StartDate: pglatest.String("ipsa"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Cursor: pglatest.String("enim"),
-                Limit: 9356,
+                Cursor: pglatest.String("omnis"),
+                Limit: 451159,
             },
         },
-        XAPIVersion: pglatest.String("est"),
-        XClientID: "quibusdam",
-        XClientSecret: "explicabo",
+        XAPIVersion: pglatest.String("cum"),
+        XClientID: "perferendis",
+        XClientSecret: "doloremque",
     })
     if err != nil {
         log.Fatal(err)

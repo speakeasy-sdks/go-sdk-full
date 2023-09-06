@@ -90,7 +90,6 @@ func main() {
             Filters: &shared.OfferFilters{
                 OfferType: []shared.OfferType{
                     shared.OfferTypeCashback,
-                    shared.OfferTypeCashback,
                 },
             },
             Queries: shared.OfferQueries{
@@ -98,9 +97,9 @@ func main() {
                 OrderID: pglatest.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: pglatest.String("debitis"),
-        XClientID: "ipsa",
-        XClientSecret: "delectus",
+        XAPIVersion: pglatest.String("iure"),
+        XClientID: "magnam",
+        XClientSecret: "debitis",
     })
     if err != nil {
         log.Fatal(err)
@@ -156,9 +155,9 @@ func main() {
                 OrderID: pglatest.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: pglatest.String("tempora"),
-        XClientID: "suscipit",
-        XClientSecret: "molestiae",
+        XAPIVersion: pglatest.String("ipsa"),
+        XClientID: "delectus",
+        XClientSecret: "tempora",
     })
     if err != nil {
         log.Fatal(err)

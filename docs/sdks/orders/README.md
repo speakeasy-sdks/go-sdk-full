@@ -33,49 +33,42 @@ func main() {
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
         CreateOrderBackendRequest: &shared.CreateOrderBackendRequest{
             CustomerDetails: shared.CustomerDetails{
-                CustomerBankAccountNumber: pglatest.String("repellendus"),
-                CustomerBankCode: pglatest.String("sapiente"),
-                CustomerBankIfsc: pglatest.String("quo"),
-                CustomerEmail: pglatest.String("odit"),
-                CustomerID: "at",
-                CustomerPhone: "at",
+                CustomerBankAccountNumber: pglatest.String("perferendis"),
+                CustomerBankCode: pglatest.String("ipsam"),
+                CustomerBankIfsc: pglatest.String("repellendus"),
+                CustomerEmail: pglatest.String("sapiente"),
+                CustomerID: "quo",
+                CustomerPhone: "odit",
             },
             OrderAmount: 10.15,
             OrderCurrency: "INR",
             OrderExpiryTime: pglatest.String("2021-07-29T00:00:00Z"),
-            OrderID: pglatest.String("maiores"),
+            OrderID: pglatest.String("at"),
             OrderMeta: &shared.OrderMeta{
-                NotifyURL: pglatest.String("molestiae"),
-                PaymentMethods: pglatest.String("quod"),
-                ReturnURL: pglatest.String("quod"),
+                NotifyURL: pglatest.String("at"),
+                PaymentMethods: pglatest.String("maiores"),
+                ReturnURL: pglatest.String("molestiae"),
             },
             OrderNote: pglatest.String("Test order"),
             OrderSplits: []shared.VendorSplit{
                 shared.VendorSplit{
-                    Amount: pglatest.Float64(5204.78),
-                    Percentage: pglatest.Float64(7805.29),
-                    VendorID: pglatest.String("dolorum"),
-                },
-                shared.VendorSplit{
-                    Amount: pglatest.Float64(1182.74),
-                    Percentage: pglatest.Float64(7206.33),
-                    VendorID: pglatest.String("officia"),
+                    Amount: pglatest.Float64(7991.59),
+                    Percentage: pglatest.Float64(8009.11),
+                    VendorID: pglatest.String("esse"),
                 },
             },
             OrderTags: map[string]string{
-                "fugit": "deleniti",
-                "hic": "optio",
-                "totam": "beatae",
+                "totam": "porro",
             },
             Terminal: &shared.TerminalDetails{
-                TerminalID: "commodi",
-                TerminalPhoneNo: "molestiae",
-                TerminalType: "modi",
+                TerminalID: "dolorum",
+                TerminalPhoneNo: "dicta",
+                TerminalType: "nam",
             },
         },
-        XAPIVersion: pglatest.String("qui"),
-        XClientID: "impedit",
-        XClientSecret: "cum",
+        XAPIVersion: pglatest.String("officia"),
+        XClientID: "occaecati",
+        XClientSecret: "fugit",
     })
     if err != nil {
         log.Fatal(err)
@@ -121,10 +114,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.GetOrder(ctx, operations.GetOrderRequest{
-        OrderID: "esse",
-        XAPIVersion: pglatest.String("ipsum"),
-        XClientID: "excepturi",
-        XClientSecret: "aspernatur",
+        OrderID: "deleniti",
+        XAPIVersion: pglatest.String("hic"),
+        XClientID: "optio",
+        XClientSecret: "totam",
     })
     if err != nil {
         log.Fatal(err)
@@ -177,7 +170,7 @@ func main() {
             PaymentSessionID: "session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn",
             SaveInstrument: pglatest.Bool(false),
         },
-        XAPIVersion: "perferendis",
+        XAPIVersion: "beatae",
     })
     if err != nil {
         log.Fatal(err)
@@ -226,12 +219,12 @@ func main() {
     res, err := s.Orders.Preauthorization(ctx, operations.PreauthorizationRequest{
         AuthorizationRequest: &shared.AuthorizationRequest{
             Action: shared.AuthorizationRequestActionCapture.ToPointer(),
-            Amount: pglatest.Float64(6176.36),
+            Amount: pglatest.Float64(4736),
         },
-        OrderID: "sed",
-        XAPIVersion: pglatest.String("iste"),
-        XClientID: "dolor",
-        XClientSecret: "natus",
+        OrderID: "modi",
+        XAPIVersion: pglatest.String("qui"),
+        XClientID: "impedit",
+        XClientSecret: "cum",
     })
     if err != nil {
         log.Fatal(err)
