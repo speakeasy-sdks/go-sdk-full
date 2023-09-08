@@ -1,7 +1,5 @@
 # LinkCancelledError
 
-Cannot cancel Payment Link if status is not ACTIVE
-
 
 ## Fields
 

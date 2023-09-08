@@ -2,7 +2,6 @@
 
 package shared
 
-// TerminalDetails - OK
 type TerminalDetails struct {
 	// The internal id that you use to map the terminal in your internal system
 	TerminalID string `json:"terminal_id"`

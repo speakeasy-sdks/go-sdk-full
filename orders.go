@@ -331,7 +331,7 @@ func (s *orders) OrderPay(ctx context.Context, request operations.OrderPayReques
 	return res, nil
 }
 
-// Preauthorization - Preauthorization
+// Preauthorization
 // Use this API to capture or void a preauthorized payment
 func (s *orders) Preauthorization(ctx context.Context, request operations.PreauthorizationRequest) (*operations.PreauthorizationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())

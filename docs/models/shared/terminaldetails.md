@@ -1,7 +1,5 @@
 # TerminalDetails
 
-OK
-
 
 ## Fields
 
