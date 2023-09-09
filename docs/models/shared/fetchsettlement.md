@@ -1,7 +1,5 @@
 # FetchSettlement
 
-OK
-
 
 ## Fields
 

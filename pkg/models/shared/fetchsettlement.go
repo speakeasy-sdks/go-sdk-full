@@ -167,7 +167,6 @@ func (o *FetchSettlementData) GetStatus() *string {
 	return o.Status
 }
 
-// FetchSettlement - OK
 type FetchSettlement struct {
 	// Specify a value from where you want to fetch the settlement details in the API call.
 	Cursor *string               `json:"cursor,omitempty"`
