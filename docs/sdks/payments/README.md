@@ -85,7 +85,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetPaymentsfororder200ApplicationJSONOneOf != nil {
+    if res.PaymentsEntity != nil {
         // handle response
     }
 }

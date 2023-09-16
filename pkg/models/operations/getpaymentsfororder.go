@@ -3,9 +3,6 @@
 package operations
 
 import (
-	"bytes"
-	"encoding/json"
-	"errors"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 	"net/http"
 )
@@ -45,59 +42,15 @@ func (o *GetPaymentsfororderRequest) GetXClientSecret() string {
 	return o.XClientSecret
 }
 
-type GetPaymentsfororder200ApplicationJSONType string
-
-const (
-	GetPaymentsfororder200ApplicationJSONTypePaymentsEntity GetPaymentsfororder200ApplicationJSONType = "PaymentsEntity"
-)
-
-type GetPaymentsfororder200ApplicationJSON struct {
-	PaymentsEntity *shared.PaymentsEntity
-
-	Type GetPaymentsfororder200ApplicationJSONType
-}
-
-func CreateGetPaymentsfororder200ApplicationJSONPaymentsEntity(paymentsEntity shared.PaymentsEntity) GetPaymentsfororder200ApplicationJSON {
-	typ := GetPaymentsfororder200ApplicationJSONTypePaymentsEntity
-
-	return GetPaymentsfororder200ApplicationJSON{
-		PaymentsEntity: &paymentsEntity,
-		Type:           typ,
-	}
-}
-
-func (u *GetPaymentsfororder200ApplicationJSON) UnmarshalJSON(data []byte) error {
-	var d *json.Decoder
-
-	paymentsEntity := new(shared.PaymentsEntity)
-	d = json.NewDecoder(bytes.NewReader(data))
-	d.DisallowUnknownFields()
-	if err := d.Decode(&paymentsEntity); err == nil {
-		u.PaymentsEntity = paymentsEntity
-		u.Type = GetPaymentsfororder200ApplicationJSONTypePaymentsEntity
-		return nil
-	}
-
-	return errors.New("could not unmarshal into supported union types")
-}
-
-func (u GetPaymentsfororder200ApplicationJSON) MarshalJSON() ([]byte, error) {
-	if u.PaymentsEntity != nil {
-		return json.Marshal(u.PaymentsEntity)
-	}
-
-	return nil, nil
-}
-
 type GetPaymentsfororderResponse struct {
 	ContentType string
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
+	Headers       map[string][]string
 	// OK
-	GetPaymentsfororder200ApplicationJSONOneOf *GetPaymentsfororder200ApplicationJSON
-	Headers                                    map[string][]string
-	StatusCode                                 int
-	RawResponse                                *http.Response
+	PaymentsEntity *shared.PaymentsEntity
+	StatusCode     int
+	RawResponse    *http.Response
 }
 
 func (o *GetPaymentsfororderResponse) GetContentType() string {
@@ -114,18 +67,18 @@ func (o *GetPaymentsfororderResponse) GetErrorResponse() *shared.ErrorResponse {
 	return o.ErrorResponse
 }
 
-func (o *GetPaymentsfororderResponse) GetGetPaymentsfororder200ApplicationJSONOneOf() *GetPaymentsfororder200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetPaymentsfororder200ApplicationJSONOneOf
-}
-
 func (o *GetPaymentsfororderResponse) GetHeaders() map[string][]string {
 	if o == nil {
 		return nil
 	}
 	return o.Headers
+}
+
+func (o *GetPaymentsfororderResponse) GetPaymentsEntity() *shared.PaymentsEntity {
+	if o == nil {
+		return nil
+	}
+	return o.PaymentsEntity
 }
 
 func (o *GetPaymentsfororderResponse) GetStatusCode() int {
