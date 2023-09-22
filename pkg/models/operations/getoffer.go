@@ -4,14 +4,26 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
 type GetOfferRequest struct {
 	OfferID       string  `pathParam:"style=simple,explode=false,name=offer_id"`
-	XAPIVersion   *string `header:"style=simple,explode=false,name=x-api-version"`
+	XAPIVersion   *string `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
 	XClientID     string  `header:"style=simple,explode=false,name=x-client-id"`
 	XClientSecret string  `header:"style=simple,explode=false,name=x-client-secret"`
+}
+
+func (g GetOfferRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(g, "", false)
+}
+
+func (g *GetOfferRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &g, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *GetOfferRequest) GetOfferID() string {

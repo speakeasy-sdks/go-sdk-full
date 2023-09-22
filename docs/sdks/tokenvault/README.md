@@ -23,20 +23,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-        CustomerID: "reprehenderit",
-        InstrumentID: "ut",
-        XAPIVersion: pglatest.String("maiores"),
+        CustomerID: "corporis",
+        InstrumentID: "dolore",
+        XAPIVersion: gosdkfull.String("iusto"),
         XClientID: "dicta",
-        XClientSecret: "corporis",
+        XClientSecret: "harum",
     })
     if err != nil {
         log.Fatal(err)
@@ -73,20 +73,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchAllSavedInstruments(ctx, operations.FetchAllSavedInstrumentsRequest{
-        CustomerID: "dolore",
-        InstrumentType: operations.FetchAllSavedInstrumentsInstrumentTypeCard,
-        XAPIVersion: pglatest.String("iusto"),
-        XClientID: "dicta",
-        XClientSecret: "harum",
+        CustomerID: "enim",
+        InstrumentType: "accusamus",
+        XAPIVersion: gosdkfull.String("commodi"),
+        XClientID: "repudiandae",
+        XClientSecret: "quae",
     })
     if err != nil {
         log.Fatal(err)
@@ -123,20 +123,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchCryptogram(ctx, operations.FetchCryptogramRequest{
-        CustomerID: "enim",
-        InstrumentID: "accusamus",
-        XAPIVersion: pglatest.String("commodi"),
-        XClientID: "repudiandae",
-        XClientSecret: "quae",
+        CustomerID: "ipsum",
+        InstrumentID: "quidem",
+        XAPIVersion: gosdkfull.String("molestias"),
+        XClientID: "excepturi",
+        XClientSecret: "pariatur",
     })
     if err != nil {
         log.Fatal(err)
@@ -173,20 +173,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchSpecificSavedInstrument(ctx, operations.FetchSpecificSavedInstrumentRequest{
-        CustomerID: "ipsum",
-        InstrumentID: "quidem",
-        XAPIVersion: pglatest.String("molestias"),
-        XClientID: "excepturi",
-        XClientSecret: "pariatur",
+        CustomerID: "modi",
+        InstrumentID: "praesentium",
+        XAPIVersion: gosdkfull.String("rem"),
+        XClientID: "voluptates",
+        XClientSecret: "quasi",
     })
     if err != nil {
         log.Fatal(err)

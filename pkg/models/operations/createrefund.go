@@ -4,15 +4,27 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
 type CreaterefundRequest struct {
 	CreateRefundRequest *shared.CreateRefundRequest `request:"mediaType=application/json"`
 	OrderID             string                      `pathParam:"style=simple,explode=false,name=order_id"`
-	XAPIVersion         *string                     `header:"style=simple,explode=false,name=x-api-version"`
+	XAPIVersion         *string                     `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
 	XClientID           string                      `header:"style=simple,explode=false,name=x-client-id"`
 	XClientSecret       string                      `header:"style=simple,explode=false,name=x-client-secret"`
+}
+
+func (c CreaterefundRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *CreaterefundRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *CreaterefundRequest) GetCreateRefundRequest() *shared.CreateRefundRequest {

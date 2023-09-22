@@ -4,15 +4,27 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
 type FetchCryptogramRequest struct {
 	CustomerID    string  `pathParam:"style=simple,explode=false,name=customer_id"`
 	InstrumentID  string  `pathParam:"style=simple,explode=false,name=instrument_id"`
-	XAPIVersion   *string `header:"style=simple,explode=false,name=x-api-version"`
+	XAPIVersion   *string `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
 	XClientID     string  `header:"style=simple,explode=false,name=x-client-id"`
 	XClientSecret string  `header:"style=simple,explode=false,name=x-client-secret"`
+}
+
+func (f FetchCryptogramRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FetchCryptogramRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *FetchCryptogramRequest) GetCustomerID() string {

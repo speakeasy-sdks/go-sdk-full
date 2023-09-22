@@ -19,7 +19,7 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/callbacks"
@@ -27,48 +27,48 @@ import(
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
         CreateOrderBackendRequest: &shared.CreateOrderBackendRequest{
             CustomerDetails: shared.CustomerDetails{
-                CustomerBankAccountNumber: pglatest.String("perferendis"),
-                CustomerBankCode: pglatest.String("ipsam"),
-                CustomerBankIfsc: pglatest.String("repellendus"),
-                CustomerEmail: pglatest.String("sapiente"),
-                CustomerID: "quo",
-                CustomerPhone: "odit",
+                CustomerBankAccountNumber: gosdkfull.String("quo"),
+                CustomerBankCode: gosdkfull.String("odit"),
+                CustomerBankIfsc: gosdkfull.String("at"),
+                CustomerEmail: gosdkfull.String("at"),
+                CustomerID: "maiores",
+                CustomerPhone: "molestiae",
             },
             OrderAmount: 10.15,
             OrderCurrency: "INR",
-            OrderExpiryTime: pglatest.String("2021-07-29T00:00:00Z"),
-            OrderID: pglatest.String("at"),
+            OrderExpiryTime: gosdkfull.String("2021-07-29T00:00:00Z"),
+            OrderID: gosdkfull.String("quod"),
             OrderMeta: &shared.OrderMeta{
-                NotifyURL: pglatest.String("at"),
-                PaymentMethods: pglatest.String("maiores"),
-                ReturnURL: pglatest.String("molestiae"),
+                NotifyURL: gosdkfull.String("quod"),
+                PaymentMethods: gosdkfull.String("esse"),
+                ReturnURL: gosdkfull.String("totam"),
             },
-            OrderNote: pglatest.String("Test order"),
+            OrderNote: gosdkfull.String("Test order"),
             OrderSplits: []shared.VendorSplit{
                 shared.VendorSplit{
-                    Amount: pglatest.Float64(7991.59),
-                    Percentage: pglatest.Float64(8009.11),
-                    VendorID: pglatest.String("esse"),
+                    Amount: gosdkfull.Float64(7805.29),
+                    Percentage: gosdkfull.Float64(6788.8),
+                    VendorID: gosdkfull.String("dicta"),
                 },
             },
             OrderTags: map[string]string{
-                "totam": "porro",
+                "nam": "officia",
             },
             Terminal: &shared.TerminalDetails{
-                TerminalID: "dolorum",
-                TerminalPhoneNo: "dicta",
-                TerminalType: "nam",
+                TerminalID: "occaecati",
+                TerminalPhoneNo: "fugit",
+                TerminalType: "deleniti",
             },
         },
-        XAPIVersion: pglatest.String("officia"),
-        XClientID: "occaecati",
-        XClientSecret: "fugit",
+        XAPIVersion: gosdkfull.String("hic"),
+        XClientID: "optio",
+        XClientSecret: "totam",
     })
     if err != nil {
         log.Fatal(err)
@@ -105,19 +105,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Orders.GetOrder(ctx, operations.GetOrderRequest{
-        OrderID: "deleniti",
-        XAPIVersion: pglatest.String("hic"),
-        XClientID: "optio",
-        XClientSecret: "totam",
+        OrderID: "beatae",
+        XAPIVersion: gosdkfull.String("commodi"),
+        XClientID: "molestiae",
+        XClientSecret: "modi",
     })
     if err != nil {
         log.Fatal(err)
@@ -154,23 +154,23 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Orders.OrderPay(ctx, operations.OrderPayRequest{
         OrderPayRequest: &shared.OrderPayRequest{
-            OfferID: pglatest.String("faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b"),
+            OfferID: gosdkfull.String("faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b"),
             PaymentMethod: shared.OrderPayRequestPaymentMethod{},
             PaymentSessionID: "session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn",
-            SaveInstrument: pglatest.Bool(false),
+            SaveInstrument: gosdkfull.Bool(false),
         },
-        XAPIVersion: "beatae",
+        XAPIVersion: "qui",
     })
     if err != nil {
         log.Fatal(err)
@@ -207,24 +207,24 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Orders.Preauthorization(ctx, operations.PreauthorizationRequest{
         AuthorizationRequest: &shared.AuthorizationRequest{
-            Action: shared.AuthorizationRequestActionCapture.ToPointer(),
-            Amount: pglatest.Float64(4736),
+            Action: shared.AuthorizationRequestActionVoid.ToPointer(),
+            Amount: gosdkfull.Float64(7369.18),
         },
-        OrderID: "modi",
-        XAPIVersion: pglatest.String("qui"),
-        XClientID: "impedit",
-        XClientSecret: "cum",
+        OrderID: "esse",
+        XAPIVersion: gosdkfull.String("ipsum"),
+        XClientID: "excepturi",
+        XClientSecret: "aspernatur",
     })
     if err != nil {
         log.Fatal(err)

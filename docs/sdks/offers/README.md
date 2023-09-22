@@ -17,27 +17,27 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Offers.CreateOffer(ctx, operations.CreateOfferRequest{
         CreateOfferBackendRequest: &shared.CreateOfferBackendRequest{
             OfferDetails: shared.OfferDetails{
                 CashbackDetails: &shared.CashbackDetails{
-                    CashbackType: shared.CashbackDetailsCashbackTypeFlat.ToPointer(),
-                    CashbackValue: pglatest.String("molestiae"),
-                    MaxCashbackAmount: "minus",
+                    CashbackType: shared.CashbackDetailsCashbackTypePercentage.ToPointer(),
+                    CashbackValue: gosdkfull.String("iusto"),
+                    MaxCashbackAmount: "excepturi",
                 },
                 DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountDetailsDiscountTypePercentage,
-                    DiscountValue: "voluptatum",
-                    MaxDiscountAmount: "iusto",
+                    DiscountType: shared.DiscountDetailsDiscountTypeFlat,
+                    DiscountValue: "recusandae",
+                    MaxDiscountAmount: "temporibus",
                 },
                 OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
             },
@@ -49,18 +49,18 @@ func main() {
                 OfferTitle: "Test Offer",
             },
             OfferTnc: shared.OfferTnc{
-                OfferTncType: shared.OfferTncOfferTncTypePost,
+                OfferTncType: shared.OfferTncOfferTncTypeLink,
                 OfferTncValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             },
             OfferValidations: shared.OfferValidations{
                 MaxAllowed: "10",
-                MinAmount: pglatest.String("1"),
+                MinAmount: gosdkfull.String("1"),
                 PaymentMethod: shared.OfferValidationsPaymentMethod{},
             },
         },
-        XAPIVersion: pglatest.String("nisi"),
-        XClientID: "recusandae",
-        XClientSecret: "temporibus",
+        XAPIVersion: gosdkfull.String("quis"),
+        XClientID: "veritatis",
+        XClientSecret: "deserunt",
     })
     if err != nil {
         log.Fatal(err)
@@ -97,19 +97,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "ab",
-        XAPIVersion: pglatest.String("quis"),
-        XClientID: "veritatis",
-        XClientSecret: "deserunt",
+        OfferID: "perferendis",
+        XAPIVersion: gosdkfull.String("ipsam"),
+        XClientID: "repellendus",
+        XClientSecret: "sapiente",
     })
     if err != nil {
         log.Fatal(err)

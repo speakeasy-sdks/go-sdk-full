@@ -17,20 +17,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentbyID(ctx, operations.GetPaymentbyIDRequest{
-        CfPaymentID: 358152,
-        OrderID: "explicabo",
-        XAPIVersion: pglatest.String("nobis"),
-        XClientID: "enim",
-        XClientSecret: "omnis",
+        CfPaymentID: 607831,
+        OrderID: "nemo",
+        XAPIVersion: gosdkfull.String("minima"),
+        XClientID: "excepturi",
+        XClientSecret: "accusantium",
     })
     if err != nil {
         log.Fatal(err)
@@ -67,19 +67,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentsfororder(ctx, operations.GetPaymentsfororderRequest{
-        OrderID: "nemo",
-        XAPIVersion: pglatest.String("minima"),
-        XClientID: "excepturi",
-        XClientSecret: "accusantium",
+        OrderID: "iure",
+        XAPIVersion: gosdkfull.String("culpa"),
+        XClientID: "doloribus",
+        XClientSecret: "sapiente",
     })
     if err != nil {
         log.Fatal(err)

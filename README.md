@@ -10,30 +10,28 @@ go get github.com/speakeasy-sdks/go-sdk-full
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
         OTPRequest: &shared.OTPRequest{
             Action: shared.OTPRequestActionResendOtp,
-            Otp: "provident",
+            Otp: "nulla",
         },
-        PaymentID: "distinctio",
-        XAPIVersion: pglatest.String("quibusdam"),
+        PaymentID: "corrupti",
+        XAPIVersion: gosdkfull.String("illum"),
     })
     if err != nil {
         log.Fatal(err)
@@ -112,6 +110,38 @@ func main() {
 * [CreateTerminals](docs/sdks/softpos/README.md#createterminals) - Create Terminal
 * [GetTerminalByMobileNumber](docs/sdks/softpos/README.md#getterminalbymobilenumber) - Get terminal status using phone number
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `nil`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+
+
+<!-- Start Go Types -->
+
+<!-- End Go Types -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

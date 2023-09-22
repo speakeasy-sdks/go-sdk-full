@@ -4,13 +4,25 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
 type OTPRequestRequest struct {
 	OTPRequest  *shared.OTPRequest `request:"mediaType=application/json"`
 	PaymentID   string             `pathParam:"style=simple,explode=false,name=payment_id"`
-	XAPIVersion *string            `header:"style=simple,explode=false,name=x-api-version"`
+	XAPIVersion *string            `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
+}
+
+func (o OTPRequestRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(o, "", false)
+}
+
+func (o *OTPRequestRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &o, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *OTPRequestRequest) GetOTPRequest() *shared.OTPRequest {

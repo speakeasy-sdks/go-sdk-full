@@ -3,44 +3,28 @@
 package operations
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
-// FetchAllSavedInstrumentsInstrumentType - type to instrument to query
-type FetchAllSavedInstrumentsInstrumentType string
-
-const (
-	FetchAllSavedInstrumentsInstrumentTypeCard FetchAllSavedInstrumentsInstrumentType = "card"
-)
-
-func (e FetchAllSavedInstrumentsInstrumentType) ToPointer() *FetchAllSavedInstrumentsInstrumentType {
-	return &e
+type FetchAllSavedInstrumentsRequest struct {
+	CustomerID     string  `pathParam:"style=simple,explode=false,name=customer_id"`
+	instrumentType string  `const:"card" queryParam:"style=form,explode=true,name=instrument_type"`
+	XAPIVersion    *string `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
+	XClientID      string  `header:"style=simple,explode=false,name=x-client-id"`
+	XClientSecret  string  `header:"style=simple,explode=false,name=x-client-secret"`
 }
 
-func (e *FetchAllSavedInstrumentsInstrumentType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
+func (f FetchAllSavedInstrumentsRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FetchAllSavedInstrumentsRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, false); err != nil {
 		return err
 	}
-	switch v {
-	case "card":
-		*e = FetchAllSavedInstrumentsInstrumentType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for FetchAllSavedInstrumentsInstrumentType: %v", v)
-	}
-}
-
-type FetchAllSavedInstrumentsRequest struct {
-	CustomerID string `pathParam:"style=simple,explode=false,name=customer_id"`
-	// type to instrument to query
-	InstrumentType FetchAllSavedInstrumentsInstrumentType `queryParam:"style=form,explode=true,name=instrument_type"`
-	XAPIVersion    *string                                `header:"style=simple,explode=false,name=x-api-version"`
-	XClientID      string                                 `header:"style=simple,explode=false,name=x-client-id"`
-	XClientSecret  string                                 `header:"style=simple,explode=false,name=x-client-secret"`
+	return nil
 }
 
 func (o *FetchAllSavedInstrumentsRequest) GetCustomerID() string {
@@ -50,11 +34,8 @@ func (o *FetchAllSavedInstrumentsRequest) GetCustomerID() string {
 	return o.CustomerID
 }
 
-func (o *FetchAllSavedInstrumentsRequest) GetInstrumentType() FetchAllSavedInstrumentsInstrumentType {
-	if o == nil {
-		return FetchAllSavedInstrumentsInstrumentType("")
-	}
-	return o.InstrumentType
+func (o *FetchAllSavedInstrumentsRequest) GetInstrumentType() string {
+	return "card"
 }
 
 func (o *FetchAllSavedInstrumentsRequest) GetXAPIVersion() *string {

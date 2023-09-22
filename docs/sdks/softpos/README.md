@@ -21,24 +21,24 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.SoftPOS.CreateTerminals(ctx, operations.CreateTerminalsRequest{
         CreateTerminalRequest: &shared.CreateTerminalRequest{
-            TerminalID: pglatest.String("modi"),
-            TerminalName: "praesentium",
-            TerminalPhoneNo: "rem",
+            TerminalID: gosdkfull.String("repudiandae"),
+            TerminalName: "sint",
+            TerminalPhoneNo: "veritatis",
         },
-        XAPIVersion: pglatest.String("voluptates"),
-        XClientID: "quasi",
-        XClientSecret: "repudiandae",
+        XAPIVersion: gosdkfull.String("itaque"),
+        XClientID: "incidunt",
+        XClientSecret: "enim",
     })
     if err != nil {
         log.Fatal(err)
@@ -75,19 +75,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.SoftPOS.GetTerminalByMobileNumber(ctx, operations.GetTerminalByMobileNumberRequest{
-        TerminalPhoneNo: "sint",
-        XAPIVersion: pglatest.String("veritatis"),
-        XClientID: "itaque",
-        XClientSecret: "incidunt",
+        TerminalPhoneNo: "consequatur",
+        XAPIVersion: gosdkfull.String("est"),
+        XClientID: "quibusdam",
+        XClientSecret: "explicabo",
     })
     if err != nil {
         log.Fatal(err)

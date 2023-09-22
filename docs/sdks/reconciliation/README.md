@@ -17,29 +17,29 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Reconciliation.PostRecon(ctx, operations.PostReconRequest{
         FetchPGReconRequest: &shared.FetchPGReconRequest{
             Filters: shared.FetchPGReconRequestFilters{
-                EndDate: "iure",
-                StartDate: "culpa",
+                EndDate: "architecto",
+                StartDate: "mollitia",
             },
             Pagination: shared.FetchPGReconRequestPagination{
-                Cursor: pglatest.String("doloribus"),
-                Limit: 958950,
+                Cursor: gosdkfull.String("dolorem"),
+                Limit: 635059,
             },
         },
-        XAPIVersion: pglatest.String("architecto"),
-        XClientID: "mollitia",
-        XClientSecret: "dolorem",
+        XAPIVersion: gosdkfull.String("consequuntur"),
+        XClientID: "repellat",
+        XClientSecret: "mollitia",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,35 +76,35 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Reconciliation.PostSettlementRecon(ctx, operations.PostSettlementReconRequest{
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    635059,
+                    581850,
                 },
-                EndDate: pglatest.String("consequuntur"),
+                EndDate: gosdkfull.String("numquam"),
                 SettlementUtrs: []string{
-                    "repellat",
+                    "commodi",
                 },
-                StartDate: pglatest.String("mollitia"),
+                StartDate: gosdkfull.String("quam"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Cursor: pglatest.String("occaecati"),
-                Limit: 253291,
+                Cursor: gosdkfull.String("molestiae"),
+                Limit: 244425,
             },
         },
-        XAPIVersion: pglatest.String("commodi"),
-        XClientID: "quam",
-        XClientSecret: "molestiae",
+        XAPIVersion: gosdkfull.String("error"),
+        XClientID: "quia",
+        XClientSecret: "quis",
     })
     if err != nil {
         log.Fatal(err)

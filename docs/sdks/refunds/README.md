@@ -18,33 +18,33 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Refunds.Createrefund(ctx, operations.CreaterefundRequest{
         CreateRefundRequest: &shared.CreateRefundRequest{
-            RefundAmount: 2444.25,
-            RefundID: "error",
-            RefundNote: pglatest.String("quia"),
+            RefundAmount: 1103.75,
+            RefundID: "laborum",
+            RefundNote: gosdkfull.String("animi"),
             RefundSpeed: shared.CreateRefundRequestRefundSpeedStandard.ToPointer(),
             RefundSplits: []shared.VendorSplit{
                 shared.VendorSplit{
-                    Amount: pglatest.Float64(1103.75),
-                    Percentage: pglatest.Float64(6747.52),
-                    VendorID: pglatest.String("animi"),
+                    Amount: gosdkfull.Float64(1381.83),
+                    Percentage: gosdkfull.Float64(7783.46),
+                    VendorID: gosdkfull.String("sequi"),
                 },
             },
         },
-        OrderID: "enim",
-        XAPIVersion: pglatest.String("odit"),
-        XClientID: "quo",
-        XClientSecret: "sequi",
+        OrderID: "tenetur",
+        XAPIVersion: gosdkfull.String("ipsam"),
+        XClientID: "id",
+        XClientSecret: "possimus",
     })
     if err != nil {
         log.Fatal(err)
@@ -81,20 +81,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Refunds.GetRefund(ctx, operations.GetRefundRequest{
-        OrderID: "tenetur",
-        RefundID: "ipsam",
-        XAPIVersion: pglatest.String("id"),
-        XClientID: "possimus",
-        XClientSecret: "aut",
+        OrderID: "aut",
+        RefundID: "quasi",
+        XAPIVersion: gosdkfull.String("error"),
+        XClientID: "temporibus",
+        XClientSecret: "laborum",
     })
     if err != nil {
         log.Fatal(err)
@@ -131,19 +131,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Refunds.Getallrefundsfororder(ctx, operations.GetallrefundsfororderRequest{
         OrderID: "quasi",
-        XAPIVersion: pglatest.String("error"),
-        XClientID: "temporibus",
-        XClientSecret: "laborum",
+        XAPIVersion: gosdkfull.String("reiciendis"),
+        XClientID: "voluptatibus",
+        XClientSecret: "vero",
     })
     if err != nil {
         log.Fatal(err)

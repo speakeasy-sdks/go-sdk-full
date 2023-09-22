@@ -20,22 +20,22 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
         OTPRequest: &shared.OTPRequest{
-            Action: shared.OTPRequestActionResendOtp,
-            Otp: "nulla",
+            Action: shared.OTPRequestActionSubmitOtp,
+            Otp: "error",
         },
-        PaymentID: "corrupti",
-        XAPIVersion: pglatest.String("illum"),
+        PaymentID: "deserunt",
+        XAPIVersion: gosdkfull.String("suscipit"),
     })
     if err != nil {
         log.Fatal(err)

@@ -4,6 +4,7 @@ package operations
 
 import (
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
@@ -11,9 +12,20 @@ type GetRefundRequest struct {
 	OrderID string `pathParam:"style=simple,explode=false,name=order_id"`
 	// Refund Id of the refund you want to fetch.
 	RefundID      string  `pathParam:"style=simple,explode=false,name=refund_id"`
-	XAPIVersion   *string `header:"style=simple,explode=false,name=x-api-version"`
+	XAPIVersion   *string `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
 	XClientID     string  `header:"style=simple,explode=false,name=x-client-id"`
 	XClientSecret string  `header:"style=simple,explode=false,name=x-client-secret"`
+}
+
+func (g GetRefundRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(g, "", false)
+}
+
+func (g *GetRefundRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &g, "", false, false); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *GetRefundRequest) GetOrderID() string {

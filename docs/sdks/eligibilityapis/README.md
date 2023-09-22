@@ -18,28 +18,28 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityCardlessEMI(ctx, operations.EligibilityCardlessEMIRequest{
         EligibilityCardlessEMIRequest: &shared.EligibilityCardlessEMIRequest{
             Queries: shared.CardlessEMIQueries{
-                Amount: pglatest.Float64(100),
+                Amount: gosdkfull.Float64(100),
                 CustomerDetails: &shared.CustomerDetailsCardlessEMI{
                     CustomerPhone: "9898989898",
                 },
-                OrderID: pglatest.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
+                OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: pglatest.String("vel"),
-        XClientID: "error",
-        XClientSecret: "deserunt",
+        XAPIVersion: gosdkfull.String("iure"),
+        XClientID: "magnam",
+        XClientSecret: "debitis",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,30 +76,30 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityOffer(ctx, operations.EligibilityOfferRequest{
         EligibilityOffersRequest: &shared.EligibilityOffersRequest{
             Filters: &shared.OfferFilters{
                 OfferType: []shared.OfferType{
-                    shared.OfferTypeCashback,
+                    shared.OfferTypeDiscount,
                 },
             },
             Queries: shared.OfferQueries{
-                Amount: pglatest.Float64(100),
-                OrderID: pglatest.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
+                Amount: gosdkfull.Float64(100),
+                OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: pglatest.String("iure"),
-        XClientID: "magnam",
-        XClientSecret: "debitis",
+        XAPIVersion: gosdkfull.String("delectus"),
+        XClientID: "tempora",
+        XClientSecret: "suscipit",
     })
     if err != nil {
         log.Fatal(err)
@@ -136,28 +136,28 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityPaylater(ctx, operations.EligibilityPaylaterRequest{
         EligibilityCardlessEMIRequest: &shared.EligibilityCardlessEMIRequest{
             Queries: shared.CardlessEMIQueries{
-                Amount: pglatest.Float64(100),
+                Amount: gosdkfull.Float64(100),
                 CustomerDetails: &shared.CustomerDetailsCardlessEMI{
                     CustomerPhone: "9898989898",
                 },
-                OrderID: pglatest.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
+                OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: pglatest.String("ipsa"),
-        XClientID: "delectus",
-        XClientSecret: "tempora",
+        XAPIVersion: gosdkfull.String("molestiae"),
+        XClientID: "minus",
+        XClientSecret: "placeat",
     })
     if err != nil {
         log.Fatal(err)

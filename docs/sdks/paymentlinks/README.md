@@ -19,19 +19,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-        LinkID: "esse",
-        XAPIVersion: pglatest.String("ipsum"),
-        XClientID: "excepturi",
-        XClientSecret: "aspernatur",
+        LinkID: "perferendis",
+        XAPIVersion: gosdkfull.String("ad"),
+        XClientID: "natus",
+        XClientSecret: "sed",
     })
     if err != nil {
         log.Fatal(err)
@@ -68,47 +68,47 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CreatePaymentLink(ctx, operations.CreatePaymentLinkRequest{
         CreateLinkRequest: &shared.CreateLinkRequest{
             CustomerDetails: shared.LinkCustomerDetailsEntity{
-                CustomerEmail: pglatest.String("perferendis"),
-                CustomerName: pglatest.String("ad"),
+                CustomerEmail: gosdkfull.String("iste"),
+                CustomerName: gosdkfull.String("dolor"),
                 CustomerPhone: "natus",
             },
-            LinkAmount: 1496.75,
-            LinkAutoReminders: pglatest.Bool(false),
-            LinkCurrency: "iste",
-            LinkExpiryTime: pglatest.String("dolor"),
-            LinkID: "natus",
+            LinkAmount: 3864.89,
+            LinkAutoReminders: gosdkfull.Bool(false),
+            LinkCurrency: "hic",
+            LinkExpiryTime: gosdkfull.String("saepe"),
+            LinkID: "fuga",
             LinkMeta: &shared.LinkMetaEntity{
-                NotifyURL: pglatest.String("laboriosam"),
-                PaymentMethods: pglatest.String("hic"),
-                ReturnURL: pglatest.String("saepe"),
-                UpiIntent: pglatest.Bool(false),
+                NotifyURL: gosdkfull.String("in"),
+                PaymentMethods: gosdkfull.String("corporis"),
+                ReturnURL: gosdkfull.String("iste"),
+                UpiIntent: gosdkfull.Bool(false),
             },
-            LinkMinimumPartialAmount: pglatest.Float64(6818.2),
+            LinkMinimumPartialAmount: gosdkfull.Float64(4370.32),
             LinkNotes: map[string]string{
-                "in": "corporis",
+                "saepe": "quidem",
             },
             LinkNotify: &shared.LinkNotifyEntity{
-                SendEmail: pglatest.Bool(false),
-                SendSms: pglatest.Bool(false),
+                SendEmail: gosdkfull.Bool(false),
+                SendSms: gosdkfull.Bool(false),
             },
-            LinkPartialPayments: pglatest.Bool(false),
-            LinkPurpose: "iste",
+            LinkPartialPayments: gosdkfull.Bool(false),
+            LinkPurpose: "architecto",
         },
-        XAPIVersion: pglatest.String("iure"),
-        XClientID: "saepe",
-        XClientSecret: "quidem",
+        XAPIVersion: gosdkfull.String("ipsa"),
+        XClientID: "reiciendis",
+        XClientSecret: "est",
     })
     if err != nil {
         log.Fatal(err)
@@ -145,19 +145,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkDetails(ctx, operations.GetPaymentLinkDetailsRequest{
-        LinkID: "architecto",
-        XAPIVersion: pglatest.String("ipsa"),
-        XClientID: "reiciendis",
-        XClientSecret: "est",
+        LinkID: "mollitia",
+        XAPIVersion: gosdkfull.String("laborum"),
+        XClientID: "dolores",
+        XClientSecret: "dolorem",
     })
     if err != nil {
         log.Fatal(err)
@@ -194,19 +194,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkOrders(ctx, operations.GetPaymentLinkOrdersRequest{
-        LinkID: "mollitia",
-        XAPIVersion: pglatest.String("laborum"),
-        XClientID: "dolores",
-        XClientSecret: "dolorem",
+        LinkID: "corporis",
+        XAPIVersion: gosdkfull.String("explicabo"),
+        XClientID: "nobis",
+        XClientSecret: "enim",
     })
     if err != nil {
         log.Fatal(err)

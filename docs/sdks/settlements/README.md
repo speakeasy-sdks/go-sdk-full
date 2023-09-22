@@ -17,19 +17,19 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Settlements.Getsettlements(ctx, operations.GetsettlementsRequest{
-        OrderID: "quasi",
-        XAPIVersion: pglatest.String("reiciendis"),
+        OrderID: "nihil",
+        XAPIVersion: gosdkfull.String("praesentium"),
         XClientID: "voluptatibus",
-        XClientSecret: "vero",
+        XClientSecret: "ipsa",
     })
     if err != nil {
         log.Fatal(err)
@@ -66,35 +66,35 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Settlements.PostSettlements(ctx, operations.PostSettlementsRequest{
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    468651,
+                    604846,
                 },
-                EndDate: pglatest.String("praesentium"),
+                EndDate: gosdkfull.String("voluptate"),
                 SettlementUtrs: []string{
-                    "voluptatibus",
+                    "cum",
                 },
-                StartDate: pglatest.String("ipsa"),
+                StartDate: gosdkfull.String("perferendis"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Cursor: pglatest.String("omnis"),
-                Limit: 451159,
+                Cursor: gosdkfull.String("doloremque"),
+                Limit: 441711,
             },
         },
-        XAPIVersion: pglatest.String("cum"),
-        XClientID: "perferendis",
-        XClientSecret: "doloremque",
+        XAPIVersion: gosdkfull.String("ut"),
+        XClientID: "maiores",
+        XClientSecret: "dicta",
     })
     if err != nil {
         log.Fatal(err)

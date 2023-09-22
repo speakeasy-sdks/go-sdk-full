@@ -7,13 +7,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/go-sdk-full"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 )
 
 func main() {
-    s := pglatest.New()
+    s := gosdkfull.New()
 
     ctx := context.Background()
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
@@ -22,7 +22,7 @@ func main() {
             Otp: "provident",
         },
         PaymentID: "distinctio",
-        XAPIVersion: pglatest.String("quibusdam"),
+        XAPIVersion: gosdkfull.String("quibusdam"),
     })
     if err != nil {
         log.Fatal(err)
