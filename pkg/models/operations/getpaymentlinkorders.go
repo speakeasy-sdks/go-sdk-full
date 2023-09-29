@@ -55,12 +55,15 @@ func (o *GetPaymentLinkOrdersRequest) GetXClientSecret() string {
 }
 
 type GetPaymentLinkOrdersResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
 	// OK
 	LinkOrdersResponses []shared.LinkOrdersResponse
-	StatusCode          int
-	RawResponse         *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 }
 
 func (o *GetPaymentLinkOrdersResponse) GetContentType() string {
