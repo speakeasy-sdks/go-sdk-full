@@ -1,4 +1,5 @@
 # Settlements
+(*Settlements*)
 
 ### Available Operations
 
@@ -26,10 +27,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settlements.Getsettlements(ctx, operations.GetsettlementsRequest{
-        OrderID: "nihil",
-        XAPIVersion: gosdkfull.String("praesentium"),
-        XClientID: "voluptatibus",
-        XClientSecret: "ipsa",
+        OrderID: "Liaison",
+        XAPIVersion: gosdkfull.String("Lawrencium aggregate black"),
+        XClientID: "Kids sole",
+        XClientSecret: "Modern Corporate redouble",
     })
     if err != nil {
         log.Fatal(err)
@@ -79,22 +80,22 @@ func main() {
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    604846,
+                    297769,
                 },
-                EndDate: gosdkfull.String("voluptate"),
+                EndDate: gosdkfull.String("provided"),
                 SettlementUtrs: []string{
-                    "cum",
+                    "Interactions",
                 },
-                StartDate: gosdkfull.String("perferendis"),
+                StartDate: gosdkfull.String("Bedfordshire Planner Representative"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Cursor: gosdkfull.String("doloremque"),
-                Limit: 441711,
+                Cursor: gosdkfull.String("program Senior"),
+                Limit: 325622,
             },
         },
-        XAPIVersion: gosdkfull.String("ut"),
-        XClientID: "maiores",
-        XClientSecret: "dicta",
+        XAPIVersion: gosdkfull.String("generate Abbie South"),
+        XClientID: "incidentally up",
+        XClientSecret: "Account Northwest",
     })
     if err != nil {
         log.Fatal(err)

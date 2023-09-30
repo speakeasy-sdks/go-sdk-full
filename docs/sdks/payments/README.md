@@ -1,4 +1,5 @@
 # Payments
+(*Payments*)
 
 ### Available Operations
 
@@ -26,11 +27,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentbyID(ctx, operations.GetPaymentbyIDRequest{
-        CfPaymentID: 607831,
-        OrderID: "nemo",
-        XAPIVersion: gosdkfull.String("minima"),
-        XClientID: "excepturi",
-        XClientSecret: "accusantium",
+        CfPaymentID: 310675,
+        OrderID: "coulomb",
+        XAPIVersion: gosdkfull.String("Solutions"),
+        XClientID: "Surinam Centreville Berkshire",
+        XClientSecret: "Consultant Southwest",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,10 +77,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentsfororder(ctx, operations.GetPaymentsfororderRequest{
-        OrderID: "iure",
-        XAPIVersion: gosdkfull.String("culpa"),
-        XClientID: "doloribus",
-        XClientSecret: "sapiente",
+        OrderID: "female indexing",
+        XAPIVersion: gosdkfull.String("Convertible Regional SAS"),
+        XClientID: "Salad",
+        XClientSecret: "copying Daniel",
     })
     if err != nil {
         log.Fatal(err)
