@@ -1,4 +1,5 @@
 # Orders
+(*Orders*)
 
 ### Available Operations
 
@@ -33,42 +34,42 @@ func main() {
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
         CreateOrderBackendRequest: &shared.CreateOrderBackendRequest{
             CustomerDetails: shared.CustomerDetails{
-                CustomerBankAccountNumber: gosdkfull.String("quo"),
-                CustomerBankCode: gosdkfull.String("odit"),
-                CustomerBankIfsc: gosdkfull.String("at"),
-                CustomerEmail: gosdkfull.String("at"),
-                CustomerID: "maiores",
-                CustomerPhone: "molestiae",
+                CustomerBankAccountNumber: gosdkfull.String("North double"),
+                CustomerBankCode: gosdkfull.String("spherical woman burdensome"),
+                CustomerBankIfsc: gosdkfull.String("interfaces Smart"),
+                CustomerEmail: gosdkfull.String("Doyle brown toast"),
+                CustomerID: "Bedfordshire",
+                CustomerPhone: "Mohr North",
             },
             OrderAmount: 10.15,
             OrderCurrency: "INR",
             OrderExpiryTime: gosdkfull.String("2021-07-29T00:00:00Z"),
-            OrderID: gosdkfull.String("quod"),
+            OrderID: gosdkfull.String("deploy South"),
             OrderMeta: &shared.OrderMeta{
-                NotifyURL: gosdkfull.String("quod"),
-                PaymentMethods: gosdkfull.String("esse"),
-                ReturnURL: gosdkfull.String("totam"),
+                NotifyURL: gosdkfull.String("Road male Berkshire"),
+                PaymentMethods: gosdkfull.String("parsing female middleware"),
+                ReturnURL: gosdkfull.String("Bedfordshire navigating"),
             },
             OrderNote: gosdkfull.String("Test order"),
             OrderSplits: []shared.VendorSplit{
                 shared.VendorSplit{
-                    Amount: gosdkfull.Float64(7805.29),
-                    Percentage: gosdkfull.Float64(6788.8),
-                    VendorID: gosdkfull.String("dicta"),
+                    Amount: gosdkfull.Float64(5942.72),
+                    Percentage: gosdkfull.Float64(3302.96),
+                    VendorID: gosdkfull.String("dearly remount"),
                 },
             },
             OrderTags: map[string]string{
-                "nam": "officia",
+                "expedita": "South",
             },
             Terminal: &shared.TerminalDetails{
-                TerminalID: "occaecati",
-                TerminalPhoneNo: "fugit",
-                TerminalType: "deleniti",
+                TerminalID: "Southwest",
+                TerminalPhoneNo: "violet Chips Porsche",
+                TerminalType: "mobile",
             },
         },
-        XAPIVersion: gosdkfull.String("hic"),
-        XClientID: "optio",
-        XClientSecret: "totam",
+        XAPIVersion: gosdkfull.String("ROI bypassing vero"),
+        XClientID: "Solutions Ferrari Accountability",
+        XClientSecret: "Folk ampere",
     })
     if err != nil {
         log.Fatal(err)
@@ -114,10 +115,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.GetOrder(ctx, operations.GetOrderRequest{
-        OrderID: "beatae",
-        XAPIVersion: gosdkfull.String("commodi"),
-        XClientID: "molestiae",
-        XClientSecret: "modi",
+        OrderID: "facilitate male Customer",
+        XAPIVersion: gosdkfull.String("lavender"),
+        XClientID: "concept phrasing Bicycle",
+        XClientSecret: "Facilitator Danville",
     })
     if err != nil {
         log.Fatal(err)
@@ -170,7 +171,7 @@ func main() {
             PaymentSessionID: "session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn",
             SaveInstrument: gosdkfull.Bool(false),
         },
-        XAPIVersion: "qui",
+        XAPIVersion: "Cheese compressing Islands",
     })
     if err != nil {
         log.Fatal(err)
@@ -219,12 +220,12 @@ func main() {
     res, err := s.Orders.Preauthorization(ctx, operations.PreauthorizationRequest{
         AuthorizationRequest: &shared.AuthorizationRequest{
             Action: shared.AuthorizationRequestActionVoid.ToPointer(),
-            Amount: gosdkfull.Float64(7369.18),
+            Amount: gosdkfull.Float64(1985.64),
         },
-        OrderID: "esse",
-        XAPIVersion: gosdkfull.String("ipsum"),
-        XClientID: "excepturi",
-        XClientSecret: "aspernatur",
+        OrderID: "Celsius cum Tricycle",
+        XAPIVersion: gosdkfull.String("than"),
+        XClientID: "illo Cuban Loan",
+        XClientSecret: "partial",
     })
     if err != nil {
         log.Fatal(err)

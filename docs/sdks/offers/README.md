@@ -1,4 +1,5 @@
 # Offers
+(*Offers*)
 
 ### Available Operations
 
@@ -31,13 +32,13 @@ func main() {
             OfferDetails: shared.OfferDetails{
                 CashbackDetails: &shared.CashbackDetails{
                     CashbackType: shared.CashbackDetailsCashbackTypePercentage.ToPointer(),
-                    CashbackValue: gosdkfull.String("iusto"),
-                    MaxCashbackAmount: "excepturi",
+                    CashbackValue: gosdkfull.String("Account viral"),
+                    MaxCashbackAmount: "Planner where",
                 },
                 DiscountDetails: &shared.DiscountDetails{
                     DiscountType: shared.DiscountDetailsDiscountTypeFlat,
-                    DiscountValue: "recusandae",
-                    MaxDiscountAmount: "temporibus",
+                    DiscountValue: "IB West",
+                    MaxDiscountAmount: "mouton openly Electric",
                 },
                 OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
             },
@@ -49,7 +50,7 @@ func main() {
                 OfferTitle: "Test Offer",
             },
             OfferTnc: shared.OfferTnc{
-                OfferTncType: shared.OfferTncOfferTncTypeLink,
+                OfferTncType: shared.OfferTncOfferTncTypePost,
                 OfferTncValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             },
             OfferValidations: shared.OfferValidations{
@@ -58,9 +59,9 @@ func main() {
                 PaymentMethod: shared.OfferValidationsPaymentMethod{},
             },
         },
-        XAPIVersion: gosdkfull.String("quis"),
-        XClientID: "veritatis",
-        XClientSecret: "deserunt",
+        XAPIVersion: gosdkfull.String("penicillin drat"),
+        XClientID: "TCP Copernicium Beryllium",
+        XClientSecret: "yuck CSS",
     })
     if err != nil {
         log.Fatal(err)
@@ -106,10 +107,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "perferendis",
-        XAPIVersion: gosdkfull.String("ipsam"),
-        XClientID: "repellendus",
-        XClientSecret: "sapiente",
+        OfferID: "frankly navigate",
+        XAPIVersion: gosdkfull.String("Electric system kilogram"),
+        XClientID: "violet green",
+        XClientSecret: "Idaho",
     })
     if err != nil {
         log.Fatal(err)

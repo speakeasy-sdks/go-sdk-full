@@ -1,4 +1,5 @@
 # Reconciliation
+(*Reconciliation*)
 
 ### Available Operations
 
@@ -29,17 +30,17 @@ func main() {
     res, err := s.Reconciliation.PostRecon(ctx, operations.PostReconRequest{
         FetchPGReconRequest: &shared.FetchPGReconRequest{
             Filters: shared.FetchPGReconRequestFilters{
-                EndDate: "architecto",
-                StartDate: "mollitia",
+                EndDate: "Bentley",
+                StartDate: "Bolingbrook Generic",
             },
             Pagination: shared.FetchPGReconRequestPagination{
-                Cursor: gosdkfull.String("dolorem"),
-                Limit: 635059,
+                Cursor: gosdkfull.String("Shoes framework"),
+                Limit: 805084,
             },
         },
-        XAPIVersion: gosdkfull.String("consequuntur"),
-        XClientID: "repellat",
-        XClientSecret: "mollitia",
+        XAPIVersion: gosdkfull.String("Liaison"),
+        XClientID: "calculating Universal",
+        XClientSecret: "mostly Checking",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,22 +90,22 @@ func main() {
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    581850,
+                    956121,
                 },
-                EndDate: gosdkfull.String("numquam"),
+                EndDate: gosdkfull.String("olive"),
                 SettlementUtrs: []string{
-                    "commodi",
+                    "Reynolds",
                 },
-                StartDate: gosdkfull.String("quam"),
+                StartDate: gosdkfull.String("schemas Recumbent API"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Cursor: gosdkfull.String("molestiae"),
-                Limit: 244425,
+                Cursor: gosdkfull.String("wireless Movies"),
+                Limit: 781173,
             },
         },
-        XAPIVersion: gosdkfull.String("error"),
-        XClientID: "quia",
-        XClientSecret: "quis",
+        XAPIVersion: gosdkfull.String("or Bicycle navigate"),
+        XClientID: "Agent North",
+        XClientSecret: "Savings",
     })
     if err != nil {
         log.Fatal(err)
