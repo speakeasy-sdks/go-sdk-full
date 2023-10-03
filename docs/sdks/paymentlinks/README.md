@@ -1,4 +1,5 @@
 # PaymentLinks
+(*PaymentLinks*)
 
 ### Available Operations
 
@@ -28,10 +29,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-        LinkID: "perferendis",
-        XAPIVersion: gosdkfull.String("ad"),
-        XClientID: "natus",
-        XClientSecret: "sed",
+        LinkID: "Mercury Michel",
+        XAPIVersion: gosdkfull.String("yellow"),
+        XClientID: "Draper sweltering Diesel",
+        XClientSecret: "Maine",
     })
     if err != nil {
         log.Fatal(err)
@@ -80,35 +81,35 @@ func main() {
     res, err := s.PaymentLinks.CreatePaymentLink(ctx, operations.CreatePaymentLinkRequest{
         CreateLinkRequest: &shared.CreateLinkRequest{
             CustomerDetails: shared.LinkCustomerDetailsEntity{
-                CustomerEmail: gosdkfull.String("iste"),
-                CustomerName: gosdkfull.String("dolor"),
-                CustomerPhone: "natus",
+                CustomerEmail: gosdkfull.String("grin Fort"),
+                CustomerName: gosdkfull.String("Licensed"),
+                CustomerPhone: "firewall Bicycle Jordan",
             },
-            LinkAmount: 3864.89,
+            LinkAmount: 4444.02,
             LinkAutoReminders: gosdkfull.Bool(false),
-            LinkCurrency: "hic",
-            LinkExpiryTime: gosdkfull.String("saepe"),
-            LinkID: "fuga",
+            LinkCurrency: "reintermediate",
+            LinkExpiryTime: gosdkfull.String("Forward Reggae Designer"),
+            LinkID: "fuga flexibility",
             LinkMeta: &shared.LinkMetaEntity{
-                NotifyURL: gosdkfull.String("in"),
-                PaymentMethods: gosdkfull.String("corporis"),
-                ReturnURL: gosdkfull.String("iste"),
+                NotifyURL: gosdkfull.String("female"),
+                PaymentMethods: gosdkfull.String("Northeast Blues Communications"),
+                ReturnURL: gosdkfull.String("SUV Smart Clothing"),
                 UpiIntent: gosdkfull.Bool(false),
             },
-            LinkMinimumPartialAmount: gosdkfull.Float64(4370.32),
+            LinkMinimumPartialAmount: gosdkfull.Float64(7331.25),
             LinkNotes: map[string]string{
-                "saepe": "quidem",
+                "quia": "Bermuda",
             },
             LinkNotify: &shared.LinkNotifyEntity{
                 SendEmail: gosdkfull.Bool(false),
                 SendSms: gosdkfull.Bool(false),
             },
             LinkPartialPayments: gosdkfull.Bool(false),
-            LinkPurpose: "architecto",
+            LinkPurpose: "brr Account",
         },
-        XAPIVersion: gosdkfull.String("ipsa"),
-        XClientID: "reiciendis",
-        XClientSecret: "est",
+        XAPIVersion: gosdkfull.String("Colombia"),
+        XClientID: "firewall Bicycle Ferry",
+        XClientSecret: "static",
     })
     if err != nil {
         log.Fatal(err)
@@ -154,10 +155,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkDetails(ctx, operations.GetPaymentLinkDetailsRequest{
-        LinkID: "mollitia",
-        XAPIVersion: gosdkfull.String("laborum"),
-        XClientID: "dolores",
-        XClientSecret: "dolorem",
+        LinkID: "Bayamon male Northwest",
+        XAPIVersion: gosdkfull.String("regional Hybrid ew"),
+        XClientID: "Operative",
+        XClientSecret: "migrate Southwest",
     })
     if err != nil {
         log.Fatal(err)
@@ -203,10 +204,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkOrders(ctx, operations.GetPaymentLinkOrdersRequest{
-        LinkID: "corporis",
-        XAPIVersion: gosdkfull.String("explicabo"),
-        XClientID: "nobis",
-        XClientSecret: "enim",
+        LinkID: "North sophomore",
+        XAPIVersion: gosdkfull.String("Supervisor sue Tunnel"),
+        XClientID: "Account",
+        XClientSecret: "Ferrari South Beauty",
     })
     if err != nil {
         log.Fatal(err)
