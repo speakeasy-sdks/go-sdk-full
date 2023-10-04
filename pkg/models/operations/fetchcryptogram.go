@@ -63,14 +63,17 @@ func (o *FetchCryptogramRequest) GetXClientSecret() string {
 }
 
 type FetchCryptogramResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// OK
 	Cryptogram *shared.Cryptogram
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
 	Headers       map[string][]string
-	StatusCode    int
-	RawResponse   *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 }
 
 func (o *FetchCryptogramResponse) GetContentType() string {
