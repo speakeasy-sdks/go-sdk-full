@@ -18,11 +18,11 @@ func main() {
     ctx := context.Background()
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
         OTPRequest: &shared.OTPRequest{
-            Action: shared.OTPRequestActionResendOtp,
-            Otp: "provident",
+            Action: shared.OTPRequestActionSubmitOtp,
+            Otp: "Tricycle pace",
         },
-        PaymentID: "distinctio",
-        XAPIVersion: gosdkfull.String("quibusdam"),
+        PaymentID: "Nobelium Planner",
+        XAPIVersion: gosdkfull.String("babyish Toys"),
     })
     if err != nil {
         log.Fatal(err)

@@ -1,4 +1,5 @@
 # EligibilityAPIs
+(*EligibilityAPIs*)
 
 ### Available Operations
 
@@ -37,9 +38,9 @@ func main() {
                 OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: gosdkfull.String("iure"),
-        XClientID: "magnam",
-        XClientSecret: "debitis",
+        XAPIVersion: gosdkfull.String("Handmade"),
+        XClientID: "Principal",
+        XClientSecret: "South male Boulder",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,7 +90,7 @@ func main() {
         EligibilityOffersRequest: &shared.EligibilityOffersRequest{
             Filters: &shared.OfferFilters{
                 OfferType: []shared.OfferType{
-                    shared.OfferTypeDiscount,
+                    shared.OfferTypeCashback,
                 },
             },
             Queries: shared.OfferQueries{
@@ -97,9 +98,9 @@ func main() {
                 OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: gosdkfull.String("delectus"),
-        XClientID: "tempora",
-        XClientSecret: "suscipit",
+        XAPIVersion: gosdkfull.String("Electric Planner"),
+        XClientID: "invoice female female",
+        XClientSecret: "Washington Facilitator Cadillac",
     })
     if err != nil {
         log.Fatal(err)
@@ -155,9 +156,9 @@ func main() {
                 OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XAPIVersion: gosdkfull.String("molestiae"),
-        XClientID: "minus",
-        XClientSecret: "placeat",
+        XAPIVersion: gosdkfull.String("generate"),
+        XClientID: "Livermorium",
+        XClientSecret: "Christmas",
     })
     if err != nil {
         log.Fatal(err)
