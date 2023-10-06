@@ -63,14 +63,17 @@ func (o *FetchSpecificSavedInstrumentRequest) GetXClientSecret() string {
 }
 
 type FetchSpecificSavedInstrumentResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
 	// OK
 	FetchAllSavedInstruments *shared.FetchAllSavedInstruments
 	Headers                  map[string][]string
-	StatusCode               int
-	RawResponse              *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 }
 
 func (o *FetchSpecificSavedInstrumentResponse) GetContentType() string {

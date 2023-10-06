@@ -1,4 +1,5 @@
 # Refunds
+(*Refunds*)
 
 ### Available Operations
 
@@ -29,22 +30,22 @@ func main() {
     ctx := context.Background()
     res, err := s.Refunds.Createrefund(ctx, operations.CreaterefundRequest{
         CreateRefundRequest: &shared.CreateRefundRequest{
-            RefundAmount: 1103.75,
-            RefundID: "laborum",
-            RefundNote: gosdkfull.String("animi"),
-            RefundSpeed: shared.CreateRefundRequestRefundSpeedStandard.ToPointer(),
+            RefundAmount: 567.71,
+            RefundID: "overstate Rutherfordium",
+            RefundNote: gosdkfull.String("perferendis Account"),
+            RefundSpeed: shared.CreateRefundRequestRefundSpeedInstant.ToPointer(),
             RefundSplits: []shared.VendorSplit{
                 shared.VendorSplit{
-                    Amount: gosdkfull.Float64(1381.83),
-                    Percentage: gosdkfull.Float64(7783.46),
-                    VendorID: gosdkfull.String("sequi"),
+                    Amount: gosdkfull.Float64(9046.67),
+                    Percentage: gosdkfull.Float64(2487.44),
+                    VendorID: gosdkfull.String("Rubber raccoon Division"),
                 },
             },
         },
-        OrderID: "tenetur",
-        XAPIVersion: gosdkfull.String("ipsam"),
-        XClientID: "id",
-        XClientSecret: "possimus",
+        OrderID: "alarming back",
+        XAPIVersion: gosdkfull.String("users"),
+        XClientID: "Administrator whiteboard",
+        XClientSecret: "Transgender Identity Berkshire",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,11 +91,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.GetRefund(ctx, operations.GetRefundRequest{
-        OrderID: "aut",
-        RefundID: "quasi",
-        XAPIVersion: gosdkfull.String("error"),
-        XClientID: "temporibus",
-        XClientSecret: "laborum",
+        OrderID: "Connecticut East aliquid",
+        RefundID: "Chair",
+        XAPIVersion: gosdkfull.String("Elbert Personal Electric"),
+        XClientID: "Director Beach Borders",
+        XClientSecret: "networks Electric",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,10 +141,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.Getallrefundsfororder(ctx, operations.GetallrefundsfororderRequest{
-        OrderID: "quasi",
-        XAPIVersion: gosdkfull.String("reiciendis"),
-        XClientID: "voluptatibus",
-        XClientSecret: "vero",
+        OrderID: "trial South",
+        XAPIVersion: gosdkfull.String("Music"),
+        XClientID: "Recycled red",
+        XClientSecret: "newton Lodge",
     })
     if err != nil {
         log.Fatal(err)

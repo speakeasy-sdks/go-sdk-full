@@ -55,12 +55,15 @@ func (o *EligibilityPaylaterRequest) GetXClientSecret() string {
 }
 
 type EligibilityPaylaterResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// OK
 	EligiblePaylaters []shared.EligiblePaylater
 	Headers           map[string][]string
-	StatusCode        int
-	RawResponse       *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 }
 
 func (o *EligibilityPaylaterResponse) GetContentType() string {
