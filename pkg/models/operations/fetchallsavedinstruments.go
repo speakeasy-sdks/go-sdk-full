@@ -3,17 +3,45 @@
 package operations
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
 	"net/http"
 )
 
+// FetchAllSavedInstrumentsInstrumentType - type to instrument to query
+type FetchAllSavedInstrumentsInstrumentType string
+
+const (
+	FetchAllSavedInstrumentsInstrumentTypeCard FetchAllSavedInstrumentsInstrumentType = "card"
+)
+
+func (e FetchAllSavedInstrumentsInstrumentType) ToPointer() *FetchAllSavedInstrumentsInstrumentType {
+	return &e
+}
+
+func (e *FetchAllSavedInstrumentsInstrumentType) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "card":
+		*e = FetchAllSavedInstrumentsInstrumentType(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for FetchAllSavedInstrumentsInstrumentType: %v", v)
+	}
+}
+
 type FetchAllSavedInstrumentsRequest struct {
-	CustomerID     string  `pathParam:"style=simple,explode=false,name=customer_id"`
-	instrumentType string  `const:"card" queryParam:"style=form,explode=true,name=instrument_type"`
-	XAPIVersion    *string `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
-	XClientID      string  `header:"style=simple,explode=false,name=x-client-id"`
-	XClientSecret  string  `header:"style=simple,explode=false,name=x-client-secret"`
+	CustomerID string `pathParam:"style=simple,explode=false,name=customer_id"`
+	// type to instrument to query
+	InstrumentType FetchAllSavedInstrumentsInstrumentType `queryParam:"style=form,explode=true,name=instrument_type"`
+	XAPIVersion    *string                                `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
+	XClientID      string                                 `header:"style=simple,explode=false,name=x-client-id"`
+	XClientSecret  string                                 `header:"style=simple,explode=false,name=x-client-secret"`
 }
 
 func (f FetchAllSavedInstrumentsRequest) MarshalJSON() ([]byte, error) {
@@ -34,8 +62,11 @@ func (o *FetchAllSavedInstrumentsRequest) GetCustomerID() string {
 	return o.CustomerID
 }
 
-func (o *FetchAllSavedInstrumentsRequest) GetInstrumentType() string {
-	return "card"
+func (o *FetchAllSavedInstrumentsRequest) GetInstrumentType() FetchAllSavedInstrumentsInstrumentType {
+	if o == nil {
+		return FetchAllSavedInstrumentsInstrumentType("")
+	}
+	return o.InstrumentType
 }
 
 func (o *FetchAllSavedInstrumentsRequest) GetXAPIVersion() *string {
@@ -60,14 +91,17 @@ func (o *FetchAllSavedInstrumentsRequest) GetXClientSecret() string {
 }
 
 type FetchAllSavedInstrumentsResponse struct {
+	// HTTP response content type for this operation
 	ContentType string
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
 	// OK
 	FetchAllSavedInstruments []shared.FetchAllSavedInstruments
 	Headers                  map[string][]string
-	StatusCode               int
-	RawResponse              *http.Response
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
 }
 
 func (o *FetchAllSavedInstrumentsResponse) GetContentType() string {

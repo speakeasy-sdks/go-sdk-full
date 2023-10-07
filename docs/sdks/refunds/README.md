@@ -1,4 +1,5 @@
 # Refunds
+(*Refunds*)
 
 ### Available Operations
 
@@ -29,22 +30,15 @@ func main() {
     ctx := context.Background()
     res, err := s.Refunds.Createrefund(ctx, operations.CreaterefundRequest{
         CreateRefundRequest: &shared.CreateRefundRequest{
-            RefundAmount: 1103.75,
-            RefundID: "laborum",
-            RefundNote: gosdkfull.String("animi"),
-            RefundSpeed: shared.CreateRefundRequestRefundSpeedStandard.ToPointer(),
+            RefundAmount: 567.71,
+            RefundID: "overstate Rutherfordium",
             RefundSplits: []shared.VendorSplit{
-                shared.VendorSplit{
-                    Amount: gosdkfull.Float64(1381.83),
-                    Percentage: gosdkfull.Float64(7783.46),
-                    VendorID: gosdkfull.String("sequi"),
-                },
+                shared.VendorSplit{},
             },
         },
-        OrderID: "tenetur",
-        XAPIVersion: gosdkfull.String("ipsam"),
-        XClientID: "id",
-        XClientSecret: "possimus",
+        OrderID: "perferendis Account",
+        XClientID: "hence Interactions invoice",
+        XClientSecret: "Division program Miami",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,11 +84,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.GetRefund(ctx, operations.GetRefundRequest{
-        OrderID: "aut",
-        RefundID: "quasi",
-        XAPIVersion: gosdkfull.String("error"),
-        XClientID: "temporibus",
-        XClientSecret: "laborum",
+        OrderID: "Connecticut East aliquid",
+        RefundID: "Chair",
+        XClientID: "Elbert Personal Electric",
+        XClientSecret: "Director Beach Borders",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,10 +133,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.Getallrefundsfororder(ctx, operations.GetallrefundsfororderRequest{
-        OrderID: "quasi",
-        XAPIVersion: gosdkfull.String("reiciendis"),
-        XClientID: "voluptatibus",
-        XClientSecret: "vero",
+        OrderID: "trial South",
+        XClientID: "Music",
+        XClientSecret: "Recycled red",
     })
     if err != nil {
         log.Fatal(err)

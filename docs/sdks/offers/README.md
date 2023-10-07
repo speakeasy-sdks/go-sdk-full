@@ -1,4 +1,5 @@
 # Offers
+(*Offers*)
 
 ### Available Operations
 
@@ -30,14 +31,12 @@ func main() {
         CreateOfferBackendRequest: &shared.CreateOfferBackendRequest{
             OfferDetails: shared.OfferDetails{
                 CashbackDetails: &shared.CashbackDetails{
-                    CashbackType: shared.CashbackDetailsCashbackTypePercentage.ToPointer(),
-                    CashbackValue: gosdkfull.String("iusto"),
-                    MaxCashbackAmount: "excepturi",
+                    MaxCashbackAmount: "Regional viral",
                 },
                 DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountDetailsDiscountTypeFlat,
-                    DiscountValue: "recusandae",
-                    MaxDiscountAmount: "temporibus",
+                    DiscountType: shared.DiscountDetailsDiscountTypePercentage,
+                    DiscountValue: "instead Blues where",
+                    MaxDiscountAmount: "Investment",
                 },
                 OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
             },
@@ -55,12 +54,17 @@ func main() {
             OfferValidations: shared.OfferValidations{
                 MaxAllowed: "10",
                 MinAmount: gosdkfull.String("1"),
-                PaymentMethod: shared.OfferValidationsPaymentMethod{},
+                PaymentMethod: shared.CreateOfferValidationsPaymentMethodOfferWallet(
+                        shared.OfferWallet{
+                            App: &shared.WalletOffer{
+                                Provider: gosdkfull.String("paytm"),
+                            },
+                        },
+                ),
             },
         },
-        XAPIVersion: gosdkfull.String("quis"),
-        XClientID: "veritatis",
-        XClientSecret: "deserunt",
+        XClientID: "mouton openly Electric",
+        XClientSecret: "Franc drat now",
     })
     if err != nil {
         log.Fatal(err)
@@ -106,10 +110,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "perferendis",
-        XAPIVersion: gosdkfull.String("ipsam"),
-        XClientID: "repellendus",
-        XClientSecret: "sapiente",
+        OfferID: "frankly navigate",
+        XClientID: "Electric system kilogram",
+        XClientSecret: "violet green",
     })
     if err != nil {
         log.Fatal(err)

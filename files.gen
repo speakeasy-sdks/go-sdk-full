@@ -28,6 +28,7 @@ pkg/utils/requestbody.go
 pkg/utils/retries.go
 pkg/utils/security.go
 pkg/utils/utils.go
+tests/helpers.go
 pkg/models/operations/otprequest.go
 pkg/models/operations/eligibilitycardlessemi.go
 pkg/models/operations/eligibilityoffer.go
@@ -198,6 +199,7 @@ docs/models/operations/getpaymentlinkordersresponse.md
 docs/models/operations/getpaymentbyidrequest.md
 docs/models/operations/getpaymentbyidresponse.md
 docs/models/operations/getpaymentsfororderrequest.md
+docs/models/operations/getpaymentsfororder200applicationjson.md
 docs/models/operations/getpaymentsfororderresponse.md
 docs/models/operations/postreconrequest.md
 docs/models/operations/postreconresponse.md
@@ -215,6 +217,7 @@ docs/models/operations/postsettlementsrequest.md
 docs/models/operations/postsettlementsresponse.md
 docs/models/operations/deletespecificsavedinstrumentrequest.md
 docs/models/operations/deletespecificsavedinstrumentresponse.md
+docs/models/operations/fetchallsavedinstrumentsinstrumenttype.md
 docs/models/operations/fetchallsavedinstrumentsrequest.md
 docs/models/operations/fetchallsavedinstrumentsresponse.md
 docs/models/operations/fetchcryptogramrequest.md
@@ -272,6 +275,7 @@ docs/models/shared/offertype.md
 docs/models/shared/eligiblepaylater.md
 docs/models/shared/paylaterentity.md
 docs/models/shared/createofferbackendrequest.md
+docs/models/shared/ratelimiterrortype.md
 docs/models/shared/ratelimiterror.md
 docs/models/shared/ordersentity.md
 docs/models/shared/settlementurlobject.md
@@ -279,7 +283,9 @@ docs/models/shared/refundurlobject.md
 docs/models/shared/paymenturlobject.md
 docs/models/shared/ordermeta.md
 docs/models/shared/customerdetails.md
+docs/models/shared/authenticationerrortype.md
 docs/models/shared/authenticationerror.md
+docs/models/shared/apierrortype.md
 docs/models/shared/apierror.md
 docs/models/shared/createorderbackendrequest.md
 docs/models/shared/terminaldetails.md
@@ -355,6 +361,7 @@ docs/models/shared/fetchsettlementrecon.md
 docs/models/shared/fetchsettlementreconrequestfilters.md
 docs/models/shared/fetchsettlementreconrequestpagination.md
 docs/models/shared/fetchsettlementreconrequest.md
+docs/models/shared/refundsentityentity.md
 docs/models/shared/refundsentitymetadata.md
 docs/models/shared/refundsentityrefundmode.md
 docs/models/shared/refundsentityrefundstatus.md
@@ -367,6 +374,7 @@ docs/models/shared/settlementsentity.md
 docs/models/shared/fetchsettlementdata.md
 docs/models/shared/fetchsettlement.md
 docs/models/shared/fetchallsavedinstrumentsinstrumentstatus.md
+docs/models/shared/fetchallsavedinstrumentsinstrumenttype.md
 docs/models/shared/fetchallsavedinstruments.md
 docs/models/shared/savedinstrumentmetacardtokendetails.md
 docs/models/shared/savedinstrumentmeta.md

@@ -1,4 +1,5 @@
 # Orders
+(*Orders*)
 
 ### Available Operations
 
@@ -23,7 +24,6 @@ import(
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/callbacks"
-	"net/http"
 )
 
 func main() {
@@ -33,42 +33,28 @@ func main() {
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
         CreateOrderBackendRequest: &shared.CreateOrderBackendRequest{
             CustomerDetails: shared.CustomerDetails{
-                CustomerBankAccountNumber: gosdkfull.String("quo"),
-                CustomerBankCode: gosdkfull.String("odit"),
-                CustomerBankIfsc: gosdkfull.String("at"),
-                CustomerEmail: gosdkfull.String("at"),
-                CustomerID: "maiores",
-                CustomerPhone: "molestiae",
+                CustomerID: "North double",
+                CustomerPhone: "spherical woman burdensome",
             },
             OrderAmount: 10.15,
             OrderCurrency: "INR",
             OrderExpiryTime: gosdkfull.String("2021-07-29T00:00:00Z"),
-            OrderID: gosdkfull.String("quod"),
-            OrderMeta: &shared.OrderMeta{
-                NotifyURL: gosdkfull.String("quod"),
-                PaymentMethods: gosdkfull.String("esse"),
-                ReturnURL: gosdkfull.String("totam"),
-            },
+            OrderMeta: &shared.OrderMeta{},
             OrderNote: gosdkfull.String("Test order"),
             OrderSplits: []shared.VendorSplit{
-                shared.VendorSplit{
-                    Amount: gosdkfull.Float64(7805.29),
-                    Percentage: gosdkfull.Float64(6788.8),
-                    VendorID: gosdkfull.String("dicta"),
-                },
+                shared.VendorSplit{},
             },
             OrderTags: map[string]string{
-                "nam": "officia",
+                "temporibus": "SUV",
             },
             Terminal: &shared.TerminalDetails{
-                TerminalID: "occaecati",
-                TerminalPhoneNo: "fugit",
-                TerminalType: "deleniti",
+                TerminalID: "overriding",
+                TerminalPhoneNo: "Southeast Southwest but",
+                TerminalType: "Recycled",
             },
         },
-        XAPIVersion: gosdkfull.String("hic"),
-        XClientID: "optio",
-        XClientSecret: "totam",
+        XClientID: "Orchestrator",
+        XClientSecret: "implement",
     })
     if err != nil {
         log.Fatal(err)
@@ -114,10 +100,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.GetOrder(ctx, operations.GetOrderRequest{
-        OrderID: "beatae",
-        XAPIVersion: gosdkfull.String("commodi"),
-        XClientID: "molestiae",
-        XClientSecret: "modi",
+        OrderID: "facilitate male Customer",
+        XClientID: "lavender",
+        XClientSecret: "concept phrasing Bicycle",
     })
     if err != nil {
         log.Fatal(err)
@@ -166,11 +151,14 @@ func main() {
     res, err := s.Orders.OrderPay(ctx, operations.OrderPayRequest{
         OrderPayRequest: &shared.OrderPayRequest{
             OfferID: gosdkfull.String("faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b"),
-            PaymentMethod: shared.OrderPayRequestPaymentMethod{},
+            PaymentMethod: shared.CreateOrderPayRequestPaymentMethodCardlessEMIPaymentMethod(
+                    shared.CardlessEMIPaymentMethod{
+                        CardlessEmi: shared.CardlessEMI{},
+                    },
+            ),
             PaymentSessionID: "session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn",
-            SaveInstrument: gosdkfull.Bool(false),
         },
-        XAPIVersion: "qui",
+        XAPIVersion: "volt",
     })
     if err != nil {
         log.Fatal(err)
@@ -217,14 +205,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.Preauthorization(ctx, operations.PreauthorizationRequest{
-        AuthorizationRequest: &shared.AuthorizationRequest{
-            Action: shared.AuthorizationRequestActionVoid.ToPointer(),
-            Amount: gosdkfull.Float64(7369.18),
-        },
-        OrderID: "esse",
-        XAPIVersion: gosdkfull.String("ipsum"),
-        XClientID: "excepturi",
-        XClientSecret: "aspernatur",
+        AuthorizationRequest: &shared.AuthorizationRequest{},
+        OrderID: "Clothing Celsius cum",
+        XClientID: "browse than salmon",
+        XClientSecret: "Cuban",
     })
     if err != nil {
         log.Fatal(err)

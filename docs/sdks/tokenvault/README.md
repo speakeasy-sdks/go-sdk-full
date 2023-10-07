@@ -1,4 +1,5 @@
 # TokenVault
+(*TokenVault*)
 
 ## Overview
 
@@ -32,11 +33,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-        CustomerID: "corporis",
-        InstrumentID: "dolore",
-        XAPIVersion: gosdkfull.String("iusto"),
-        XClientID: "dicta",
-        XClientSecret: "harum",
+        CustomerID: "as",
+        InstrumentID: "Bentley",
+        XClientID: "azure improbable Nickel",
+        XClientSecret: "where Soul budgetary",
     })
     if err != nil {
         log.Fatal(err)
@@ -82,11 +82,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchAllSavedInstruments(ctx, operations.FetchAllSavedInstrumentsRequest{
-        CustomerID: "enim",
-        InstrumentType: "accusamus",
-        XAPIVersion: gosdkfull.String("commodi"),
-        XClientID: "repudiandae",
-        XClientSecret: "quae",
+        CustomerID: "Internal",
+        InstrumentType: operations.FetchAllSavedInstrumentsInstrumentTypeCard,
+        XClientID: "array",
+        XClientSecret: "aggravate Wooden black",
     })
     if err != nil {
         log.Fatal(err)
@@ -132,11 +131,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchCryptogram(ctx, operations.FetchCryptogramRequest{
-        CustomerID: "ipsum",
-        InstrumentID: "quidem",
-        XAPIVersion: gosdkfull.String("molestias"),
-        XClientID: "excepturi",
-        XClientSecret: "pariatur",
+        CustomerID: "Northwest Touring overbook",
+        InstrumentID: "lest",
+        XClientID: "distil",
+        XClientSecret: "hacking Van Checking",
     })
     if err != nil {
         log.Fatal(err)
@@ -182,11 +180,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchSpecificSavedInstrument(ctx, operations.FetchSpecificSavedInstrumentRequest{
-        CustomerID: "modi",
-        InstrumentID: "praesentium",
-        XAPIVersion: gosdkfull.String("rem"),
-        XClientID: "voluptates",
-        XClientSecret: "quasi",
+        CustomerID: "excluding Diesel perspiciatis",
+        InstrumentID: "tan male",
+        XClientID: "eaque empower",
+        XClientSecret: "Auto siemens Altoona",
     })
     if err != nil {
         log.Fatal(err)

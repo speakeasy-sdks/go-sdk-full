@@ -1,4 +1,5 @@
 # Authentication
+(*Authentication*)
 
 ## Overview
 
@@ -32,10 +33,9 @@ func main() {
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
         OTPRequest: &shared.OTPRequest{
             Action: shared.OTPRequestActionSubmitOtp,
-            Otp: "error",
+            Otp: "Tricycle pace",
         },
-        PaymentID: "deserunt",
-        XAPIVersion: gosdkfull.String("suscipit"),
+        PaymentID: "Nobelium Planner",
     })
     if err != nil {
         log.Fatal(err)
