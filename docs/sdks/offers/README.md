@@ -31,12 +31,12 @@ func main() {
         CreateOfferBackendRequest: &shared.CreateOfferBackendRequest{
             OfferDetails: shared.OfferDetails{
                 CashbackDetails: &shared.CashbackDetails{
-                    MaxCashbackAmount: "Regional viral",
+                    MaxCashbackAmount: "animi",
                 },
                 DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountDetailsDiscountTypePercentage,
-                    DiscountValue: "instead Blues where",
-                    MaxDiscountAmount: "Investment",
+                    DiscountType: shared.DiscountDetailsDiscountTypeFlat,
+                    DiscountValue: "viral",
+                    MaxDiscountAmount: "synthesize",
                 },
                 OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
             },
@@ -48,23 +48,23 @@ func main() {
                 OfferTitle: "Test Offer",
             },
             OfferTnc: shared.OfferTnc{
-                OfferTncType: shared.OfferTncOfferTncTypeLink,
+                OfferTncType: shared.OfferTncOfferTncTypePost,
                 OfferTncValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             },
             OfferValidations: shared.OfferValidations{
                 MaxAllowed: "10",
                 MinAmount: gosdkfull.String("1"),
-                PaymentMethod: shared.CreateOfferValidationsPaymentMethodOfferWallet(
-                        shared.OfferWallet{
-                            App: &shared.WalletOffer{
-                                Provider: gosdkfull.String("paytm"),
+                PaymentMethod: shared.CreateOfferValidationsPaymentMethodOfferNB(
+                        shared.OfferNB{
+                            Netbanking: &shared.NBOffer{
+                                BankName: "all",
                             },
                         },
                 ),
             },
         },
-        XClientID: "mouton openly Electric",
-        XClientSecret: "Franc drat now",
+        XClientID: "Blues",
+        XClientSecret: "where",
     })
     if err != nil {
         log.Fatal(err)
@@ -110,9 +110,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "frankly navigate",
-        XClientID: "Electric system kilogram",
-        XClientSecret: "violet green",
+        OfferID: "tangible",
+        XClientID: "Bacon",
+        XClientSecret: "male",
     })
     if err != nil {
         log.Fatal(err)

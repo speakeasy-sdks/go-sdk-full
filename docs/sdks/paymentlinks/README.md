@@ -29,9 +29,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-        LinkID: "Mercury Michel",
-        XClientID: "yellow",
-        XClientSecret: "Draper sweltering Diesel",
+        LinkID: "payment",
+        XClientID: "Identity",
+        XClientSecret: "Club",
     })
     if err != nil {
         log.Fatal(err)
@@ -80,21 +80,21 @@ func main() {
     res, err := s.PaymentLinks.CreatePaymentLink(ctx, operations.CreatePaymentLinkRequest{
         CreateLinkRequest: &shared.CreateLinkRequest{
             CustomerDetails: shared.LinkCustomerDetailsEntity{
-                CustomerPhone: "grin Fort",
+                CustomerPhone: "navigate",
             },
-            LinkAmount: 185.31,
-            LinkCurrency: "Hybrid",
-            LinkID: "synthesizing programming",
+            LinkAmount: 9424.43,
+            LinkCurrency: "grin",
+            LinkID: "Fort",
             LinkMeta: &shared.LinkMetaEntity{},
             LinkNotes: map[string]string{
-                "key_1": "value_1",
                 "key_2": "value_2",
+                "key_1": "value_1",
             },
             LinkNotify: &shared.LinkNotifyEntity{},
-            LinkPurpose: "Mazda",
+            LinkPurpose: "North",
         },
-        XClientID: "Bedfordshire Human",
-        XClientSecret: "plum becquerel",
+        XClientID: "Hybrid",
+        XClientSecret: "firewall",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,9 +140,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkDetails(ctx, operations.GetPaymentLinkDetailsRequest{
-        LinkID: "Bayamon male Northwest",
-        XClientID: "regional Hybrid ew",
-        XClientSecret: "Operative",
+        LinkID: "anxiously",
+        XClientID: "Buckinghamshire",
+        XClientSecret: "bandwidth",
     })
     if err != nil {
         log.Fatal(err)
@@ -188,9 +188,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkOrders(ctx, operations.GetPaymentLinkOrdersRequest{
-        LinkID: "North sophomore",
-        XClientID: "Supervisor sue Tunnel",
-        XClientSecret: "Account",
+        LinkID: "Security",
+        XClientID: "Virginia",
+        XClientSecret: "rank",
     })
     if err != nil {
         log.Fatal(err)

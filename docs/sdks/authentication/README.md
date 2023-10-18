@@ -33,9 +33,9 @@ func main() {
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
         OTPRequest: &shared.OTPRequest{
             Action: shared.OTPRequestActionSubmitOtp,
-            Otp: "Tricycle pace",
+            Otp: "1080p",
         },
-        PaymentID: "Nobelium Planner",
+        PaymentID: "whey",
     })
     if err != nil {
         log.Fatal(err)

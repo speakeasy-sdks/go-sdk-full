@@ -33,8 +33,8 @@ func main() {
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
         CreateOrderBackendRequest: &shared.CreateOrderBackendRequest{
             CustomerDetails: shared.CustomerDetails{
-                CustomerID: "North double",
-                CustomerPhone: "spherical woman burdensome",
+                CustomerID: "Solutions",
+                CustomerPhone: "Pizza",
             },
             OrderAmount: 10.15,
             OrderCurrency: "INR",
@@ -45,16 +45,16 @@ func main() {
                 shared.VendorSplit{},
             },
             OrderTags: map[string]string{
-                "temporibus": "SUV",
+                "Salad": "spherical",
             },
             Terminal: &shared.TerminalDetails{
-                TerminalID: "overriding",
-                TerminalPhoneNo: "Southeast Southwest but",
-                TerminalType: "Recycled",
+                TerminalID: "woman",
+                TerminalPhoneNo: "burdensome",
+                TerminalType: "temporibus",
             },
         },
-        XClientID: "Orchestrator",
-        XClientSecret: "implement",
+        XClientID: "SUV",
+        XClientSecret: "Doyle",
     })
     if err != nil {
         log.Fatal(err)
@@ -100,9 +100,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.GetOrder(ctx, operations.GetOrderRequest{
-        OrderID: "facilitate male Customer",
-        XClientID: "lavender",
-        XClientSecret: "concept phrasing Bicycle",
+        OrderID: "Cab",
+        XClientID: "male",
+        XClientSecret: "Customer",
     })
     if err != nil {
         log.Fatal(err)
@@ -158,7 +158,7 @@ func main() {
             ),
             PaymentSessionID: "session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn",
         },
-        XAPIVersion: "volt",
+        XAPIVersion: "Cheese",
     })
     if err != nil {
         log.Fatal(err)
@@ -206,9 +206,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Orders.Preauthorization(ctx, operations.PreauthorizationRequest{
         AuthorizationRequest: &shared.AuthorizationRequest{},
-        OrderID: "Clothing Celsius cum",
-        XClientID: "browse than salmon",
-        XClientSecret: "Cuban",
+        OrderID: "Bicycle",
+        XClientID: "Celsius",
+        XClientSecret: "cum",
     })
     if err != nil {
         log.Fatal(err)

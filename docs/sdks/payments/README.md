@@ -28,9 +28,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Payments.GetPaymentbyID(ctx, operations.GetPaymentbyIDRequest{
         CfPaymentID: 310675,
-        OrderID: "coulomb",
-        XClientID: "Solutions",
-        XClientSecret: "Surinam Centreville Berkshire",
+        OrderID: "Rwanda",
+        XClientID: "deposit",
+        XClientSecret: "Solutions",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,9 +76,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentsfororder(ctx, operations.GetPaymentsfororderRequest{
-        OrderID: "female indexing",
-        XClientID: "Convertible Regional SAS",
-        XClientSecret: "Salad",
+        OrderID: "monitor",
+        XClientID: "West",
+        XClientSecret: "syndicate",
     })
     if err != nil {
         log.Fatal(err)

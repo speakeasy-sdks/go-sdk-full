@@ -33,10 +33,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-        CustomerID: "as",
-        InstrumentID: "Bentley",
-        XClientID: "azure improbable Nickel",
-        XClientSecret: "where Soul budgetary",
+        CustomerID: "West",
+        InstrumentID: "Sports",
+        XClientID: "Buckinghamshire",
+        XClientSecret: "azure",
     })
     if err != nil {
         log.Fatal(err)
@@ -82,10 +82,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchAllSavedInstruments(ctx, operations.FetchAllSavedInstrumentsRequest{
-        CustomerID: "Internal",
+        CustomerID: "Louisiana",
         InstrumentType: operations.FetchAllSavedInstrumentsInstrumentTypeCard,
-        XClientID: "array",
-        XClientSecret: "aggravate Wooden black",
+        XClientID: "SDD",
+        XClientSecret: "Diesel",
     })
     if err != nil {
         log.Fatal(err)
@@ -131,10 +131,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchCryptogram(ctx, operations.FetchCryptogramRequest{
-        CustomerID: "Northwest Touring overbook",
-        InstrumentID: "lest",
-        XClientID: "distil",
-        XClientSecret: "hacking Van Checking",
+        CustomerID: "BMW",
+        InstrumentID: "invoice",
+        XClientID: "Honda",
+        XClientSecret: "overbook",
     })
     if err != nil {
         log.Fatal(err)
@@ -180,10 +180,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchSpecificSavedInstrument(ctx, operations.FetchSpecificSavedInstrumentRequest{
-        CustomerID: "excluding Diesel perspiciatis",
-        InstrumentID: "tan male",
-        XClientID: "eaque empower",
-        XClientSecret: "Auto siemens Altoona",
+        CustomerID: "wiry",
+        InstrumentID: "Turkish",
+        XClientID: "perspiciatis",
+        XClientSecret: "sensor",
     })
     if err != nil {
         log.Fatal(err)

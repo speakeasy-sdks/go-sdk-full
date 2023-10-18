@@ -38,8 +38,8 @@ func main() {
                 OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XClientID: "Handmade",
-        XClientSecret: "Principal",
+        XClientID: "white",
+        XClientSecret: "female",
     })
     if err != nil {
         log.Fatal(err)
@@ -97,8 +97,8 @@ func main() {
                 OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XClientID: "Electric Planner",
-        XClientSecret: "invoice female female",
+        XClientID: "invoice",
+        XClientSecret: "And",
     })
     if err != nil {
         log.Fatal(err)
@@ -154,8 +154,8 @@ func main() {
                 OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
             },
         },
-        XClientID: "generate",
-        XClientSecret: "Livermorium",
+        XClientID: "Granite",
+        XClientSecret: "protocol",
     })
     if err != nil {
         log.Fatal(err)
