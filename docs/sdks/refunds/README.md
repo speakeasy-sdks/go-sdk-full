@@ -31,14 +31,14 @@ func main() {
     res, err := s.Refunds.Createrefund(ctx, operations.CreaterefundRequest{
         CreateRefundRequest: &shared.CreateRefundRequest{
             RefundAmount: 567.71,
-            RefundID: "Kwacha",
+            RefundID: "string",
             RefundSplits: []shared.VendorSplit{
                 shared.VendorSplit{},
             },
         },
-        OrderID: "Rutherfordium",
-        XClientID: "Male",
-        XClientSecret: "Account",
+        OrderID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -84,10 +84,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.GetRefund(ctx, operations.GetRefundRequest{
-        OrderID: "cast",
-        RefundID: "Alabama",
-        XClientID: "Loan",
-        XClientSecret: "Wooden",
+        OrderID: "string",
+        RefundID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -133,9 +133,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.Getallrefundsfororder(ctx, operations.GetallrefundsfororderRequest{
-        OrderID: "yuck",
-        XClientID: "Directives",
-        XClientSecret: "Recycled",
+        OrderID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)

@@ -30,15 +30,15 @@ func main() {
     res, err := s.Reconciliation.PostRecon(ctx, operations.PostReconRequest{
         FetchPGReconRequest: &shared.FetchPGReconRequest{
             Filters: shared.FetchPGReconRequestFilters{
-                EndDate: "Southeast",
-                StartDate: "Borders",
+                EndDate: "string",
+                StartDate: "string",
             },
             Pagination: shared.FetchPGReconRequestPagination{
-                Limit: 30545,
+                Limit: 85382,
             },
         },
-        XClientID: "South",
-        XClientSecret: "Global",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -91,15 +91,15 @@ func main() {
                     956121,
                 },
                 SettlementUtrs: []string{
-                    "Buckinghamshire",
+                    "string",
                 },
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Limit: 661166,
+                Limit: 71166,
             },
         },
-        XClientID: "Reynolds",
-        XClientSecret: "gleeful",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)

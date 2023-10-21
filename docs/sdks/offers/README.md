@@ -31,12 +31,12 @@ func main() {
         CreateOfferBackendRequest: &shared.CreateOfferBackendRequest{
             OfferDetails: shared.OfferDetails{
                 CashbackDetails: &shared.CashbackDetails{
-                    MaxCashbackAmount: "animi",
+                    MaxCashbackAmount: "string",
                 },
                 DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountDetailsDiscountTypeFlat,
-                    DiscountValue: "viral",
-                    MaxDiscountAmount: "synthesize",
+                    DiscountType: shared.DiscountDetailsDiscountTypePercentage,
+                    DiscountValue: "string",
+                    MaxDiscountAmount: "string",
                 },
                 OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
             },
@@ -63,8 +63,8 @@ func main() {
                 ),
             },
         },
-        XClientID: "Blues",
-        XClientSecret: "where",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -110,9 +110,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "tangible",
-        XClientID: "Bacon",
-        XClientSecret: "male",
+        OfferID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)

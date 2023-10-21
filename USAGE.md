@@ -19,9 +19,9 @@ func main() {
 	res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
 		OTPRequest: &shared.OTPRequest{
 			Action: shared.OTPRequestActionSubmitOtp,
-			Otp:    "1080p",
+			Otp:    "string",
 		},
-		PaymentID: "whey",
+		PaymentID: "string",
 	})
 	if err != nil {
 		log.Fatal(err)

@@ -27,9 +27,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settlements.Getsettlements(ctx, operations.GetsettlementsRequest{
-        OrderID: "Metal",
-        XClientID: "Rice",
-        XClientSecret: "Bacon",
+        OrderID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -82,15 +82,15 @@ func main() {
                     297769,
                 },
                 SettlementUtrs: []string{
-                    "Southwest",
+                    "string",
                 },
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Limit: 542580,
+                Limit: 116172,
             },
         },
-        XClientID: "Interactions",
-        XClientSecret: "bravely",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)

@@ -29,9 +29,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-        LinkID: "payment",
-        XClientID: "Identity",
-        XClientSecret: "Club",
+        LinkID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -80,21 +80,21 @@ func main() {
     res, err := s.PaymentLinks.CreatePaymentLink(ctx, operations.CreatePaymentLinkRequest{
         CreateLinkRequest: &shared.CreateLinkRequest{
             CustomerDetails: shared.LinkCustomerDetailsEntity{
-                CustomerPhone: "navigate",
+                CustomerPhone: "string",
             },
-            LinkAmount: 9424.43,
-            LinkCurrency: "grin",
-            LinkID: "Fort",
+            LinkAmount: 5411.24,
+            LinkCurrency: "string",
+            LinkID: "string",
             LinkMeta: &shared.LinkMetaEntity{},
             LinkNotes: map[string]string{
-                "key_2": "value_2",
                 "key_1": "value_1",
+                "key_2": "value_2",
             },
             LinkNotify: &shared.LinkNotifyEntity{},
-            LinkPurpose: "North",
+            LinkPurpose: "string",
         },
-        XClientID: "Hybrid",
-        XClientSecret: "firewall",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,9 +140,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkDetails(ctx, operations.GetPaymentLinkDetailsRequest{
-        LinkID: "anxiously",
-        XClientID: "Buckinghamshire",
-        XClientSecret: "bandwidth",
+        LinkID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -188,9 +188,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkOrders(ctx, operations.GetPaymentLinkOrdersRequest{
-        LinkID: "Security",
-        XClientID: "Virginia",
-        XClientSecret: "rank",
+        LinkID: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)

@@ -33,11 +33,11 @@ func main() {
     ctx := context.Background()
     res, err := s.SoftPOS.CreateTerminals(ctx, operations.CreateTerminalsRequest{
         CreateTerminalRequest: &shared.CreateTerminalRequest{
-            TerminalName: "Representative",
-            TerminalPhoneNo: "M2F",
+            TerminalName: "string",
+            TerminalPhoneNo: "string",
         },
-        XClientID: "capacity",
-        XClientSecret: "Neptunium",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -83,9 +83,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.SoftPOS.GetTerminalByMobileNumber(ctx, operations.GetTerminalByMobileNumberRequest{
-        TerminalPhoneNo: "portal",
-        XClientID: "API",
-        XClientSecret: "extensible",
+        TerminalPhoneNo: "string",
+        XClientID: "string",
+        XClientSecret: "string",
     })
     if err != nil {
         log.Fatal(err)
