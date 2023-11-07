@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type offers struct {
+type Offers struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newOffers(sdkConfig sdkConfiguration) *offers {
-	return &offers{
+func newOffers(sdkConfig sdkConfiguration) *Offers {
+	return &Offers{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateOffer - Create Offer
 // Use this API to create offers with Cashfree from your backend
-func (s *offers) CreateOffer(ctx context.Context, request operations.CreateOfferRequest) (*operations.CreateOfferResponse, error) {
+func (s *Offers) CreateOffer(ctx context.Context, request operations.CreateOfferRequest) (*operations.CreateOfferResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/offers"
 
@@ -86,6 +86,10 @@ func (s *offers) CreateOffer(ctx context.Context, request operations.CreateOffer
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -93,7 +97,7 @@ func (s *offers) CreateOffer(ctx context.Context, request operations.CreateOffer
 
 // GetOffer - Get Offer by ID
 // Use this API to get offer by offer_id
-func (s *offers) GetOffer(ctx context.Context, request operations.GetOfferRequest) (*operations.GetOfferResponse, error) {
+func (s *Offers) GetOffer(ctx context.Context, request operations.GetOfferRequest) (*operations.GetOfferResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/offers/{offer_id}", request, nil)
 	if err != nil {
@@ -148,6 +152,10 @@ func (s *offers) GetOffer(ctx context.Context, request operations.GetOfferReques
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

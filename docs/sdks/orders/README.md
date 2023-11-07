@@ -1,5 +1,5 @@
 # Orders
-(*Orders*)
+(*.Orders*)
 
 ### Available Operations
 
@@ -20,10 +20,10 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/callbacks"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/callbacks"
 )
 
 func main() {
@@ -91,8 +91,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {
@@ -139,9 +139,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {
@@ -195,9 +195,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {

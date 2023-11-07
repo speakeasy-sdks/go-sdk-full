@@ -6,9 +6,8 @@ package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 	"log"
 )
 
@@ -16,18 +15,17 @@ func main() {
 	s := gosdkfull.New()
 
 	ctx := context.Background()
-	res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
-		OTPRequest: &shared.OTPRequest{
-			Action: shared.OTPRequestActionSubmitOtp,
-			Otp:    "string",
-		},
-		PaymentID: "string",
+	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
+		CustomerID:    "string",
+		InstrumentID:  "string",
+		XClientID:     "string",
+		XClientSecret: "string",
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.OTPResponseEntity != nil {
+	if res.FetchAllSavedInstruments != nil {
 		// handle response
 	}
 }

@@ -1,5 +1,5 @@
 # Reconciliation
-(*Reconciliation*)
+(*.Reconciliation*)
 
 ### Available Operations
 
@@ -18,9 +18,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {
@@ -29,11 +29,11 @@ func main() {
     ctx := context.Background()
     res, err := s.Reconciliation.PostRecon(ctx, operations.PostReconRequest{
         FetchPGReconRequest: &shared.FetchPGReconRequest{
-            Filters: shared.FetchPGReconRequestFilters{
+            Filters: shared.Filters{
                 EndDate: "string",
                 StartDate: "string",
             },
-            Pagination: shared.FetchPGReconRequestPagination{
+            Pagination: shared.Pagination{
                 Limit: 85382,
             },
         },
@@ -75,9 +75,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {

@@ -4,7 +4,7 @@ package gosdkfull
 
 import (
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"net/http"
 	"time"
 )
@@ -63,20 +63,20 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 }
 
 type PGLatest struct {
-	// The Authentication API allows merchants to show a native screen and capture OTP on their own page and submit to Cashfree. This feature is only available on request.
-	Authentication  *authentication
-	EligibilityAPIs *eligibilityAPIs
-	Offers          *offers
-	Orders          *orders
-	PaymentLinks    *paymentLinks
-	Payments        *payments
-	Reconciliation  *reconciliation
-	Refunds         *refunds
-	Settlements     *settlements
 	// Cashfree's token Vault helps you save cards and tokenize them in a PCI complaint manner. We support creation of network tokens which can be used across acquiring banks
-	TokenVault *tokenVault
+	TokenVault      *TokenVault
+	EligibilityAPIs *EligibilityAPIs
+	PaymentLinks    *PaymentLinks
+	Offers          *Offers
+	Orders          *Orders
+	// The Authentication API allows merchants to show a native screen and capture OTP on their own page and submit to Cashfree. This feature is only available on request.
+	Authentication *Authentication
+	Payments       *Payments
+	Refunds        *Refunds
+	Settlements    *Settlements
+	Reconciliation *Reconciliation
 	// softPOS' agent and order management system now supported by APIs
-	SoftPOS *softPOS
+	SoftPOS *SoftPOS
 
 	sdkConfiguration sdkConfiguration
 }
@@ -131,9 +131,9 @@ func New(opts ...SDKOption) *PGLatest {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "2022-09-01",
-			SDKVersion:        "1.6.1",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 1.6.1 2.173.0 2022-09-01 github.com/speakeasy-sdks/go-sdk-full",
+			SDKVersion:        "2.0.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 2.0.0 2.181.1 2022-09-01 github.com/speakeasy-sdks/go-sdk-full",
 		},
 	}
 	for _, opt := range opts {
@@ -148,25 +148,25 @@ func New(opts ...SDKOption) *PGLatest {
 		sdk.sdkConfiguration.SecurityClient = sdk.sdkConfiguration.DefaultClient
 	}
 
-	sdk.Authentication = newAuthentication(sdk.sdkConfiguration)
+	sdk.TokenVault = newTokenVault(sdk.sdkConfiguration)
 
 	sdk.EligibilityAPIs = newEligibilityAPIs(sdk.sdkConfiguration)
+
+	sdk.PaymentLinks = newPaymentLinks(sdk.sdkConfiguration)
 
 	sdk.Offers = newOffers(sdk.sdkConfiguration)
 
 	sdk.Orders = newOrders(sdk.sdkConfiguration)
 
-	sdk.PaymentLinks = newPaymentLinks(sdk.sdkConfiguration)
+	sdk.Authentication = newAuthentication(sdk.sdkConfiguration)
 
 	sdk.Payments = newPayments(sdk.sdkConfiguration)
-
-	sdk.Reconciliation = newReconciliation(sdk.sdkConfiguration)
 
 	sdk.Refunds = newRefunds(sdk.sdkConfiguration)
 
 	sdk.Settlements = newSettlements(sdk.sdkConfiguration)
 
-	sdk.TokenVault = newTokenVault(sdk.sdkConfiguration)
+	sdk.Reconciliation = newReconciliation(sdk.sdkConfiguration)
 
 	sdk.SoftPOS = newSoftPOS(sdk.sdkConfiguration)
 

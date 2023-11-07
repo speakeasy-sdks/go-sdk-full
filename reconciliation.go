@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type reconciliation struct {
+type Reconciliation struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newReconciliation(sdkConfig sdkConfiguration) *reconciliation {
-	return &reconciliation{
+func newReconciliation(sdkConfig sdkConfiguration) *Reconciliation {
+	return &Reconciliation{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // PostRecon - PG Reconciliation
 // Use this API to get the payment gateway reconciliation details with date range.
-func (s *reconciliation) PostRecon(ctx context.Context, request operations.PostReconRequest) (*operations.PostReconResponse, error) {
+func (s *Reconciliation) PostRecon(ctx context.Context, request operations.PostReconRequest) (*operations.PostReconResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/recon"
 
@@ -86,6 +86,10 @@ func (s *reconciliation) PostRecon(ctx context.Context, request operations.PostR
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -107,7 +111,7 @@ func (s *reconciliation) PostRecon(ctx context.Context, request operations.PostR
 
 // PostSettlementRecon - Settlement Reconciliation
 // Use this API to get settlement reconciliation details using Settlement ID, settlement UTR or date range.
-func (s *reconciliation) PostSettlementRecon(ctx context.Context, request operations.PostSettlementReconRequest) (*operations.PostSettlementReconResponse, error) {
+func (s *Reconciliation) PostSettlementRecon(ctx context.Context, request operations.PostSettlementReconRequest) (*operations.PostSettlementReconResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settlement/recon"
 
@@ -166,6 +170,10 @@ func (s *reconciliation) PostSettlementRecon(ctx context.Context, request operat
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

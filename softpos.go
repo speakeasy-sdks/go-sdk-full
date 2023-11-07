@@ -6,29 +6,29 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-// softPOS - softPOS' agent and order management system now supported by APIs
-type softPOS struct {
+// SoftPOS - softPOS' agent and order management system now supported by APIs
+type SoftPOS struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSoftPOS(sdkConfig sdkConfiguration) *softPOS {
-	return &softPOS{
+func newSoftPOS(sdkConfig sdkConfiguration) *SoftPOS {
+	return &SoftPOS{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateTerminals - Create Terminal
 // Use this API to create new terminals to use softPOS.
-func (s *softPOS) CreateTerminals(ctx context.Context, request operations.CreateTerminalsRequest) (*operations.CreateTerminalsResponse, error) {
+func (s *SoftPOS) CreateTerminals(ctx context.Context, request operations.CreateTerminalsRequest) (*operations.CreateTerminalsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/terminal"
 
@@ -87,6 +87,10 @@ func (s *softPOS) CreateTerminals(ctx context.Context, request operations.Create
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -94,7 +98,7 @@ func (s *softPOS) CreateTerminals(ctx context.Context, request operations.Create
 
 // GetTerminalByMobileNumber - Get terminal status using phone number
 // Use this API to view all details of a terminal.
-func (s *softPOS) GetTerminalByMobileNumber(ctx context.Context, request operations.GetTerminalByMobileNumberRequest) (*operations.GetTerminalByMobileNumberResponse, error) {
+func (s *SoftPOS) GetTerminalByMobileNumber(ctx context.Context, request operations.GetTerminalByMobileNumberRequest) (*operations.GetTerminalByMobileNumberResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/terminal/{terminal_phone_no}", request, nil)
 	if err != nil {
@@ -149,6 +153,10 @@ func (s *softPOS) GetTerminalByMobileNumber(ctx context.Context, request operati
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

@@ -1,5 +1,5 @@
 # TokenVault
-(*TokenVault*)
+(*.TokenVault*)
 
 ## Overview
 
@@ -24,8 +24,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {
@@ -73,8 +73,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {
@@ -83,7 +83,7 @@ func main() {
     ctx := context.Background()
     res, err := s.TokenVault.FetchAllSavedInstruments(ctx, operations.FetchAllSavedInstrumentsRequest{
         CustomerID: "string",
-        InstrumentType: operations.FetchAllSavedInstrumentsInstrumentTypeCard,
+        InstrumentType: operations.InstrumentTypeCard,
         XClientID: "string",
         XClientSecret: "string",
     })
@@ -91,7 +91,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.FetchAllSavedInstruments != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -122,8 +122,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {
@@ -171,8 +171,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {

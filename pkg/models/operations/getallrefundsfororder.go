@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"net/http"
 )
 
@@ -60,12 +60,12 @@ type GetallrefundsfororderResponse struct {
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
 	Headers       map[string][]string
-	// OK
-	RefundsEntities []shared.RefundsEntity
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	Classes []shared.RefundsEntity
 }
 
 func (o *GetallrefundsfororderResponse) GetContentType() string {
@@ -89,13 +89,6 @@ func (o *GetallrefundsfororderResponse) GetHeaders() map[string][]string {
 	return o.Headers
 }
 
-func (o *GetallrefundsfororderResponse) GetRefundsEntities() []shared.RefundsEntity {
-	if o == nil {
-		return nil
-	}
-	return o.RefundsEntities
-}
-
 func (o *GetallrefundsfororderResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -108,4 +101,11 @@ func (o *GetallrefundsfororderResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetallrefundsfororderResponse) GetClasses() []shared.RefundsEntity {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

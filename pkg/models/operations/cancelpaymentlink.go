@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"net/http"
 )
 
@@ -58,8 +58,6 @@ type CancelPaymentLinkResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
-	// Cannot cancel Payment Link if status is not ACTIVE
-	LinkCancelledError *shared.LinkCancelledError
 	// Payment Link cancelled
 	LinkCancelledResponse *shared.LinkCancelledResponse
 	// HTTP response status code for this operation
@@ -80,13 +78,6 @@ func (o *CancelPaymentLinkResponse) GetHeaders() map[string][]string {
 		return nil
 	}
 	return o.Headers
-}
-
-func (o *CancelPaymentLinkResponse) GetLinkCancelledError() *shared.LinkCancelledError {
-	if o == nil {
-		return nil
-	}
-	return o.LinkCancelledError
 }
 
 func (o *CancelPaymentLinkResponse) GetLinkCancelledResponse() *shared.LinkCancelledResponse {

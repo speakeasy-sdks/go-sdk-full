@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-// authentication - The Authentication API allows merchants to show a native screen and capture OTP on their own page and submit to Cashfree. This feature is only available on request.
-type authentication struct {
+// The Authentication API allows merchants to show a native screen and capture OTP on their own page and submit to Cashfree. This feature is only available on request.
+type Authentication struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAuthentication(sdkConfig sdkConfiguration) *authentication {
-	return &authentication{
+func newAuthentication(sdkConfig sdkConfiguration) *Authentication {
+	return &Authentication{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // OTPRequest - Submit or Resend OTP
 // If you accept OTP on your own page, you can use the below API to send OTP to Cashfree.
-func (s *authentication) OTPRequest(ctx context.Context, request operations.OTPRequestRequest) (*operations.OTPRequestResponse, error) {
+func (s *Authentication) OTPRequest(ctx context.Context, request operations.OTPRequestRequest) (*operations.OTPRequestResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/pay/authenticate/{payment_id}", request, nil)
 	if err != nil {
@@ -89,6 +89,10 @@ func (s *authentication) OTPRequest(ctx context.Context, request operations.OTPR
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

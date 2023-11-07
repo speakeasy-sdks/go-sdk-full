@@ -1,4 +1,4 @@
-module github.com/speakeasy-sdks/go-sdk-full
+module github.com/speakeasy-sdks/go-sdk-full/v2
 
 go 1.14
 

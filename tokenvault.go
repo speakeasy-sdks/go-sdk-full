@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-// tokenVault - Cashfree's token Vault helps you save cards and tokenize them in a PCI complaint manner. We support creation of network tokens which can be used across acquiring banks
-type tokenVault struct {
+// TokenVault - Cashfree's token Vault helps you save cards and tokenize them in a PCI complaint manner. We support creation of network tokens which can be used across acquiring banks
+type TokenVault struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTokenVault(sdkConfig sdkConfiguration) *tokenVault {
-	return &tokenVault{
+func newTokenVault(sdkConfig sdkConfiguration) *TokenVault {
+	return &TokenVault{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // DeleteSpecificSavedInstrument - Delete Saved Instrument
 // To delete a saved instrument for a customer id and instrument id
-func (s *tokenVault) DeleteSpecificSavedInstrument(ctx context.Context, request operations.DeleteSpecificSavedInstrumentRequest) (*operations.DeleteSpecificSavedInstrumentResponse, error) {
+func (s *TokenVault) DeleteSpecificSavedInstrument(ctx context.Context, request operations.DeleteSpecificSavedInstrumentRequest) (*operations.DeleteSpecificSavedInstrumentResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/customers/{customer_id}/instruments/{instrument_id}", request, nil)
 	if err != nil {
@@ -82,6 +82,10 @@ func (s *tokenVault) DeleteSpecificSavedInstrument(ctx context.Context, request 
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -103,7 +107,7 @@ func (s *tokenVault) DeleteSpecificSavedInstrument(ctx context.Context, request 
 
 // FetchAllSavedInstruments - Fetch All Saved Instruments
 // To get all saved instruments for a customer id
-func (s *tokenVault) FetchAllSavedInstruments(ctx context.Context, request operations.FetchAllSavedInstrumentsRequest) (*operations.FetchAllSavedInstrumentsResponse, error) {
+func (s *TokenVault) FetchAllSavedInstruments(ctx context.Context, request operations.FetchAllSavedInstrumentsRequest) (*operations.FetchAllSavedInstrumentsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/customers/{customer_id}/instruments", request, nil)
 	if err != nil {
@@ -158,10 +162,14 @@ func (s *tokenVault) FetchAllSavedInstruments(ctx context.Context, request opera
 				return nil, err
 			}
 
-			res.FetchAllSavedInstruments = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -183,7 +191,7 @@ func (s *tokenVault) FetchAllSavedInstruments(ctx context.Context, request opera
 
 // FetchCryptogram - Fetch cryptogram for saved instrument
 // To get the card network token, token expiry and cryptogram for a saved instrument using instrument id
-func (s *tokenVault) FetchCryptogram(ctx context.Context, request operations.FetchCryptogramRequest) (*operations.FetchCryptogramResponse, error) {
+func (s *TokenVault) FetchCryptogram(ctx context.Context, request operations.FetchCryptogramRequest) (*operations.FetchCryptogramResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/customers/{customer_id}/instruments/{instrument_id}/cryptogram", request, nil)
 	if err != nil {
@@ -238,6 +246,10 @@ func (s *tokenVault) FetchCryptogram(ctx context.Context, request operations.Fet
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -259,7 +271,7 @@ func (s *tokenVault) FetchCryptogram(ctx context.Context, request operations.Fet
 
 // FetchSpecificSavedInstrument - Fetch Single Saved Instrument
 // To get specific saved instrument for a customer id and instrument id
-func (s *tokenVault) FetchSpecificSavedInstrument(ctx context.Context, request operations.FetchSpecificSavedInstrumentRequest) (*operations.FetchSpecificSavedInstrumentResponse, error) {
+func (s *TokenVault) FetchSpecificSavedInstrument(ctx context.Context, request operations.FetchSpecificSavedInstrumentRequest) (*operations.FetchSpecificSavedInstrumentResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/customers/{customer_id}/instruments/{instrument_id}", request, nil)
 	if err != nil {
@@ -314,6 +326,10 @@ func (s *tokenVault) FetchSpecificSavedInstrument(ctx context.Context, request o
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

@@ -5,43 +5,43 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"net/http"
 )
 
-// FetchAllSavedInstrumentsInstrumentType - type to instrument to query
-type FetchAllSavedInstrumentsInstrumentType string
+// InstrumentType - type to instrument to query
+type InstrumentType string
 
 const (
-	FetchAllSavedInstrumentsInstrumentTypeCard FetchAllSavedInstrumentsInstrumentType = "card"
+	InstrumentTypeCard InstrumentType = "card"
 )
 
-func (e FetchAllSavedInstrumentsInstrumentType) ToPointer() *FetchAllSavedInstrumentsInstrumentType {
+func (e InstrumentType) ToPointer() *InstrumentType {
 	return &e
 }
 
-func (e *FetchAllSavedInstrumentsInstrumentType) UnmarshalJSON(data []byte) error {
+func (e *InstrumentType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
 	switch v {
 	case "card":
-		*e = FetchAllSavedInstrumentsInstrumentType(v)
+		*e = InstrumentType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for FetchAllSavedInstrumentsInstrumentType: %v", v)
+		return fmt.Errorf("invalid value for InstrumentType: %v", v)
 	}
 }
 
 type FetchAllSavedInstrumentsRequest struct {
 	CustomerID string `pathParam:"style=simple,explode=false,name=customer_id"`
 	// type to instrument to query
-	InstrumentType FetchAllSavedInstrumentsInstrumentType `queryParam:"style=form,explode=true,name=instrument_type"`
-	XAPIVersion    *string                                `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
-	XClientID      string                                 `header:"style=simple,explode=false,name=x-client-id"`
-	XClientSecret  string                                 `header:"style=simple,explode=false,name=x-client-secret"`
+	InstrumentType InstrumentType `queryParam:"style=form,explode=true,name=instrument_type"`
+	XAPIVersion    *string        `default:"2022-09-01" header:"style=simple,explode=false,name=x-api-version"`
+	XClientID      string         `header:"style=simple,explode=false,name=x-client-id"`
+	XClientSecret  string         `header:"style=simple,explode=false,name=x-client-secret"`
 }
 
 func (f FetchAllSavedInstrumentsRequest) MarshalJSON() ([]byte, error) {
@@ -62,9 +62,9 @@ func (o *FetchAllSavedInstrumentsRequest) GetCustomerID() string {
 	return o.CustomerID
 }
 
-func (o *FetchAllSavedInstrumentsRequest) GetInstrumentType() FetchAllSavedInstrumentsInstrumentType {
+func (o *FetchAllSavedInstrumentsRequest) GetInstrumentType() InstrumentType {
 	if o == nil {
-		return FetchAllSavedInstrumentsInstrumentType("")
+		return InstrumentType("")
 	}
 	return o.InstrumentType
 }
@@ -95,13 +95,13 @@ type FetchAllSavedInstrumentsResponse struct {
 	ContentType string
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
-	// OK
-	FetchAllSavedInstruments []shared.FetchAllSavedInstruments
-	Headers                  map[string][]string
+	Headers       map[string][]string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	Classes []shared.FetchAllSavedInstruments
 }
 
 func (o *FetchAllSavedInstrumentsResponse) GetContentType() string {
@@ -116,13 +116,6 @@ func (o *FetchAllSavedInstrumentsResponse) GetErrorResponse() *shared.ErrorRespo
 		return nil
 	}
 	return o.ErrorResponse
-}
-
-func (o *FetchAllSavedInstrumentsResponse) GetFetchAllSavedInstruments() []shared.FetchAllSavedInstruments {
-	if o == nil {
-		return nil
-	}
-	return o.FetchAllSavedInstruments
 }
 
 func (o *FetchAllSavedInstrumentsResponse) GetHeaders() map[string][]string {
@@ -144,4 +137,11 @@ func (o *FetchAllSavedInstrumentsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *FetchAllSavedInstrumentsResponse) GetClasses() []shared.FetchAllSavedInstruments {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }

@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type eligibilityAPIs struct {
+type EligibilityAPIs struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newEligibilityAPIs(sdkConfig sdkConfiguration) *eligibilityAPIs {
-	return &eligibilityAPIs{
+func newEligibilityAPIs(sdkConfig sdkConfiguration) *EligibilityAPIs {
+	return &EligibilityAPIs{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // EligibilityCardlessEMI - Get eligible Cardless EMI
 // Use this API to get eligible Cardless EMI Payment Methods for a customer on an order.
-func (s *eligibilityAPIs) EligibilityCardlessEMI(ctx context.Context, request operations.EligibilityCardlessEMIRequest) (*operations.EligibilityCardlessEMIResponse, error) {
+func (s *EligibilityAPIs) EligibilityCardlessEMI(ctx context.Context, request operations.EligibilityCardlessEMIRequest) (*operations.EligibilityCardlessEMIResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/eligibility/cardlessemi"
 
@@ -82,10 +82,14 @@ func (s *eligibilityAPIs) EligibilityCardlessEMI(ctx context.Context, request op
 				return nil, err
 			}
 
-			res.EligibleCardlessEMIEntities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -93,7 +97,7 @@ func (s *eligibilityAPIs) EligibilityCardlessEMI(ctx context.Context, request op
 
 // EligibilityOffer - Get eligible Offers
 // Use this API to get eligible offers for an order or amount.
-func (s *eligibilityAPIs) EligibilityOffer(ctx context.Context, request operations.EligibilityOfferRequest) (*operations.EligibilityOfferResponse, error) {
+func (s *EligibilityAPIs) EligibilityOffer(ctx context.Context, request operations.EligibilityOfferRequest) (*operations.EligibilityOfferResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/eligibility/offers"
 
@@ -148,10 +152,14 @@ func (s *eligibilityAPIs) EligibilityOffer(ctx context.Context, request operatio
 				return nil, err
 			}
 
-			res.EligibleOffersEntities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -159,7 +167,7 @@ func (s *eligibilityAPIs) EligibilityOffer(ctx context.Context, request operatio
 
 // EligibilityPaylater - Get eligible Paylater
 // Use this API to get eligible Paylater Payment Methods for a customer on an order.
-func (s *eligibilityAPIs) EligibilityPaylater(ctx context.Context, request operations.EligibilityPaylaterRequest) (*operations.EligibilityPaylaterResponse, error) {
+func (s *EligibilityAPIs) EligibilityPaylater(ctx context.Context, request operations.EligibilityPaylaterRequest) (*operations.EligibilityPaylaterResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/eligibility/paylater"
 
@@ -214,10 +222,14 @@ func (s *eligibilityAPIs) EligibilityPaylater(ctx context.Context, request opera
 				return nil, err
 			}
 
-			res.EligiblePaylaters = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

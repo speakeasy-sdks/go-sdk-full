@@ -6,27 +6,27 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-type payments struct {
+type Payments struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPayments(sdkConfig sdkConfiguration) *payments {
-	return &payments{
+func newPayments(sdkConfig sdkConfiguration) *Payments {
+	return &Payments{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetPaymentbyID - Get Payment by ID
 // Use this API to view payment details of an order for a payment ID.
-func (s *payments) GetPaymentbyID(ctx context.Context, request operations.GetPaymentbyIDRequest) (*operations.GetPaymentbyIDResponse, error) {
+func (s *Payments) GetPaymentbyID(ctx context.Context, request operations.GetPaymentbyIDRequest) (*operations.GetPaymentbyIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/{order_id}/payments/{cf_payment_id}", request, nil)
 	if err != nil {
@@ -81,6 +81,10 @@ func (s *payments) GetPaymentbyID(ctx context.Context, request operations.GetPay
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -102,7 +106,7 @@ func (s *payments) GetPaymentbyID(ctx context.Context, request operations.GetPay
 
 // GetPaymentsfororder - Get Payments for an Order
 // Use this API to view all payment details for an order.
-func (s *payments) GetPaymentsfororder(ctx context.Context, request operations.GetPaymentsfororderRequest) (*operations.GetPaymentsfororderResponse, error) {
+func (s *Payments) GetPaymentsfororder(ctx context.Context, request operations.GetPaymentsfororderRequest) (*operations.GetPaymentsfororderResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/{order_id}/payments", request, nil)
 	if err != nil {
@@ -148,15 +152,19 @@ func (s *payments) GetPaymentsfororder(ctx context.Context, request operations.G
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetPaymentsfororder200ApplicationJSON
+			var out operations.GetPaymentsfororderResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetPaymentsfororder200ApplicationJSONOneOf = &out
+			res.OneOf = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

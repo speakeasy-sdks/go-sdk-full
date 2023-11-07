@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type paymentLinks struct {
+type PaymentLinks struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPaymentLinks(sdkConfig sdkConfiguration) *paymentLinks {
-	return &paymentLinks{
+func newPaymentLinks(sdkConfig sdkConfiguration) *PaymentLinks {
+	return &PaymentLinks{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CancelPaymentLink - Cancel Payment Link
 // Use this API to cancel a payment link. No further payments can be done against a cancelled link. Only a link in ACTIVE status can be cancelled.
-func (s *paymentLinks) CancelPaymentLink(ctx context.Context, request operations.CancelPaymentLinkRequest) (*operations.CancelPaymentLinkResponse, error) {
+func (s *PaymentLinks) CancelPaymentLink(ctx context.Context, request operations.CancelPaymentLinkRequest) (*operations.CancelPaymentLinkResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/links/{link_id}/cancel", request, nil)
 	if err != nil {
@@ -87,15 +87,18 @@ func (s *paymentLinks) CancelPaymentLink(ctx context.Context, request operations
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out shared.LinkCancelledError
+			var out sdkerrors.LinkCancelledError
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
-
-			res.LinkCancelledError = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -103,7 +106,7 @@ func (s *paymentLinks) CancelPaymentLink(ctx context.Context, request operations
 
 // CreatePaymentLink - Create Payment Link
 // Use this API to create a new payment link. The created payment link url will be available in the API response parameter link_url.
-func (s *paymentLinks) CreatePaymentLink(ctx context.Context, request operations.CreatePaymentLinkRequest) (*operations.CreatePaymentLinkResponse, error) {
+func (s *PaymentLinks) CreatePaymentLink(ctx context.Context, request operations.CreatePaymentLinkRequest) (*operations.CreatePaymentLinkResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/links"
 
@@ -162,6 +165,10 @@ func (s *paymentLinks) CreatePaymentLink(ctx context.Context, request operations
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -169,7 +176,7 @@ func (s *paymentLinks) CreatePaymentLink(ctx context.Context, request operations
 
 // GetPaymentLinkDetails - Fetch Payment Link Details
 // Use this API to view all details and status of a payment link.
-func (s *paymentLinks) GetPaymentLinkDetails(ctx context.Context, request operations.GetPaymentLinkDetailsRequest) (*operations.GetPaymentLinkDetailsResponse, error) {
+func (s *PaymentLinks) GetPaymentLinkDetails(ctx context.Context, request operations.GetPaymentLinkDetailsRequest) (*operations.GetPaymentLinkDetailsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/links/{link_id}", request, nil)
 	if err != nil {
@@ -224,6 +231,10 @@ func (s *paymentLinks) GetPaymentLinkDetails(ctx context.Context, request operat
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -231,7 +242,7 @@ func (s *paymentLinks) GetPaymentLinkDetails(ctx context.Context, request operat
 
 // GetPaymentLinkOrders - Get Orders for a Payment Link
 // Use this API to view all order details for a payment link.
-func (s *paymentLinks) GetPaymentLinkOrders(ctx context.Context, request operations.GetPaymentLinkOrdersRequest) (*operations.GetPaymentLinkOrdersResponse, error) {
+func (s *PaymentLinks) GetPaymentLinkOrders(ctx context.Context, request operations.GetPaymentLinkOrdersRequest) (*operations.GetPaymentLinkOrdersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/links/{link_id}/orders", request, nil)
 	if err != nil {
@@ -282,10 +293,14 @@ func (s *paymentLinks) GetPaymentLinkOrders(ctx context.Context, request operati
 				return nil, err
 			}
 
-			res.LinkOrdersResponses = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

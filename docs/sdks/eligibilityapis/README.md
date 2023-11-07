@@ -1,5 +1,5 @@
 # EligibilityAPIs
-(*EligibilityAPIs*)
+(*.EligibilityAPIs*)
 
 ### Available Operations
 
@@ -19,9 +19,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {
@@ -45,7 +45,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.EligibleCardlessEMIEntities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -76,9 +76,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {
@@ -104,7 +104,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.EligibleOffersEntities != nil {
+    if res.Classes != nil {
         // handle response
     }
 }
@@ -135,9 +135,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {
@@ -161,7 +161,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.EligiblePaylaters != nil {
+    if res.Classes != nil {
         // handle response
     }
 }

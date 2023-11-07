@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type settlements struct {
+type Settlements struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSettlements(sdkConfig sdkConfiguration) *settlements {
-	return &settlements{
+func newSettlements(sdkConfig sdkConfiguration) *Settlements {
+	return &Settlements{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // Getsettlements - Get Settlements by Order ID
 // Use this API to view all the settlements of a particular order.
-func (s *settlements) Getsettlements(ctx context.Context, request operations.GetsettlementsRequest) (*operations.GetsettlementsResponse, error) {
+func (s *Settlements) Getsettlements(ctx context.Context, request operations.GetsettlementsRequest) (*operations.GetsettlementsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/{order_id}/settlements", request, nil)
 	if err != nil {
@@ -82,6 +82,10 @@ func (s *settlements) Getsettlements(ctx context.Context, request operations.Get
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -103,7 +107,7 @@ func (s *settlements) Getsettlements(ctx context.Context, request operations.Get
 
 // PostSettlements - Get All Settlements
 // Use this API to get all settlement details by specifying the settlement ID, settlement UTR or date range.
-func (s *settlements) PostSettlements(ctx context.Context, request operations.PostSettlementsRequest) (*operations.PostSettlementsResponse, error) {
+func (s *Settlements) PostSettlements(ctx context.Context, request operations.PostSettlementsRequest) (*operations.PostSettlementsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/settlements"
 
@@ -162,6 +166,10 @@ func (s *settlements) PostSettlements(ctx context.Context, request operations.Po
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

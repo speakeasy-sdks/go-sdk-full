@@ -1,5 +1,5 @@
 # Offers
-(*Offers*)
+(*.Offers*)
 
 ### Available Operations
 
@@ -18,9 +18,9 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
                     MaxCashbackAmount: "string",
                 },
                 DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountDetailsDiscountTypePercentage,
+                    DiscountType: shared.DiscountTypePercentage,
                     DiscountValue: "string",
                     MaxDiscountAmount: "string",
                 },
@@ -48,13 +48,13 @@ func main() {
                 OfferTitle: "Test Offer",
             },
             OfferTnc: shared.OfferTnc{
-                OfferTncType: shared.OfferTncOfferTncTypePost,
+                OfferTncType: shared.OfferTncTypePost,
                 OfferTncValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             },
             OfferValidations: shared.OfferValidations{
                 MaxAllowed: "10",
                 MinAmount: gosdkfull.String("1"),
-                PaymentMethod: shared.CreateOfferValidationsPaymentMethodOfferNB(
+                PaymentMethod: shared.CreatePaymentMethodOfferNB(
                         shared.OfferNB{
                             Netbanking: &shared.NBOffer{
                                 BankName: "all",
@@ -101,8 +101,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {

@@ -15,9 +15,8 @@ package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 	"log"
 )
 
@@ -25,18 +24,17 @@ func main() {
 	s := gosdkfull.New()
 
 	ctx := context.Background()
-	res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
-		OTPRequest: &shared.OTPRequest{
-			Action: shared.OTPRequestActionSubmitOtp,
-			Otp:    "string",
-		},
-		PaymentID: "string",
+	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
+		CustomerID:    "string",
+		InstrumentID:  "string",
+		XClientID:     "string",
+		XClientSecret: "string",
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.OTPResponseEntity != nil {
+	if res.FetchAllSavedInstruments != nil {
 		// handle response
 	}
 }
@@ -48,64 +46,64 @@ func main() {
 ## Available Resources and Operations
 
 
-### [Authentication](docs/sdks/authentication/README.md)
-
-* [OTPRequest](docs/sdks/authentication/README.md#otprequest) - Submit or Resend OTP
-
-### [EligibilityAPIs](docs/sdks/eligibilityapis/README.md)
-
-* [EligibilityCardlessEMI](docs/sdks/eligibilityapis/README.md#eligibilitycardlessemi) - Get eligible Cardless EMI
-* [EligibilityOffer](docs/sdks/eligibilityapis/README.md#eligibilityoffer) - Get eligible Offers
-* [EligibilityPaylater](docs/sdks/eligibilityapis/README.md#eligibilitypaylater) - Get eligible Paylater
-
-### [Offers](docs/sdks/offers/README.md)
-
-* [CreateOffer](docs/sdks/offers/README.md#createoffer) - Create Offer
-* [GetOffer](docs/sdks/offers/README.md#getoffer) - Get Offer by ID
-
-### [Orders](docs/sdks/orders/README.md)
-
-* [CreateOrder](docs/sdks/orders/README.md#createorder) - Create Order
-* [GetOrder](docs/sdks/orders/README.md#getorder) - Get Order
-* [OrderPay](docs/sdks/orders/README.md#orderpay) - Order Pay
-* [Preauthorization](docs/sdks/orders/README.md#preauthorization) - Preauthorization
-
-### [PaymentLinks](docs/sdks/paymentlinks/README.md)
-
-* [CancelPaymentLink](docs/sdks/paymentlinks/README.md#cancelpaymentlink) - Cancel Payment Link
-* [CreatePaymentLink](docs/sdks/paymentlinks/README.md#createpaymentlink) - Create Payment Link
-* [GetPaymentLinkDetails](docs/sdks/paymentlinks/README.md#getpaymentlinkdetails) - Fetch Payment Link Details
-* [GetPaymentLinkOrders](docs/sdks/paymentlinks/README.md#getpaymentlinkorders) - Get Orders for a Payment Link
-
-### [Payments](docs/sdks/payments/README.md)
-
-* [GetPaymentbyID](docs/sdks/payments/README.md#getpaymentbyid) - Get Payment by ID
-* [GetPaymentsfororder](docs/sdks/payments/README.md#getpaymentsfororder) - Get Payments for an Order
-
-### [Reconciliation](docs/sdks/reconciliation/README.md)
-
-* [PostRecon](docs/sdks/reconciliation/README.md#postrecon) - PG Reconciliation
-* [PostSettlementRecon](docs/sdks/reconciliation/README.md#postsettlementrecon) - Settlement Reconciliation
-
-### [Refunds](docs/sdks/refunds/README.md)
-
-* [Createrefund](docs/sdks/refunds/README.md#createrefund) - Create Refund
-* [GetRefund](docs/sdks/refunds/README.md#getrefund) - Get Refund
-* [Getallrefundsfororder](docs/sdks/refunds/README.md#getallrefundsfororder) - Get All Refunds for an Order
-
-### [Settlements](docs/sdks/settlements/README.md)
-
-* [Getsettlements](docs/sdks/settlements/README.md#getsettlements) - Get Settlements by Order ID
-* [PostSettlements](docs/sdks/settlements/README.md#postsettlements) - Get All Settlements
-
-### [TokenVault](docs/sdks/tokenvault/README.md)
+### [.TokenVault](docs/sdks/tokenvault/README.md)
 
 * [DeleteSpecificSavedInstrument](docs/sdks/tokenvault/README.md#deletespecificsavedinstrument) - Delete Saved Instrument
 * [FetchAllSavedInstruments](docs/sdks/tokenvault/README.md#fetchallsavedinstruments) - Fetch All Saved Instruments
 * [FetchCryptogram](docs/sdks/tokenvault/README.md#fetchcryptogram) - Fetch cryptogram for saved instrument
 * [FetchSpecificSavedInstrument](docs/sdks/tokenvault/README.md#fetchspecificsavedinstrument) - Fetch Single Saved Instrument
 
-### [SoftPOS](docs/sdks/softpos/README.md)
+### [.EligibilityAPIs](docs/sdks/eligibilityapis/README.md)
+
+* [EligibilityCardlessEMI](docs/sdks/eligibilityapis/README.md#eligibilitycardlessemi) - Get eligible Cardless EMI
+* [EligibilityOffer](docs/sdks/eligibilityapis/README.md#eligibilityoffer) - Get eligible Offers
+* [EligibilityPaylater](docs/sdks/eligibilityapis/README.md#eligibilitypaylater) - Get eligible Paylater
+
+### [.PaymentLinks](docs/sdks/paymentlinks/README.md)
+
+* [CancelPaymentLink](docs/sdks/paymentlinks/README.md#cancelpaymentlink) - Cancel Payment Link
+* [CreatePaymentLink](docs/sdks/paymentlinks/README.md#createpaymentlink) - Create Payment Link
+* [GetPaymentLinkDetails](docs/sdks/paymentlinks/README.md#getpaymentlinkdetails) - Fetch Payment Link Details
+* [GetPaymentLinkOrders](docs/sdks/paymentlinks/README.md#getpaymentlinkorders) - Get Orders for a Payment Link
+
+### [.Offers](docs/sdks/offers/README.md)
+
+* [CreateOffer](docs/sdks/offers/README.md#createoffer) - Create Offer
+* [GetOffer](docs/sdks/offers/README.md#getoffer) - Get Offer by ID
+
+### [.Orders](docs/sdks/orders/README.md)
+
+* [CreateOrder](docs/sdks/orders/README.md#createorder) - Create Order
+* [GetOrder](docs/sdks/orders/README.md#getorder) - Get Order
+* [OrderPay](docs/sdks/orders/README.md#orderpay) - Order Pay
+* [Preauthorization](docs/sdks/orders/README.md#preauthorization) - Preauthorization
+
+### [.Authentication](docs/sdks/authentication/README.md)
+
+* [OTPRequest](docs/sdks/authentication/README.md#otprequest) - Submit or Resend OTP
+
+### [.Payments](docs/sdks/payments/README.md)
+
+* [GetPaymentbyID](docs/sdks/payments/README.md#getpaymentbyid) - Get Payment by ID
+* [GetPaymentsfororder](docs/sdks/payments/README.md#getpaymentsfororder) - Get Payments for an Order
+
+### [.Refunds](docs/sdks/refunds/README.md)
+
+* [Createrefund](docs/sdks/refunds/README.md#createrefund) - Create Refund
+* [GetRefund](docs/sdks/refunds/README.md#getrefund) - Get Refund
+* [Getallrefundsfororder](docs/sdks/refunds/README.md#getallrefundsfororder) - Get All Refunds for an Order
+
+### [.Settlements](docs/sdks/settlements/README.md)
+
+* [Getsettlements](docs/sdks/settlements/README.md#getsettlements) - Get Settlements by Order ID
+* [PostSettlements](docs/sdks/settlements/README.md#postsettlements) - Get All Settlements
+
+### [.Reconciliation](docs/sdks/reconciliation/README.md)
+
+* [PostRecon](docs/sdks/reconciliation/README.md#postrecon) - PG Reconciliation
+* [PostSettlementRecon](docs/sdks/reconciliation/README.md#postsettlementrecon) - Settlement Reconciliation
+
+### [.SoftPOS](docs/sdks/softpos/README.md)
 
 * [CreateTerminals](docs/sdks/softpos/README.md#createterminals) - Create Terminal
 * [GetTerminalByMobileNumber](docs/sdks/softpos/README.md#getterminalbymobilenumber) - Get terminal status using phone number
@@ -143,6 +141,39 @@ Here's an example of one such pagination call:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
 
 
+## Example
+
+```go
+package main
+
+import (
+	"context"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
+)
+
+func main() {
+	s := gosdkfull.New()
+
+	ctx := context.Background()
+	res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
+		LinkID:        "string",
+		XClientID:     "string",
+		XClientSecret: "string",
+	})
+	if err != nil {
+
+		var e *sdkerrors.LinkCancelledError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+
+	}
+}
+
+```
 <!-- End Error Handling -->
 
 
@@ -161,15 +192,13 @@ You can override the default server globally using the `WithServerIndex` option 
 
 For example:
 
-
 ```go
 package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 	"log"
 )
 
@@ -179,18 +208,17 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
-		OTPRequest: &shared.OTPRequest{
-			Action: shared.OTPRequestActionSubmitOtp,
-			Otp:    "string",
-		},
-		PaymentID: "string",
+	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
+		CustomerID:    "string",
+		InstrumentID:  "string",
+		XClientID:     "string",
+		XClientSecret: "string",
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.OTPResponseEntity != nil {
+	if res.FetchAllSavedInstruments != nil {
 		// handle response
 	}
 }
@@ -202,15 +230,13 @@ func main() {
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
 
-
 ```go
 package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 	"log"
 )
 
@@ -220,18 +246,17 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
-		OTPRequest: &shared.OTPRequest{
-			Action: shared.OTPRequestActionSubmitOtp,
-			Otp:    "string",
-		},
-		PaymentID: "string",
+	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
+		CustomerID:    "string",
+		InstrumentID:  "string",
+		XClientID:     "string",
+		XClientSecret: "string",
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.OTPResponseEntity != nil {
+	if res.FetchAllSavedInstruments != nil {
 		// handle response
 	}
 }

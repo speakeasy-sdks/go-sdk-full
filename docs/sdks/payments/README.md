@@ -1,5 +1,5 @@
 # Payments
-(*Payments*)
+(*.Payments*)
 
 ### Available Operations
 
@@ -18,8 +18,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {
@@ -67,8 +67,8 @@ package main
 import(
 	"context"
 	"log"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
 )
 
 func main() {
@@ -84,7 +84,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.GetPaymentsfororder200ApplicationJSONOneOf != nil {
+    if res.OneOf != nil {
         // handle response
     }
 }

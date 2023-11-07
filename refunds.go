@@ -6,27 +6,27 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-type refunds struct {
+type Refunds struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newRefunds(sdkConfig sdkConfiguration) *refunds {
-	return &refunds{
+func newRefunds(sdkConfig sdkConfiguration) *Refunds {
+	return &Refunds{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // Createrefund - Create Refund
 // Use this API to initiate refunds.
-func (s *refunds) Createrefund(ctx context.Context, request operations.CreaterefundRequest) (*operations.CreaterefundResponse, error) {
+func (s *Refunds) Createrefund(ctx context.Context, request operations.CreaterefundRequest) (*operations.CreaterefundResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/{order_id}/refunds", request, nil)
 	if err != nil {
@@ -88,6 +88,10 @@ func (s *refunds) Createrefund(ctx context.Context, request operations.Createref
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -109,7 +113,7 @@ func (s *refunds) Createrefund(ctx context.Context, request operations.Createref
 
 // GetRefund - Get Refund
 // Use this API to fetch a specific refund processed on your Cashfree Account.
-func (s *refunds) GetRefund(ctx context.Context, request operations.GetRefundRequest) (*operations.GetRefundResponse, error) {
+func (s *Refunds) GetRefund(ctx context.Context, request operations.GetRefundRequest) (*operations.GetRefundResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/{order_id}/refunds/{refund_id}", request, nil)
 	if err != nil {
@@ -164,6 +168,10 @@ func (s *refunds) GetRefund(ctx context.Context, request operations.GetRefundReq
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 
@@ -185,7 +193,7 @@ func (s *refunds) GetRefund(ctx context.Context, request operations.GetRefundReq
 
 // Getallrefundsfororder - Get All Refunds for an Order
 // Use this API to fetch all refunds processed against an order.
-func (s *refunds) Getallrefundsfororder(ctx context.Context, request operations.GetallrefundsfororderRequest) (*operations.GetallrefundsfororderResponse, error) {
+func (s *Refunds) Getallrefundsfororder(ctx context.Context, request operations.GetallrefundsfororderRequest) (*operations.GetallrefundsfororderResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/orders/{order_id}/refunds", request, nil)
 	if err != nil {
@@ -236,10 +244,14 @@ func (s *refunds) Getallrefundsfororder(ctx context.Context, request operations.
 				return nil, err
 			}
 
-			res.RefundsEntities = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	default:
 		res.Headers = httpRes.Header
 

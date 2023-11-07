@@ -4,8 +4,8 @@ package operations
 
 import (
 	"errors"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
 	"net/http"
 )
 
@@ -55,40 +55,40 @@ func (o *GetPaymentsfororderRequest) GetXClientSecret() string {
 	return o.XClientSecret
 }
 
-type GetPaymentsfororder200ApplicationJSONType string
+type GetPaymentsfororderResponseBodyType string
 
 const (
-	GetPaymentsfororder200ApplicationJSONTypePaymentsEntity GetPaymentsfororder200ApplicationJSONType = "PaymentsEntity"
+	GetPaymentsfororderResponseBodyTypePaymentsEntity GetPaymentsfororderResponseBodyType = "PaymentsEntity"
 )
 
-type GetPaymentsfororder200ApplicationJSON struct {
+type GetPaymentsfororderResponseBody struct {
 	PaymentsEntity *shared.PaymentsEntity
 
-	Type GetPaymentsfororder200ApplicationJSONType
+	Type GetPaymentsfororderResponseBodyType
 }
 
-func CreateGetPaymentsfororder200ApplicationJSONPaymentsEntity(paymentsEntity shared.PaymentsEntity) GetPaymentsfororder200ApplicationJSON {
-	typ := GetPaymentsfororder200ApplicationJSONTypePaymentsEntity
+func CreateGetPaymentsfororderResponseBodyPaymentsEntity(paymentsEntity shared.PaymentsEntity) GetPaymentsfororderResponseBody {
+	typ := GetPaymentsfororderResponseBodyTypePaymentsEntity
 
-	return GetPaymentsfororder200ApplicationJSON{
+	return GetPaymentsfororderResponseBody{
 		PaymentsEntity: &paymentsEntity,
 		Type:           typ,
 	}
 }
 
-func (u *GetPaymentsfororder200ApplicationJSON) UnmarshalJSON(data []byte) error {
+func (u *GetPaymentsfororderResponseBody) UnmarshalJSON(data []byte) error {
 
 	paymentsEntity := shared.PaymentsEntity{}
 	if err := utils.UnmarshalJSON(data, &paymentsEntity, "", true, true); err == nil {
 		u.PaymentsEntity = &paymentsEntity
-		u.Type = GetPaymentsfororder200ApplicationJSONTypePaymentsEntity
+		u.Type = GetPaymentsfororderResponseBodyTypePaymentsEntity
 		return nil
 	}
 
 	return errors.New("could not unmarshal into supported union types")
 }
 
-func (u GetPaymentsfororder200ApplicationJSON) MarshalJSON() ([]byte, error) {
+func (u GetPaymentsfororderResponseBody) MarshalJSON() ([]byte, error) {
 	if u.PaymentsEntity != nil {
 		return utils.MarshalJSON(u.PaymentsEntity, "", true)
 	}
@@ -101,13 +101,13 @@ type GetPaymentsfororderResponse struct {
 	ContentType string
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
-	// OK
-	GetPaymentsfororder200ApplicationJSONOneOf *GetPaymentsfororder200ApplicationJSON
-	Headers                                    map[string][]string
+	Headers       map[string][]string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	OneOf *GetPaymentsfororderResponseBody
 }
 
 func (o *GetPaymentsfororderResponse) GetContentType() string {
@@ -122,13 +122,6 @@ func (o *GetPaymentsfororderResponse) GetErrorResponse() *shared.ErrorResponse {
 		return nil
 	}
 	return o.ErrorResponse
-}
-
-func (o *GetPaymentsfororderResponse) GetGetPaymentsfororder200ApplicationJSONOneOf() *GetPaymentsfororder200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetPaymentsfororder200ApplicationJSONOneOf
 }
 
 func (o *GetPaymentsfororderResponse) GetHeaders() map[string][]string {
@@ -150,4 +143,11 @@ func (o *GetPaymentsfororderResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetPaymentsfororderResponse) GetOneOf() *GetPaymentsfororderResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.OneOf
 }
