@@ -46,64 +46,64 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.TokenVault](docs/sdks/tokenvault/README.md)
+### [TokenVault](docs/sdks/tokenvault/README.md)
 
 * [DeleteSpecificSavedInstrument](docs/sdks/tokenvault/README.md#deletespecificsavedinstrument) - Delete Saved Instrument
 * [FetchAllSavedInstruments](docs/sdks/tokenvault/README.md#fetchallsavedinstruments) - Fetch All Saved Instruments
 * [FetchCryptogram](docs/sdks/tokenvault/README.md#fetchcryptogram) - Fetch cryptogram for saved instrument
 * [FetchSpecificSavedInstrument](docs/sdks/tokenvault/README.md#fetchspecificsavedinstrument) - Fetch Single Saved Instrument
 
-### [.EligibilityAPIs](docs/sdks/eligibilityapis/README.md)
+### [EligibilityAPIs](docs/sdks/eligibilityapis/README.md)
 
 * [EligibilityCardlessEMI](docs/sdks/eligibilityapis/README.md#eligibilitycardlessemi) - Get eligible Cardless EMI
 * [EligibilityOffer](docs/sdks/eligibilityapis/README.md#eligibilityoffer) - Get eligible Offers
 * [EligibilityPaylater](docs/sdks/eligibilityapis/README.md#eligibilitypaylater) - Get eligible Paylater
 
-### [.PaymentLinks](docs/sdks/paymentlinks/README.md)
+### [PaymentLinks](docs/sdks/paymentlinks/README.md)
 
 * [CancelPaymentLink](docs/sdks/paymentlinks/README.md#cancelpaymentlink) - Cancel Payment Link
 * [CreatePaymentLink](docs/sdks/paymentlinks/README.md#createpaymentlink) - Create Payment Link
 * [GetPaymentLinkDetails](docs/sdks/paymentlinks/README.md#getpaymentlinkdetails) - Fetch Payment Link Details
 * [GetPaymentLinkOrders](docs/sdks/paymentlinks/README.md#getpaymentlinkorders) - Get Orders for a Payment Link
 
-### [.Offers](docs/sdks/offers/README.md)
+### [Offers](docs/sdks/offers/README.md)
 
 * [CreateOffer](docs/sdks/offers/README.md#createoffer) - Create Offer
 * [GetOffer](docs/sdks/offers/README.md#getoffer) - Get Offer by ID
 
-### [.Orders](docs/sdks/orders/README.md)
+### [Orders](docs/sdks/orders/README.md)
 
 * [CreateOrder](docs/sdks/orders/README.md#createorder) - Create Order
 * [GetOrder](docs/sdks/orders/README.md#getorder) - Get Order
 * [OrderPay](docs/sdks/orders/README.md#orderpay) - Order Pay
 * [Preauthorization](docs/sdks/orders/README.md#preauthorization) - Preauthorization
 
-### [.Authentication](docs/sdks/authentication/README.md)
+### [Authentication](docs/sdks/authentication/README.md)
 
 * [OTPRequest](docs/sdks/authentication/README.md#otprequest) - Submit or Resend OTP
 
-### [.Payments](docs/sdks/payments/README.md)
+### [Payments](docs/sdks/payments/README.md)
 
 * [GetPaymentbyID](docs/sdks/payments/README.md#getpaymentbyid) - Get Payment by ID
 * [GetPaymentsfororder](docs/sdks/payments/README.md#getpaymentsfororder) - Get Payments for an Order
 
-### [.Refunds](docs/sdks/refunds/README.md)
+### [Refunds](docs/sdks/refunds/README.md)
 
 * [Createrefund](docs/sdks/refunds/README.md#createrefund) - Create Refund
 * [GetRefund](docs/sdks/refunds/README.md#getrefund) - Get Refund
 * [Getallrefundsfororder](docs/sdks/refunds/README.md#getallrefundsfororder) - Get All Refunds for an Order
 
-### [.Settlements](docs/sdks/settlements/README.md)
+### [Settlements](docs/sdks/settlements/README.md)
 
 * [Getsettlements](docs/sdks/settlements/README.md#getsettlements) - Get Settlements by Order ID
 * [PostSettlements](docs/sdks/settlements/README.md#postsettlements) - Get All Settlements
 
-### [.Reconciliation](docs/sdks/reconciliation/README.md)
+### [Reconciliation](docs/sdks/reconciliation/README.md)
 
 * [PostRecon](docs/sdks/reconciliation/README.md#postrecon) - PG Reconciliation
 * [PostSettlementRecon](docs/sdks/reconciliation/README.md#postsettlementrecon) - Settlement Reconciliation
 
-### [.SoftPOS](docs/sdks/softpos/README.md)
+### [SoftPOS](docs/sdks/softpos/README.md)
 
 * [CreateTerminals](docs/sdks/softpos/README.md#createterminals) - Create Terminal
 * [GetTerminalByMobileNumber](docs/sdks/softpos/README.md#getterminalbymobilenumber) - Get terminal status using phone number
@@ -138,7 +138,12 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object                 | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| sdkerrors.LinkCancelledError | 400                          | application/json             |
+| sdkerrors.SDKError           | 400-600                      | */*                          |
 
 
 ## Example
@@ -170,6 +175,11 @@ func main() {
 			log.Fatal(e.Error())
 		}
 
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
 	}
 }
 
