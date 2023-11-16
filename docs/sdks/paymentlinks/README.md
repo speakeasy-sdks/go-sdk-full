@@ -18,10 +18,10 @@ Use this API to cancel a payment link. No further payments can be done against a
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -69,11 +69,11 @@ Use this API to create a new payment link. The created payment link url will be 
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -134,10 +134,10 @@ Use this API to view all details and status of a payment link.
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -184,10 +184,10 @@ Use this API to view all order details for a payment link.
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

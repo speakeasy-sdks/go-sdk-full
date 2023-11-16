@@ -18,12 +18,11 @@ Use this API to create orders with Cashfree from your backend and get the paymen
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/callbacks"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -94,10 +93,10 @@ Use this API to view all details of an order.
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -144,11 +143,11 @@ Use this API when you have already created the orders and want Cashfree to proce
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -204,11 +203,11 @@ Use this API to capture or void a preauthorized payment
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

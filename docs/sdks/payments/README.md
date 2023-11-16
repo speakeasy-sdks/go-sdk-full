@@ -16,10 +16,10 @@ Use this API to view payment details of an order for a payment ID.
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -67,10 +67,10 @@ Use this API to view all payment details for an order.
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

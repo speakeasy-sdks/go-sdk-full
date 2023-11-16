@@ -75,7 +75,7 @@ func (o *CreateTerminalsResponse) GetContentType() string {
 
 func (o *CreateTerminalsResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

@@ -16,11 +16,11 @@ Use this API to get the payment gateway reconciliation details with date range.
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -75,11 +75,11 @@ Use this API to get settlement reconciliation details using Settlement ID, settl
 package main
 
 import(
-	"context"
-	"log"
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"context"
 	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

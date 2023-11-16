@@ -84,7 +84,7 @@ func (o *GetsettlementsResponse) GetErrorResponse() *shared.ErrorResponse {
 
 func (o *GetsettlementsResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

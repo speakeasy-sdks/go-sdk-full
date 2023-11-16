@@ -76,7 +76,7 @@ func (o *OTPRequestResponse) GetErrorResponse() *shared.ErrorResponse {
 
 func (o *OTPRequestResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

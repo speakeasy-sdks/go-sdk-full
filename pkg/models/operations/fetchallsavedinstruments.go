@@ -120,7 +120,7 @@ func (o *FetchAllSavedInstrumentsResponse) GetErrorResponse() *shared.ErrorRespo
 
 func (o *FetchAllSavedInstrumentsResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

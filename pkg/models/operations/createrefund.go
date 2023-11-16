@@ -92,7 +92,7 @@ func (o *CreaterefundResponse) GetErrorResponse() *shared.ErrorResponse {
 
 func (o *CreaterefundResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

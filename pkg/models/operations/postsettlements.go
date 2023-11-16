@@ -91,7 +91,7 @@ func (o *PostSettlementsResponse) GetFetchSettlement() *shared.FetchSettlement {
 
 func (o *PostSettlementsResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

@@ -91,7 +91,7 @@ func (o *PostReconResponse) GetFetchPGRecon() *shared.FetchPGRecon {
 
 func (o *PostReconResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

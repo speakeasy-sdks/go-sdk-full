@@ -92,7 +92,7 @@ func (o *PreauthorizationResponse) GetErrorResponse() *shared.ErrorResponse {
 
 func (o *PreauthorizationResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
