@@ -233,7 +233,7 @@ docs/pkg/models/shared/instrumenttype.md
 docs/pkg/models/shared/fetchallsavedinstruments.md
 docs/pkg/models/shared/cardtokendetails.md
 docs/pkg/models/shared/savedinstrumentmeta.md
-docs/pkg/models/shared/errorresponsetype.md
+docs/pkg/models/shared/type.md
 docs/pkg/models/shared/errorresponse.md
 docs/pkg/models/shared/cryptogram.md
 docs/pkg/models/shared/eligiblecardlessemientity.md
