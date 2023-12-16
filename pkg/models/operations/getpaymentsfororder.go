@@ -61,6 +61,7 @@ const (
 	GetPaymentsfororderResponseBodyTypePaymentsEntity GetPaymentsfororderResponseBodyType = "PaymentsEntity"
 )
 
+// GetPaymentsfororderResponseBody - OK
 type GetPaymentsfororderResponseBody struct {
 	PaymentsEntity *shared.PaymentsEntity
 

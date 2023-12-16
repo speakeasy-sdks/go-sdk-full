@@ -2,22 +2,24 @@ configVersion: 1.0.0
 management:
   docChecksum: 279157cb6e58c32a08b11d9e8f6f02be
   docVersion: "2022-09-01"
-  speakeasyVersion: 1.126.0
-  generationVersion: 2.213.3
+  speakeasyVersion: 1.126.4
+  generationVersion: 2.214.10
 generation:
   comments: {}
   sdkClassName: PG-Latest
   repoURL: https://github.com/speakeasy-sdks/go-sdk-full.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 features:
   go:
     constsAndDefaults: 0.1.2
-    core: 3.2.0
+    core: 3.2.2
     globalServerURLs: 2.82.1
-    unions: 2.85.0
+    unions: 2.85.2
 go:
-  version: 2.1.0
+  version: 2.1.1
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
