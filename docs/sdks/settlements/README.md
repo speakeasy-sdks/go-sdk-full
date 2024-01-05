@@ -54,7 +54,7 @@ func main() {
 **[*operations.GetsettlementsResponse](../../pkg/models/operations/getsettlementsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettlements
 
@@ -117,4 +117,4 @@ func main() {
 **[*operations.PostSettlementsResponse](../../pkg/models/operations/postsettlementsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

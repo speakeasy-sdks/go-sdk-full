@@ -57,7 +57,7 @@ func main() {
 | Error Object                 | Status Code                  | Content Type                 |
 | ---------------------------- | ---------------------------- | ---------------------------- |
 | sdkerrors.LinkCancelledError | 400                          | application/json             |
-| sdkerrors.SDKError           | 400-600                      | */*                          |
+| sdkerrors.SDKError           | 4xx-5xx                      | */*                          |
 
 ## CreatePaymentLink
 
@@ -122,7 +122,7 @@ func main() {
 **[*operations.CreatePaymentLinkResponse](../../pkg/models/operations/createpaymentlinkresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetPaymentLinkDetails
 
@@ -172,7 +172,7 @@ func main() {
 **[*operations.GetPaymentLinkDetailsResponse](../../pkg/models/operations/getpaymentlinkdetailsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetPaymentLinkOrders
 
@@ -222,4 +222,4 @@ func main() {
 **[*operations.GetPaymentLinkOrdersResponse](../../pkg/models/operations/getpaymentlinkordersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

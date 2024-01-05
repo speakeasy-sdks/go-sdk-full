@@ -61,7 +61,7 @@ func main() {
 **[*operations.DeleteSpecificSavedInstrumentResponse](../../pkg/models/operations/deletespecificsavedinstrumentresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## FetchAllSavedInstruments
 
@@ -112,7 +112,7 @@ func main() {
 **[*operations.FetchAllSavedInstrumentsResponse](../../pkg/models/operations/fetchallsavedinstrumentsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## FetchCryptogram
 
@@ -163,7 +163,7 @@ func main() {
 **[*operations.FetchCryptogramResponse](../../pkg/models/operations/fetchcryptogramresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## FetchSpecificSavedInstrument
 
@@ -214,4 +214,4 @@ func main() {
 **[*operations.FetchSpecificSavedInstrumentResponse](../../pkg/models/operations/fetchspecificsavedinstrumentresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

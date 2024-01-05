@@ -62,7 +62,7 @@ func main() {
 **[*operations.CreateTerminalsResponse](../../pkg/models/operations/createterminalsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetTerminalByMobileNumber
 
@@ -112,4 +112,4 @@ func main() {
 **[*operations.GetTerminalByMobileNumberResponse](../../pkg/models/operations/getterminalbymobilenumberresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

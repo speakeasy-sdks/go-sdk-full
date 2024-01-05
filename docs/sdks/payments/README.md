@@ -55,7 +55,7 @@ func main() {
 **[*operations.GetPaymentbyIDResponse](../../pkg/models/operations/getpaymentbyidresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetPaymentsfororder
 
@@ -105,4 +105,4 @@ func main() {
 **[*operations.GetPaymentsfororderResponse](../../pkg/models/operations/getpaymentsfororderresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

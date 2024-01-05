@@ -81,7 +81,7 @@ func main() {
 | sdkerrors.AuthenticationError | 401                           | application/json              |
 | sdkerrors.RateLimitError      | 429                           | application/json              |
 | sdkerrors.APIError            | 500                           | application/json              |
-| sdkerrors.SDKError            | 400-600                       | */*                           |
+| sdkerrors.SDKError            | 4xx-5xx                       | */*                           |
 
 ## GetOrder
 
@@ -131,7 +131,7 @@ func main() {
 **[*operations.GetOrderResponse](../../pkg/models/operations/getorderresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## OrderPay
 
@@ -191,7 +191,7 @@ func main() {
 | ------------------------ | ------------------------ | ------------------------ |
 | sdkerrors.RateLimitError | 429                      | application/json         |
 | sdkerrors.APIError       | 500                      | application/json         |
-| sdkerrors.SDKError       | 400-600                  | */*                      |
+| sdkerrors.SDKError       | 4xx-5xx                  | */*                      |
 
 ## Preauthorization
 
@@ -243,4 +243,4 @@ func main() {
 **[*operations.PreauthorizationResponse](../../pkg/models/operations/preauthorizationresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

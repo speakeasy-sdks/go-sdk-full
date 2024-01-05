@@ -64,7 +64,7 @@ func main() {
 **[*operations.EligibilityCardlessEMIResponse](../../pkg/models/operations/eligibilitycardlessemiresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## EligibilityOffer
 
@@ -125,7 +125,7 @@ func main() {
 **[*operations.EligibilityOfferResponse](../../pkg/models/operations/eligibilityofferresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## EligibilityPaylater
 
@@ -184,4 +184,4 @@ func main() {
 **[*operations.EligibilityPaylaterResponse](../../pkg/models/operations/eligibilitypaylaterresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

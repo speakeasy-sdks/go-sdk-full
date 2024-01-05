@@ -63,7 +63,7 @@ func main() {
 **[*operations.CreaterefundResponse](../../pkg/models/operations/createrefundresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetRefund
 
@@ -114,7 +114,7 @@ func main() {
 **[*operations.GetRefundResponse](../../pkg/models/operations/getrefundresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Getallrefundsfororder
 
@@ -164,4 +164,4 @@ func main() {
 **[*operations.GetallrefundsfororderResponse](../../pkg/models/operations/getallrefundsfororderresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

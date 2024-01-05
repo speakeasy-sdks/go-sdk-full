@@ -63,7 +63,7 @@ func main() {
 **[*operations.PostReconResponse](../../pkg/models/operations/postreconresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## PostSettlementRecon
 
@@ -126,4 +126,4 @@ func main() {
 **[*operations.PostSettlementReconResponse](../../pkg/models/operations/postsettlementreconresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

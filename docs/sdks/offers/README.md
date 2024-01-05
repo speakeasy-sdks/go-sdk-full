@@ -89,7 +89,7 @@ func main() {
 **[*operations.CreateOfferResponse](../../pkg/models/operations/createofferresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetOffer
 
@@ -139,4 +139,4 @@ func main() {
 **[*operations.GetOfferResponse](../../pkg/models/operations/getofferresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
