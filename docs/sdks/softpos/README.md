@@ -20,10 +20,10 @@ Use this API to create new terminals to use softPOS.
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -74,9 +74,9 @@ Use this API to view all details of a terminal.
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 

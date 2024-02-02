@@ -19,10 +19,10 @@ If you accept OTP on your own page, you can use the below API to send OTP to Cas
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 

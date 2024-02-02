@@ -4,9 +4,9 @@ management:
   docChecksum: 279157cb6e58c32a08b11d9e8f6f02be
   docVersion: "2022-09-01"
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 2.1.2
-  configChecksum: 85f883d411decfe12bd2d916246c9da9
+  generationVersion: 2.248.1
+  releaseVersion: 3.0.0
+  configChecksum: 9230bf4655f69f4100291a051cf0853a
   repoURL: https://github.com/speakeasy-sdks/go-sdk-full.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/go-sdk-full

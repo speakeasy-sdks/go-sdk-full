@@ -16,9 +16,9 @@ Use this API to view all the settlements of a particular order.
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -66,10 +66,10 @@ Use this API to get all settlement details by specifying the settlement ID, sett
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 

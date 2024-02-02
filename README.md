@@ -18,8 +18,8 @@ package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -143,9 +143,9 @@ package main
 import (
 	"context"
 	"errors"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/sdkerrors"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/sdkerrors"
 	"log"
 )
 
@@ -198,8 +198,8 @@ package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -235,8 +235,8 @@ package main
 
 import (
 	"context"
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 

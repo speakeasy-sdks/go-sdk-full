@@ -1,4 +1,4 @@
-module github.com/speakeasy-sdks/go-sdk-full/v2
+module github.com/speakeasy-sdks/go-sdk-full/v3
 
 go 1.20
 

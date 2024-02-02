@@ -18,9 +18,9 @@ Use this API to cancel a payment link. No further payments can be done against a
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -69,10 +69,10 @@ Use this API to create a new payment link. The created payment link url will be 
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/shared"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -134,9 +134,9 @@ Use this API to view all details and status of a payment link.
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 
@@ -184,9 +184,9 @@ Use this API to view all order details for a payment link.
 package main
 
 import(
-	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v2"
+	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
 

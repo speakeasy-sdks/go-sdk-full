@@ -4,7 +4,7 @@ package shared
 
 import (
 	"errors"
-	"github.com/speakeasy-sdks/go-sdk-full/v2/pkg/utils"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/utils"
 )
 
 type OrderPayRequestPaymentMethodType string
