@@ -18,7 +18,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -28,41 +27,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.CreateOffer(ctx, operations.CreateOfferRequest{
-        CreateOfferBackendRequest: &shared.CreateOfferBackendRequest{
-            OfferDetails: shared.OfferDetails{
-                CashbackDetails: &shared.CashbackDetails{
-                    MaxCashbackAmount: "string",
-                },
-                DiscountDetails: &shared.DiscountDetails{
-                    DiscountType: shared.DiscountTypePercentage,
-                    DiscountValue: "string",
-                    MaxDiscountAmount: "string",
-                },
-                OfferType: shared.OfferDetailsOfferTypeDiscountAndCashback,
-            },
-            OfferMeta: shared.OfferMeta{
-                OfferCode: "CFTESTOFFER",
-                OfferDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                OfferEndTime: "2023-03-29T08:09:51Z",
-                OfferStartTime: "2023-03-21T08:09:51Z",
-                OfferTitle: "Test Offer",
-            },
-            OfferTnc: shared.OfferTnc{
-                OfferTncType: shared.OfferTncTypePost,
-                OfferTncValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            },
-            OfferValidations: shared.OfferValidations{
-                MaxAllowed: "10",
-                MinAmount: gosdkfull.String("1"),
-                PaymentMethod: shared.CreatePaymentMethodOfferNB(
-                        shared.OfferNB{
-                            Netbanking: &shared.NBOffer{
-                                BankName: "all",
-                            },
-                        },
-                ),
-            },
-        },
         XClientID: "string",
         XClientSecret: "string",
     })

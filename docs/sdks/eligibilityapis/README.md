@@ -19,7 +19,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -29,15 +28,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityCardlessEMI(ctx, operations.EligibilityCardlessEMIRequest{
-        EligibilityCardlessEMIRequest: &shared.EligibilityCardlessEMIRequest{
-            Queries: shared.CardlessEMIQueries{
-                Amount: gosdkfull.Float64(100),
-                CustomerDetails: &shared.CustomerDetailsCardlessEMI{
-                    CustomerPhone: "9898989898",
-                },
-                OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
-            },
-        },
         XClientID: "string",
         XClientSecret: "string",
     })
@@ -78,7 +68,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -88,17 +77,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityOffer(ctx, operations.EligibilityOfferRequest{
-        EligibilityOffersRequest: &shared.EligibilityOffersRequest{
-            Filters: &shared.OfferFilters{
-                OfferType: []shared.OfferType{
-                    shared.OfferTypeCashback,
-                },
-            },
-            Queries: shared.OfferQueries{
-                Amount: gosdkfull.Float64(100),
-                OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
-            },
-        },
         XClientID: "string",
         XClientSecret: "string",
     })
@@ -139,7 +117,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -149,15 +126,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityPaylater(ctx, operations.EligibilityPaylaterRequest{
-        EligibilityCardlessEMIRequest: &shared.EligibilityCardlessEMIRequest{
-            Queries: shared.CardlessEMIQueries{
-                Amount: gosdkfull.Float64(100),
-                CustomerDetails: &shared.CustomerDetailsCardlessEMI{
-                    CustomerPhone: "9898989898",
-                },
-                OrderID: gosdkfull.String("order_413462PK1RI1IwYB1X69LgzUQWiSxYDF"),
-            },
-        },
         XClientID: "string",
         XClientSecret: "string",
     })

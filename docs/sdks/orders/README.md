@@ -20,7 +20,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -30,28 +29,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
-        CreateOrderBackendRequest: &shared.CreateOrderBackendRequest{
-            CustomerDetails: shared.CustomerDetails{
-                CustomerID: "string",
-                CustomerPhone: "string",
-            },
-            OrderAmount: 10.15,
-            OrderCurrency: "INR",
-            OrderExpiryTime: gosdkfull.String("2021-07-29T00:00:00Z"),
-            OrderMeta: &shared.OrderMeta{},
-            OrderNote: gosdkfull.String("Test order"),
-            OrderSplits: []shared.VendorSplit{
-                shared.VendorSplit{},
-            },
-            OrderTags: map[string]string{
-                "key": "string",
-            },
-            Terminal: &shared.TerminalDetails{
-                TerminalID: "string",
-                TerminalPhoneNo: "string",
-                TerminalType: "string",
-            },
-        },
         XClientID: "string",
         XClientSecret: "string",
     })
@@ -145,7 +122,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -155,15 +131,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.OrderPay(ctx, operations.OrderPayRequest{
-        OrderPayRequest: &shared.OrderPayRequest{
-            OfferID: gosdkfull.String("faa6cc05-d1e2-401c-b0cf-0c9db3ff0f0b"),
-            PaymentMethod: shared.CreateOrderPayRequestPaymentMethodCardlessEMIPaymentMethod(
-                    shared.CardlessEMIPaymentMethod{
-                        CardlessEmi: shared.CardlessEMI{},
-                    },
-            ),
-            PaymentSessionID: "session__CvcEmNKDkmERQrxnx39ibhJ3Ii034pjc8ZVxf3qcgEXCWlgDDlHRgz2XYZCqpajDQSXMMtCusPgOIxYP2LZx0-05p39gC2Vgmq1RAj--gcn",
-        },
         XAPIVersion: "string",
     })
     if err != nil {
@@ -215,7 +182,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.Preauthorization(ctx, operations.PreauthorizationRequest{
-        AuthorizationRequest: &shared.AuthorizationRequest{},
+        AuthorizationRequest: &shared.AuthorizationRequest{
+            Action: shared.AuthorizationRequestActionCapture.ToPointer(),
+            Amount: gosdkfull.Float64(100),
+        },
         OrderID: "string",
         XClientID: "string",
         XClientSecret: "string",

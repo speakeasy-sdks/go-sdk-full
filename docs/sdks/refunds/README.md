@@ -30,11 +30,10 @@ func main() {
     ctx := context.Background()
     res, err := s.Refunds.Createrefund(ctx, operations.CreaterefundRequest{
         CreateRefundRequest: &shared.CreateRefundRequest{
-            RefundAmount: 567.71,
-            RefundID: "string",
-            RefundSplits: []shared.VendorSplit{
-                shared.VendorSplit{},
-            },
+            RefundAmount: 1,
+            RefundID: "refund_00912",
+            RefundNote: gosdkfull.String("refund note for reference"),
+            RefundSpeed: shared.CreateRefundRequestRefundSpeedStandard.ToPointer(),
         },
         OrderID: "string",
         XClientID: "string",

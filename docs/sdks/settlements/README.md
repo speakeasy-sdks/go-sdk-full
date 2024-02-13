@@ -81,14 +81,18 @@ func main() {
         FetchSettlementReconRequest: &shared.FetchSettlementReconRequest{
             Filters: shared.FetchSettlementReconRequestFilters{
                 CfSettlementIds: []int64{
-                    297769,
+                    4234233,
                 },
+                EndDate: gosdkfull.String("2022-07-21T23:59:59Z"),
                 SettlementUtrs: []string{
-                    "string",
+                    "utr1",
+                    "utr2",
                 },
+                StartDate: gosdkfull.String("2022-07-20T00:00:00Z"),
             },
             Pagination: shared.FetchSettlementReconRequestPagination{
-                Limit: 116172,
+                Cursor: gosdkfull.String("eyJzZWFyY2hBZnRlciI6eyJsaXN0IjpbMTg4NjcxNDVdLCJlbXB0eSI6ZmFsc2V9LCJyZWNvbkFQSVR5cGUiOiJMRURHRVIifQ=="),
+                Limit: 10,
             },
         },
         XClientID: "string",

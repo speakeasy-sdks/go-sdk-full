@@ -33,8 +33,9 @@ func main() {
     ctx := context.Background()
     res, err := s.SoftPOS.CreateTerminals(ctx, operations.CreateTerminalsRequest{
         CreateTerminalRequest: &shared.CreateTerminalRequest{
-            TerminalName: "string",
-            TerminalPhoneNo: "string",
+            TerminalID: gosdkfull.String("1"),
+            TerminalName: "Jane Doe",
+            TerminalPhoneNo: "9876543210",
         },
         XClientID: "string",
         XClientSecret: "string",

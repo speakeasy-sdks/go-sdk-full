@@ -21,7 +21,6 @@ package main
 import(
 	gosdkfull "github.com/speakeasy-sdks/go-sdk-full/v3"
 	"context"
-	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/shared"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/models/operations"
 	"log"
 )
@@ -31,10 +30,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
-        OTPRequest: &shared.OTPRequest{
-            Action: shared.OTPRequestActionSubmitOtp,
-            Otp: "string",
-        },
         PaymentID: "string",
     })
     if err != nil {
