@@ -27,9 +27,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Settlements.Getsettlements(ctx, operations.GetsettlementsRequest{
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -95,8 +95,8 @@ func main() {
                 Limit: 10,
             },
         },
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

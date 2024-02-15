@@ -4,9 +4,9 @@ management:
   docChecksum: 279157cb6e58c32a08b11d9e8f6f02be
   docVersion: "2022-09-01"
   speakeasyVersion: internal
-  generationVersion: 2.253.0
-  releaseVersion: 3.0.2
-  configChecksum: 7f5906327ab6cc9c136585bee028706f
+  generationVersion: 2.258.2
+  releaseVersion: 3.1.0
+  configChecksum: 41d48f68aab3fc16449ae41e23f68de1
   repoURL: https://github.com/speakeasy-sdks/go-sdk-full.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/go-sdk-full
@@ -14,7 +14,7 @@ management:
 features:
   go:
     constsAndDefaults: 0.1.3
-    core: 3.3.2
+    core: 3.4.0
     globalServerURLs: 2.82.1
     unions: 2.85.3
 generatedFiles:
@@ -414,3 +414,4 @@ generatedFiles:
   - docs/sdks/softpos/README.md
   - USAGE.md
   - .gitattributes
+  - internal/hooks/hooks.go

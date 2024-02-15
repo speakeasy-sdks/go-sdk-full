@@ -28,8 +28,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityCardlessEMI(ctx, operations.EligibilityCardlessEMIRequest{
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -77,8 +77,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityOffer(ctx, operations.EligibilityOfferRequest{
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -126,8 +126,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.EligibilityAPIs.EligibilityPaylater(ctx, operations.EligibilityPaylaterRequest{
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

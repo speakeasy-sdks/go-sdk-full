@@ -29,9 +29,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-        LinkID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        LinkID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -83,7 +83,7 @@ func main() {
     res, err := s.PaymentLinks.CreatePaymentLink(ctx, operations.CreatePaymentLinkRequest{
         CreateLinkRequest: &shared.CreateLinkRequest{
             CustomerDetails: shared.LinkCustomerDetailsEntity{
-                CustomerPhone: "string",
+                CustomerPhone: "<value>",
             },
             LinkAmount: 100,
             LinkAutoReminders: gosdkfull.Bool(true),
@@ -99,8 +99,8 @@ func main() {
             LinkPartialPayments: gosdkfull.Bool(true),
             LinkPurpose: "Payment for PlayStation 11",
         },
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -148,9 +148,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkDetails(ctx, operations.GetPaymentLinkDetailsRequest{
-        LinkID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        LinkID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -198,9 +198,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PaymentLinks.GetPaymentLinkOrders(ctx, operations.GetPaymentLinkOrdersRequest{
-        LinkID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        LinkID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

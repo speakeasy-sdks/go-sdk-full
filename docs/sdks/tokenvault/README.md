@@ -33,10 +33,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-        CustomerID: "string",
-        InstrumentID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        CustomerID: "<value>",
+        InstrumentID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -84,10 +84,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchAllSavedInstruments(ctx, operations.FetchAllSavedInstrumentsRequest{
-        CustomerID: "string",
+        CustomerID: "<value>",
         InstrumentType: operations.InstrumentTypeCard,
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -135,10 +135,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchCryptogram(ctx, operations.FetchCryptogramRequest{
-        CustomerID: "string",
-        InstrumentID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        CustomerID: "<value>",
+        InstrumentID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -186,10 +186,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TokenVault.FetchSpecificSavedInstrument(ctx, operations.FetchSpecificSavedInstrumentRequest{
-        CustomerID: "string",
-        InstrumentID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        CustomerID: "<value>",
+        InstrumentID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

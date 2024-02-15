@@ -27,8 +27,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.CreateOffer(ctx, operations.CreateOfferRequest{
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,9 +76,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Offers.GetOffer(ctx, operations.GetOfferRequest{
-        OfferID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OfferID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

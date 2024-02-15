@@ -28,9 +28,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Payments.GetPaymentbyID(ctx, operations.GetPaymentbyIDRequest{
         CfPaymentID: 310675,
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -78,9 +78,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Payments.GetPaymentsfororder(ctx, operations.GetPaymentsfororderRequest{
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

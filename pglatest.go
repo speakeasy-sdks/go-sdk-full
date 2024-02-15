@@ -4,6 +4,7 @@ package gosdkfull
 
 import (
 	"fmt"
+	"github.com/speakeasy-sdks/go-sdk-full/v3/internal/hooks"
 	"github.com/speakeasy-sdks/go-sdk-full/v3/pkg/utils"
 	"net/http"
 	"time"
@@ -52,6 +53,7 @@ type sdkConfiguration struct {
 	GenVersion        string
 	UserAgent         string
 	RetryConfig       *utils.RetryConfig
+	Hooks             *hooks.Hooks
 }
 
 func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
@@ -131,14 +133,17 @@ func New(opts ...SDKOption) *PGLatest {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "2022-09-01",
-			SDKVersion:        "3.0.2",
-			GenVersion:        "2.253.0",
-			UserAgent:         "speakeasy-sdk/go 3.0.2 2.253.0 2022-09-01 github.com/speakeasy-sdks/go-sdk-full",
+			SDKVersion:        "3.1.0",
+			GenVersion:        "2.258.2",
+			UserAgent:         "speakeasy-sdk/go 3.1.0 2.258.2 2022-09-01 github.com/speakeasy-sdks/go-sdk-full",
+			Hooks:             hooks.New(),
 		},
 	}
 	for _, opt := range opts {
 		opt(sdk)
 	}
+
+	sdk.sdkConfiguration.DefaultClient = sdk.sdkConfiguration.Hooks.ClientInit(sdk.sdkConfiguration.DefaultClient)
 
 	// Use WithClient to override the default client if you would like to customize the timeout
 	if sdk.sdkConfiguration.DefaultClient == nil {

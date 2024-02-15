@@ -28,10 +28,10 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-		CustomerID:    "string",
-		InstrumentID:  "string",
-		XClientID:     "string",
-		XClientSecret: "string",
+		CustomerID:    "<value>",
+		InstrumentID:  "<value>",
+		XClientID:     "<value>",
+		XClientSecret: "<value>",
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -154,9 +154,9 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.PaymentLinks.CancelPaymentLink(ctx, operations.CancelPaymentLinkRequest{
-		LinkID:        "string",
-		XClientID:     "string",
-		XClientSecret: "string",
+		LinkID:        "<value>",
+		XClientID:     "<value>",
+		XClientSecret: "<value>",
 	})
 	if err != nil {
 
@@ -210,10 +210,10 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-		CustomerID:    "string",
-		InstrumentID:  "string",
-		XClientID:     "string",
-		XClientSecret: "string",
+		CustomerID:    "<value>",
+		InstrumentID:  "<value>",
+		XClientID:     "<value>",
+		XClientSecret: "<value>",
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -247,10 +247,10 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-		CustomerID:    "string",
-		InstrumentID:  "string",
-		XClientID:     "string",
-		XClientSecret: "string",
+		CustomerID:    "<value>",
+		InstrumentID:  "<value>",
+		XClientID:     "<value>",
+		XClientSecret: "<value>",
 	})
 	if err != nil {
 		log.Fatal(err)

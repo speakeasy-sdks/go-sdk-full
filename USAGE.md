@@ -14,10 +14,10 @@ func main() {
 
 	ctx := context.Background()
 	res, err := s.TokenVault.DeleteSpecificSavedInstrument(ctx, operations.DeleteSpecificSavedInstrumentRequest{
-		CustomerID:    "string",
-		InstrumentID:  "string",
-		XClientID:     "string",
-		XClientSecret: "string",
+		CustomerID:    "<value>",
+		InstrumentID:  "<value>",
+		XClientID:     "<value>",
+		XClientSecret: "<value>",
 	})
 	if err != nil {
 		log.Fatal(err)

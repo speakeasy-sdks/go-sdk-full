@@ -38,8 +38,8 @@ func main() {
                 Limit: 10,
             },
         },
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -105,8 +105,8 @@ func main() {
                 Limit: 10,
             },
         },
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

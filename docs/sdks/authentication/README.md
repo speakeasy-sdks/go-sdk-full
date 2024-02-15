@@ -30,7 +30,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Authentication.OTPRequest(ctx, operations.OTPRequestRequest{
-        PaymentID: "string",
+        PaymentID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

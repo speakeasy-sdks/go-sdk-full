@@ -29,8 +29,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -81,9 +81,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.GetOrder(ctx, operations.GetOrderRequest{
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -131,7 +131,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Orders.OrderPay(ctx, operations.OrderPayRequest{
-        XAPIVersion: "string",
+        XAPIVersion: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -186,9 +186,9 @@ func main() {
             Action: shared.AuthorizationRequestActionCapture.ToPointer(),
             Amount: gosdkfull.Float64(100),
         },
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

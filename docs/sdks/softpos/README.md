@@ -37,8 +37,8 @@ func main() {
             TerminalName: "Jane Doe",
             TerminalPhoneNo: "9876543210",
         },
-        XClientID: "string",
-        XClientSecret: "string",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,9 +86,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.SoftPOS.GetTerminalByMobileNumber(ctx, operations.GetTerminalByMobileNumberRequest{
-        TerminalPhoneNo: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        TerminalPhoneNo: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)

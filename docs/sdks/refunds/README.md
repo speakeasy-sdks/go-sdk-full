@@ -35,9 +35,9 @@ func main() {
             RefundNote: gosdkfull.String("refund note for reference"),
             RefundSpeed: shared.CreateRefundRequestRefundSpeedStandard.ToPointer(),
         },
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -85,10 +85,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.GetRefund(ctx, operations.GetRefundRequest{
-        OrderID: "string",
-        RefundID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        RefundID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -136,9 +136,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Refunds.Getallrefundsfororder(ctx, operations.GetallrefundsfororderRequest{
-        OrderID: "string",
-        XClientID: "string",
-        XClientSecret: "string",
+        OrderID: "<value>",
+        XClientID: "<value>",
+        XClientSecret: "<value>",
     })
     if err != nil {
         log.Fatal(err)
