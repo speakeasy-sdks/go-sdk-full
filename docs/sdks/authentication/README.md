@@ -35,7 +35,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.OTPResponseEntity != nil {
         // handle response
     }

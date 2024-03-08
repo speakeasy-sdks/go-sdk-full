@@ -44,7 +44,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.FetchPGRecon != nil {
         // handle response
     }
@@ -111,7 +110,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.FetchSettlementRecon != nil {
         // handle response
     }

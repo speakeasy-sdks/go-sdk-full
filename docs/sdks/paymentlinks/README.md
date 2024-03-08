@@ -36,7 +36,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.LinkCancelledResponse != nil {
         // handle response
     }
@@ -105,7 +104,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.LinkResponse != nil {
         // handle response
     }
@@ -155,7 +153,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.LinkResponse != nil {
         // handle response
     }
@@ -205,7 +202,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Classes != nil {
         // handle response
     }

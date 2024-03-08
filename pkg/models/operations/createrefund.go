@@ -68,12 +68,12 @@ type CreaterefundResponse struct {
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
 	Headers       map[string][]string
-	// Refund created
-	RefundsEntity *shared.RefundsEntity
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Refund created
+	RefundsEntity *shared.RefundsEntity
 }
 
 func (o *CreaterefundResponse) GetContentType() string {
@@ -97,13 +97,6 @@ func (o *CreaterefundResponse) GetHeaders() map[string][]string {
 	return o.Headers
 }
 
-func (o *CreaterefundResponse) GetRefundsEntity() *shared.RefundsEntity {
-	if o == nil {
-		return nil
-	}
-	return o.RefundsEntity
-}
-
 func (o *CreaterefundResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -116,4 +109,11 @@ func (o *CreaterefundResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *CreaterefundResponse) GetRefundsEntity() *shared.RefundsEntity {
+	if o == nil {
+		return nil
+	}
+	return o.RefundsEntity
 }

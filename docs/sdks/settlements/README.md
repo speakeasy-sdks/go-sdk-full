@@ -34,7 +34,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SettlementsEntity != nil {
         // handle response
     }
@@ -101,7 +100,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.FetchSettlement != nil {
         // handle response
     }

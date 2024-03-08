@@ -60,12 +60,12 @@ type GetsettlementsResponse struct {
 	// Any bad or invalid request will lead to following error object
 	ErrorResponse *shared.ErrorResponse
 	Headers       map[string][]string
-	// OK
-	SettlementsEntity *shared.SettlementsEntity
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// OK
+	SettlementsEntity *shared.SettlementsEntity
 }
 
 func (o *GetsettlementsResponse) GetContentType() string {
@@ -89,13 +89,6 @@ func (o *GetsettlementsResponse) GetHeaders() map[string][]string {
 	return o.Headers
 }
 
-func (o *GetsettlementsResponse) GetSettlementsEntity() *shared.SettlementsEntity {
-	if o == nil {
-		return nil
-	}
-	return o.SettlementsEntity
-}
-
 func (o *GetsettlementsResponse) GetStatusCode() int {
 	if o == nil {
 		return 0
@@ -108,4 +101,11 @@ func (o *GetsettlementsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *GetsettlementsResponse) GetSettlementsEntity() *shared.SettlementsEntity {
+	if o == nil {
+		return nil
+	}
+	return o.SettlementsEntity
 }
